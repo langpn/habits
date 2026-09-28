@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Ultimate Habits & Elastic Companion</title>
+  
+  <!-- PWA & Mobile Web App Meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Habits">
+  <meta name="theme-color" content="#0a0d14">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0d14'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' font-size='60'>⚡</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0d14;
+      --card-bg: rgba(18, 24, 38, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-strict: #38bdf8;
+      --accent-strict-glow: rgba(56, 189, 248, 0.25);
+      --accent-priority: #f59e0b;
+      --accent-priority-glow: rgba(245, 158, 11, 0.25);
+      --accent-core: #ef4444;
+      --accent-core-glow: rgba(239, 68, 68, 0.25);
+      --accent-green: #10b981;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.1) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Header */
+    .header {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-title h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-title p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge-target {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+    }
+
+    .badge-target .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #ef4444;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ef4444;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.8; }
+    }
+
+    /* Mode Selector Buttons */
+    .mode-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .mode-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mode-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .mode-btn.active-strict {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent-strict);
+      box-shadow: 0 0 20px var(--accent-strict-glow);
+    }
+
+    .mode-btn.active-priority {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: var(--accent-priority);
+      box-shadow: 0 0 20px var(--accent-priority-glow);
+    }
+
+    .mode-btn.active-core {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: var(--accent-core);
+      box-shadow: 0 0 20px var(--accent-core-glow);
+    }
+
+    .mode-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .mode-btn.strict .mode-tag { color: var(--accent-strict); }
+    .mode-btn.priority .mode-tag { color: var(--accent-priority); }
+    .mode-btn.core .mode-tag { color: var(--accent-core); }
+
+    .mode-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .mode-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* Progress Card */
+    .progress-bar-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .progress-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .progress-label {
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .progress-percent {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 15px;
+      color: #fff;
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      transition: width 0.3s ease;
+      background: linear-gradient(90deg, #38bdf8, #10b981);
+    }
+
+    /* Task List */
+    .task-list-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .list-title {
+      font-size: 17px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .task-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .task-item.completed {
+      background: rgba(16, 185, 129, 0.05);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+
+    .task-item.completed .task-title {
+      text-decoration: line-through;
+      color: var(--text-dim);
+    }
+
+    .task-item.completed .task-desc {
+      color: #475569;
+    }
+
+    .checkbox-custom {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .task-item.completed .checkbox-custom {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
+    }
+
+    .checkbox-custom svg {
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .task-item.completed .checkbox-custom svg {
+      opacity: 1;
+    }
+
+    .task-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .task-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+
+    .task-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-strict);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .task-item[data-mode="priority"] .task-time {
+      color: var(--accent-priority);
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .task-item[data-mode="core"] .task-time {
+      color: var(--accent-core);
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .task-category {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .task-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .task-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .pill-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    /* Warning & Mindset */
+    .mindset-card {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(20, 20, 30, 0.6) 100%);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 18px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .mindset-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .mindset-content h4 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #f87171;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 4px;
+    }
+
+    .mindset-content p {
+      font-size: 14px;
+      font-style: italic;
+      color: #fca5a5;
+      line-height: 1.5;
+    }
+
+    /* Bottom quick rules */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .principle-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .principle-box strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .mode-selector, .principles-grid {
+        grid-template-columns: 1fr;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-title">
+        <h1>⚡ ULTIMATE HABITS & ELASTIC COMPANION</h1>
+        <p>Hệ thống Kỷ luật Linh hoạt: Doom GTD + Obsidian Vault + Sean Kang Video Editing</p>
+      </div>
+      <div class="badge-target">
+        <span class="pulse-dot"></span>
+        Target: Job Before Tết 2027
+      </div>
+    </header>
+
+    <!-- Mode Selector -->
+    <div class="mode-selector">
+      <!-- Strict Mode -->
+      <div class="mode-btn strict active-strict" id="btn-strict" onclick="switchMode('strict')">
+        <span class="mode-tag">Level 1 • Rảnh & Khỏe</span>
+        <div class="mode-name">🟢 Nghiêm Ngặt (Peak)</div>
+        <div class="mode-desc">Trạng thái tinh thần cao, toàn bộ thời gian ở nhà, đẩy tối đa hỏa lực.</div>
+      </div>
+
+      <!-- Priority Mode -->
+      <div class="mode-btn priority" id="btn-priority" onclick="switchMode('priority')">
+        <span class="mode-tag">Level 2 • Bận & Đi Học</span>
+        <div class="mode-name">🟡 Quan Trọng (School/Busy)</div>
+        <div class="mode-desc">Có lịch học trường, ôn thi, việc bận. Chỉ giữ 4 trụ cột không vỡ trận.</div>
+      </div>
+
+      <!-- Core Survival Mode -->
+      <div class="mode-btn core" id="btn-core" onclick="switchMode('core')">
+        <span class="mode-tag">Level 3 • Kiệt Sức / Ốm</span>
+        <div class="mode-name">🔴 Sống Còn (Never Zero)</div>
+        <div class="mode-desc">Mệt mỏi, sốt mũi, deadline gấp. Giữ neo tối thiểu, không bỏ cuộc.</div>
+      </div>
+    </div>
+
+    <!-- Progress Card -->
+    <div class="progress-bar-container">
+      <div class="progress-stats">
+        <span class="progress-label" id="progress-mode-label">
+          <span>Tiến độ thực hiện:</span> 
+          <strong id="mode-display-name" style="color: var(--accent-strict)">Chế độ Nghiêm Ngặt</strong>
+        </span>
+        <span class="progress-percent" id="progress-percent-text">0 / 11 (0%)</span>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Task List Container -->
+    <div class="task-list-card">
+      <div class="list-header">
+        <div class="list-title" id="list-title">
+          <span>📋</span> Danh sách Thói quen Hôm nay
+        </div>
+        <button class="copy-btn" onclick="copyObsidianMarkdown()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Copy vào Obsidian
+        </button>
+      </div>
+
+      <div id="tasks-container">
+        <!-- Rendered by JavaScript based on active mode -->
+      </div>
+    </div>
+
+    <!-- Mindset Warning -->
+    <div class="mindset-card">
+      <div class="mindset-icon">⚠️</div>
+      <div class="mindset-content">
+        <h4>Mindset & Warning</h4>
+        <p>"Do you want a brilliant future, or a life of poverty and humiliation? Đừng tìm sự hoàn hảo, hãy tìm sự bền bỉ. Một ngày tồi tệ vẫn phải giữ lấy sợi dây neo!"</p>
+      </div>
+    </div>
+
+    <!-- Quick Principles -->
+    <div class="principles-grid">
+      <div class="principle-box">
+        <strong>1. Never Miss Twice</strong>
+        Nếu hôm nay phải dùng Mode 3 (Sống còn), tuyệt đối ngày mai phải bật lại Mode 1 hoặc 2.
+      </div>
+      <div class="principle-box">
+        <strong>2. Hybrid Tooling</strong>
+        Doom Emacs giữ GTD & Agenda. Obsidian + Neovim giữ Zettelkasten & Media Visual.
+      </div>
+      <div class="principle-box">
+        <strong>3. Cần câu cơm 2027</strong>
+        Mọi lý thuyết phải quy về timeline Premiere/AE và 1 proposal gửi khách hàng.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const MODES_DATA = {
+      strict: {
+        name: "Chế độ Nghiêm Ngặt (Peak)",
+        color: "var(--accent-strict)",
+        tasks: [
+          { time: "07:30", cat: "Bio Shield", title: "Thức dậy + Ăn sáng + Thuốc mũi (Spray/Telfor)", desc: "Bắt buộc uống sau ăn sáng để thông mũi, duy trì sức khỏe hô hấp." },
+          { time: "08:15", cat: "Mindset", title: "Thiền 15 phút (Meditation)", desc: "Định tâm, giải phóng dopamine dư thừa, tập trung vào hơi thở." },
+          { time: "08:35", cat: "Planning", title: "Doom Emacs: Review GTD & Chọn Top 3 NEXT", desc: "Mở org-agenda, chọn đúng 3 task quan trọng nhất của ngày đưa vào NEXT." },
+          { time: "08:45 - 12:00", cat: "Money Focus", title: "Video Editing: Học & Thực hành Khóa Sean Kang", desc: "3 tiếng Deep Work: Luyện nhịp cắt, sound design, hook retention trên timeline." },
+          { time: "12:00", cat: "Bio Shield", title: "Ăn trưa + Uống Vitamin trị mụn + Nghỉ trưa 25p", desc: "Nạp dưỡng chất, chợp mắt ngắn để reset não bộ cho ca chiều." },
+          { time: "13:30 - 15:30", cat: "Academic", title: "School Tasks: Làm bài tập & đồ án tốt nghiệp", desc: "Giải quyết dứt điểm các môn ở trường, đảm bảo đủ điều kiện tốt nghiệp." },
+          { time: "15:45 - 17:30", cat: "Portfolio", title: "Hands-on Edit: Dựng sample reel / Portfolio Upwork", desc: "Thực chiến dựng video hoàn chỉnh để chuẩn bị show cho khách." },
+          { time: "17:45 - 19:15", cat: "Workout", title: "Calisthenics (Hypertrophy) / Boxing (Rest day)", desc: "Tập trung tăng cơ (pull-up, dip, push-up), không tập skill phức tạp." },
+          { time: "20:15 - 21:15", cat: "English ESP", title: "Học Tiếng Anh Freelance (Upwork/Fiverr)", desc: "Luyện đọc hiểu brief, viết template proposal, nghe podcast editing." },
+          { time: "21:15 - 22:00", cat: "Zettelkasten", title: "Viết 1 Zettelkasten trong Obsidian/Neovim", desc: "Đúc kết 1 kỹ thuật dựng hoặc 1 kiến thức trường vào Permanent Note." },
+          { time: "23:00 - 00:00", cat: "Sleep Anchor", title: "Giới nghiêm thiết bị + Đi ngủ trước 00:00", desc: "Tắt toàn bộ màn hình, để não thư giãn, bảo vệ chu kỳ ngủ 7.5 tiếng." }
+        ]
+      },
+      priority: {
+        name: "Chế độ Quan Trọng (School/Busy)",
+        color: "var(--accent-priority)",
+        tasks: [
+          { time: "Sáng", cat: "Bio Shield", title: "Thuốc mũi (Spray/Telfor) sau ăn sáng", desc: "Không bao giờ được quên thuốc dị ứng/viêm mũi." },
+          { time: "Ban ngày", cat: "Academic", title: "Tập trung 100% việc trường / Ôn thi / Đồ án", desc: "Dành trọn thời gian trên trường hoặc thư viện, dẹp bỏ xao nhãng." },
+          { time: "Trưa", cat: "Bio Shield", title: "Uống Vitamin trị mụn sau ăn trưa", desc: "Duy trì liệu trình đều đặn." },
+          { time: "Chiều / Tối", cat: "Money Focus", title: "Video Editing Express (60 - 90 phút)", desc: "Tối thiểu mở Premiere xem 1 bài Sean Kang hoặc cắt nháp 1 đoạn clip ngắn." },
+          { time: "18:00", cat: "Workout", title: "Calisthenics Express (30 - 45 phút)", desc: "3 hiệp hít xà + 3 hiệp chống đẩy + 3 hiệp squat tại phòng." },
+          { time: "Tối", cat: "English / Note", title: "Quick English (15p) + Fleeting Note Obsidian", desc: "Đọc lướt 1 proposal mẫu + note nhanh 1 ý tưởng vào Inbox Obsidian." },
+          { time: "23:30", cat: "Sleep Anchor", title: "Giới nghiêm thiết bị + Ngủ trước 00:15", desc: "Duy trì giờ ngủ ổn định để mai dậy sớm đi học." }
+        ]
+      },
+      core: {
+        name: "Chế độ Sống Còn (Never Zero)",
+        color: "var(--accent-core)",
+        tasks: [
+          { time: "Bất kỳ", cat: "Bio Shield", title: "Uống thuốc mũi + Vitamin trị mụn 100%", desc: "Cơ thể đang yếu, bảo vệ sức khỏe là ưu tiên số một." },
+          { time: "15 Phút", cat: "Money Anchor", title: "Mở Premiere / Xem 1 video Sean Kang (15 phút)", desc: "Giữ liên kết não bộ với công việc dựng phim, không để 'nguội tay'." },
+          { time: "5 Phút", cat: "Body Anchor", title: "2 Hiệp chống đẩy / Giãn cơ nhẹ tại chỗ", desc: "Báo hiệu cho cơ thể biết bạn chưa bao giờ bỏ cuộc." },
+          { time: "Tối", cat: "Recovery", title: "Nghỉ ngơi không tội lỗi + Ngủ sớm trước 23:00", desc: "Hồi phục hoàn toàn năng lượng để hôm sau chuyển lại Mode 1 hoặc 2." }
+        ]
+      }
+    };
+
+    let currentMode = 'strict';
+    let checkedStates = JSON.parse(localStorage.getItem('habits_checked_states') || '{}');
+
+    function switchMode(mode) {
+      currentMode = mode;
+      
+      // Update Button Styles
+      document.getElementById('btn-strict').className = 'mode-btn strict ' + (mode === 'strict' ? 'active-strict' : '');
+      document.getElementById('btn-priority').className = 'mode-btn priority ' + (mode === 'priority' ? 'active-priority' : '');
+      document.getElementById('btn-core').className = 'mode-btn core ' + (mode === 'core' ? 'active-core' : '');
+
+      // Update Labels
+      const data = MODES_DATA[mode];
+      document.getElementById('mode-display-name').textContent = data.name;
+      document.getElementById('mode-display-name').style.color = data.color;
+
+      renderTasks();
+    }
+
+    function toggleTask(mode, index) {
+      const key = `${mode}_${index}`;
+      checkedStates[key] = !checkedStates[key];
+      localStorage.setItem('habits_checked_states', JSON.stringify(checkedStates));
+      renderTasks();
+    }
+
+    function renderTasks() {
+      const container = document.getElementById('tasks-container');
+      container.innerHTML = '';
+
+      const modeInfo = MODES_DATA[currentMode];
+      let completedCount = 0;
+
+      modeInfo.tasks.forEach((task, idx) => {
+        const key = `${currentMode}_${idx}`;
+        const isDone = !!checkedStates[key];
+        if (isDone) completedCount++;
+
+        const item = document.createElement('div');
+        item.className = `task-item ${isDone ? 'completed' : ''}`;
+        item.setAttribute('data-mode', currentMode);
+        item.onclick = () => toggleTask(currentMode, idx);
+
+        item.innerHTML = `
+          <div class="checkbox-custom">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="task-info">
+            <div class="task-meta">
+              <span class="task-time">${task.time}</span>
+              <span class="task-category">${task.cat}</span>
+            </div>
+            <div class="task-title">${task.title}</div>
+            <div class="task-desc">${task.desc}</div>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+
+      // Update progress
+      const total = modeInfo.tasks.length;
+      const pct = Math.round((completedCount / total) * 100);
+      document.getElementById('progress-percent-text').textContent = `${completedCount} / ${total} (${pct}%)`;
+      document.getElementById('progress-fill').style.width = `${pct}%`;
+      
+      if (pct === 100) {
+        document.getElementById('progress-fill').style.background = '#10b981';
+      } else {
+        document.getElementById('progress-fill').style.background = 
+          currentMode === 'strict' ? 'linear-gradient(90deg, #38bdf8, #10b981)' :
+          currentMode === 'priority' ? 'linear-gradient(90deg, #f59e0b, #10b981)' :
+          'linear-gradient(90deg, #ef4444, #f59e0b)';
+      }
+    }
+
+    function copyObsidianMarkdown() {
+      const modeInfo = MODES_DATA[currentMode];
+      const today = new Date().toISOString().slice(0, 10);
+      let md = `## ⚡ Habits Checklist - ${modeInfo.name} (${today})\n\n`;
+
+      modeInfo.tasks.forEach((task, idx) => {
+        const key = `${currentMode}_${idx}`;
+        const isDone = !!checkedStates[key];
+        const mark = isDone ? 'x' : ' ';
+        md += `- [${mark}] **${task.time}** [${task.cat}] ${task.title}\n  > ${task.desc}\n`;
+      });
+
+      md += `\n*Target: Have a Video Editing job before Lunar New Year 2027!*\n`;
+
+      navigator.clipboard.writeText(md).then(() => {
+        alert("Đã copy Markdown checklist vào clipboard! Bạn có thể dán (Cmd+V) ngay vào Daily Note Obsidian.");
+      });
+    }
+
+    // Initialize
+    renderTasks();
+  </script>
+</body>
+</html>
