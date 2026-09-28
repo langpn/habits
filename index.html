@@ -1052,6 +1052,12 @@
         };
         saveStoredHistory(history);
       }
+      if (!history[dateKey].checked || typeof history[dateKey].checked !== 'object') {
+        history[dateKey].checked = {};
+      }
+      if (!history[dateKey].mode) {
+        history[dateKey].mode = 'strict';
+      }
       return history[dateKey];
     }
 
@@ -1059,12 +1065,15 @@
       const history = getStoredHistory();
       if (!history[dateKey]) history[dateKey] = { mode: 'strict', checked: {} };
       history[dateKey] = { ...history[dateKey], ...partial };
+      if (!history[dateKey].checked || typeof history[dateKey].checked !== 'object') {
+        history[dateKey].checked = {};
+      }
       saveStoredHistory(history);
 
       // Realtime Cloud Sync
       if (isFirebaseInit && auth && auth.currentUser && habitsRef) {
         setSyncBadge('syncing');
-        habitsRef.child(dateKey).update(history[dateKey])
+        habitsRef.child(dateKey).set(history[dateKey])
           .then(() => setSyncBadge('synced'))
           .catch((err) => {
             console.error("Cloud push error:", err);
@@ -1138,6 +1147,9 @@
 
     function toggleTask(mode, index) {
       const dayData = getDayData(viewedDateKey);
+      if (!dayData.checked || typeof dayData.checked !== 'object') {
+        dayData.checked = {};
+      }
       const key = `${mode}_${index}`;
       dayData.checked[key] = !dayData.checked[key];
       updateDayData(viewedDateKey, { checked: dayData.checked });
@@ -1345,6 +1357,16 @@
           habitsRef.on('value', (snapshot) => {
             const cloudHistory = snapshot.val();
             if (cloudHistory && typeof cloudHistory === 'object') {
+              for (const k in cloudHistory) {
+                if (cloudHistory[k] && typeof cloudHistory[k] === 'object') {
+                  if (!cloudHistory[k].checked || typeof cloudHistory[k].checked !== 'object') {
+                    cloudHistory[k].checked = {};
+                  }
+                  if (!cloudHistory[k].mode) {
+                    cloudHistory[k].mode = 'strict';
+                  }
+                }
+              }
               saveStoredHistory(cloudHistory);
               updateDateUI();
               renderTasks();
