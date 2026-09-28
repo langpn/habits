@@ -1,0 +1,459 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1420" width="1200" height="1420">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a10" />
+      <stop offset="50%" stop-color="#0c121e" />
+      <stop offset="100%" stop-color="#080c14" />
+    </linearGradient>
+
+    <radialGradient id="glow-cyan" cx="10%" cy="10%" r="40%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-amber" cx="50%" cy="15%" r="40%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glow-red" cx="90%" cy="10%" r="40%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Backgrounds -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141c2b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f1623" stop-opacity="0.7" />
+    </linearGradient>
+
+    <!-- Header Gradients -->
+    <linearGradient id="strict-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+
+    <linearGradient id="priority-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+
+    <linearGradient id="core-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#dc2626" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="shadow" x="-10%" y="-5%" width="120%" height="115%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+
+    <filter id="badge-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Plus Jakarta Sans", sans-serif; }
+    .font-mono { font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace; }
+  </style>
+
+  <!-- Base Background -->
+  <rect width="1200" height="1420" fill="url(#bg-grad)" />
+  <rect width="1200" height="1420" fill="url(#glow-cyan)" />
+  <rect width="1200" height="1420" fill="url(#glow-amber)" />
+  <rect width="1200" height="1420" fill="url(#glow-red)" />
+
+  <!-- TOP HEADER CARD -->
+  <g transform="translate(50, 40)" filter="url(#shadow)">
+    <rect width="1100" height="110" rx="20" fill="url(#card-grad)" stroke="rgba(255,255,255,0.08)" stroke-width="1.2" />
+    
+    <!-- Title -->
+    <text x="35" y="48" fill="#ffffff" font-size="24" font-weight="800" class="font-sans" letter-spacing="-0.5">
+      ⚡ ULTIMATE HABITS &amp; ELASTIC COMPANION
+    </text>
+    <text x="35" y="80" fill="#94a3b8" font-size="13" font-weight="500" class="font-mono">
+      DOOM EMACS GTD  •  OBSIDIAN ZETTELKASTEN  •  SEAN KANG VIDEO EDITING
+    </text>
+
+    <!-- Target Badge -->
+    <g transform="translate(810, 36)">
+      <rect width="255" height="38" rx="19" fill="rgba(239, 68, 68, 0.15)" stroke="rgba(239, 68, 68, 0.4)" stroke-width="1.2" />
+      <circle cx="22" cy="19" r="5" fill="#ef4444" filter="url(#badge-glow)" />
+      <text x="36" y="24" fill="#fca5a5" font-size="11.5" font-weight="700" class="font-sans" letter-spacing="0.8">
+        TARGET: JOB BEFORE TẾT 2027
+      </text>
+    </g>
+  </g>
+
+  <!-- ==================== COLUMN 1: STRICT MODE ==================== -->
+  <g transform="translate(50, 180)" filter="url(#shadow)">
+    <!-- Card Frame -->
+    <rect width="345" height="960" rx="18" fill="url(#card-grad)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.2" />
+    
+    <!-- Header Banner -->
+    <rect width="345" height="74" rx="18" fill="rgba(56, 189, 248, 0.08)" />
+    <path d="M 0 18 Q 0 0 18 0 L 327 0 Q 345 0 345 18 L 345 74 L 0 74 Z" fill="rgba(56, 189, 248, 0.06)" />
+    <text x="24" y="32" fill="#38bdf8" font-size="11" font-weight="800" class="font-sans" letter-spacing="1">
+      LEVEL 1 • RẢNH RỖI &amp; NĂNG LƯỢNG CAO
+    </text>
+    <text x="24" y="58" fill="#ffffff" font-size="18" font-weight="800" class="font-sans">
+      🟢 Chế Độ Nghiêm Ngặt
+    </text>
+
+    <!-- Sub-info -->
+    <text x="24" y="98" fill="#64748b" font-size="11" font-style="italic" class="font-sans">
+      Áp dụng khi ở nhà toàn thời gian, tinh thần tốt.
+    </text>
+
+    <!-- Items Container -->
+    <!-- Item 1 -->
+    <g transform="translate(20, 115)">
+      <rect width="305" height="62" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="14" width="46" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="17" y="27" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">07:30</text>
+      <text x="66" y="27" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[BIO SHIELD]</text>
+      <text x="12" y="48" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">Dậy + Ăn sáng + Thuốc mũi</text>
+    </g>
+
+    <!-- Item 2 -->
+    <g transform="translate(20, 185)">
+      <rect width="305" height="52" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="10" width="46" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="17" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">08:15</text>
+      <text x="66" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[MINDSET]</text>
+      <text x="12" y="42" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">Thiền định 15 phút (Reset tâm)</text>
+    </g>
+
+    <!-- Item 3 -->
+    <g transform="translate(20, 245)">
+      <rect width="305" height="52" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="10" width="46" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="17" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">08:35</text>
+      <text x="66" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[GTD EMACS]</text>
+      <text x="12" y="42" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">Chọn Top 3 Task NEXT trong Agenda</text>
+    </g>
+
+    <!-- Item 4 (Highlight) -->
+    <g transform="translate(20, 305)">
+      <rect width="305" height="74" rx="10" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.3)" />
+      <rect x="12" y="12" width="85" height="18" rx="4" fill="rgba(56, 189, 248, 0.25)" />
+      <text x="16" y="25" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">08:45-12:00</text>
+      <text x="104" y="25" fill="#38bdf8" font-size="10.5" font-weight="800" class="font-sans">⭐ DEEP WORK 1</text>
+      <text x="12" y="48" fill="#ffffff" font-size="12.5" font-weight="700" class="font-sans">Video Editing: Khóa Sean Kang</text>
+      <text x="12" y="64" fill="#94a3b8" font-size="10.5" class="font-sans">3 tiếng cày timeline, nhịp cắt, SFX</text>
+    </g>
+
+    <!-- Item 5 -->
+    <g transform="translate(20, 387)">
+      <rect width="305" height="52" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="10" width="46" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="17" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">12:00</text>
+      <text x="66" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[BIO SHIELD]</text>
+      <text x="12" y="42" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">Ăn trưa + Uống Vitamin + Nghỉ 25p</text>
+    </g>
+
+    <!-- Item 6 -->
+    <g transform="translate(20, 447)">
+      <rect width="305" height="66" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="10" width="85" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="16" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">13:30-15:30</text>
+      <text x="104" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[ACADEMIC]</text>
+      <text x="12" y="44" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">School Tasks: Hoàn thành bài tập</text>
+      <text x="12" y="58" fill="#64748b" font-size="10.5" class="font-sans">Mục tiêu giải quyết nợ môn &amp; tốt nghiệp</text>
+    </g>
+
+    <!-- Item 7 -->
+    <g transform="translate(20, 521)">
+      <rect width="305" height="66" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="10" width="85" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="16" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">15:45-17:30</text>
+      <text x="104" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[PORTFOLIO]</text>
+      <text x="12" y="44" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">Hands-on: Dựng Sample Portfolio</text>
+      <text x="12" y="58" fill="#64748b" font-size="10.5" class="font-sans">Tích lũy sản phẩm gửi client Upwork</text>
+    </g>
+
+    <!-- Item 8 -->
+    <g transform="translate(20, 595)">
+      <rect width="305" height="66" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="10" width="85" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="16" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">17:45-19:15</text>
+      <text x="104" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[BODY]</text>
+      <text x="12" y="44" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">Calisthenics (Hypertrophy) / Boxing</text>
+      <text x="12" y="58" fill="#64748b" font-size="10.5" class="font-sans">Tập trung cơ, không tập skill phức tạp</text>
+    </g>
+
+    <!-- Item 9 -->
+    <g transform="translate(20, 669)">
+      <rect width="305" height="66" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="10" width="85" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="16" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">20:15-21:15</text>
+      <text x="104" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[ENGLISH ESP]</text>
+      <text x="12" y="44" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">Tiếng Anh Freelance (Upwork/Fiverr)</text>
+      <text x="12" y="58" fill="#64748b" font-size="10.5" class="font-sans">Luyện proposal, nghe podcast editing</text>
+    </g>
+
+    <!-- Item 10 -->
+    <g transform="translate(20, 743)">
+      <rect width="305" height="66" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="10" width="85" height="18" rx="4" fill="rgba(56, 189, 248, 0.15)" />
+      <text x="16" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">21:15-22:00</text>
+      <text x="104" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[OBSIDIAN]</text>
+      <text x="12" y="44" fill="#f1f5f9" font-size="12" font-weight="600" class="font-sans">Viết 1 Zettelkasten (Neovim/Obsidian)</text>
+      <text x="12" y="58" fill="#64748b" font-size="10.5" class="font-sans">Permanent Note từ kiến thức trong ngày</text>
+    </g>
+
+    <!-- Item 11 -->
+    <g transform="translate(20, 817)">
+      <rect width="305" height="66" rx="10" fill="rgba(56, 189, 248, 0.05)" stroke="rgba(56, 189, 248, 0.2)" />
+      <rect x="12" y="10" width="85" height="18" rx="4" fill="rgba(56, 189, 248, 0.2)" />
+      <text x="16" y="23" fill="#38bdf8" font-size="10" font-weight="700" class="font-mono">23:00-00:00</text>
+      <text x="104" y="23" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[CURFEW]</text>
+      <text x="12" y="44" fill="#ffffff" font-size="12" font-weight="600" class="font-sans">Giới nghiêm thiết bị + Ngủ trước 0h</text>
+      <text x="12" y="58" fill="#64748b" font-size="10.5" class="font-sans">Không màn hình xanh sau 23h</text>
+    </g>
+
+    <!-- Column Footer Summary -->
+    <rect x="20" y="897" width="305" height="42" rx="8" fill="rgba(56, 189, 248, 0.1)" />
+    <text x="172" y="922" text-anchor="middle" fill="#38bdf8" font-size="11.5" font-weight="700" class="font-sans">
+      ⚡ 11 HABITS: TỐI ĐA HÓA SỨC BẬT
+    </text>
+  </g>
+
+  <!-- ==================== COLUMN 2: PRIORITY MODE ==================== -->
+  <g transform="translate(425, 180)" filter="url(#shadow)">
+    <!-- Card Frame -->
+    <rect width="345" height="960" rx="18" fill="url(#card-grad)" stroke="rgba(245, 158, 11, 0.3)" stroke-width="1.2" />
+    
+    <!-- Header Banner -->
+    <rect width="345" height="74" rx="18" fill="rgba(245, 158, 11, 0.08)" />
+    <path d="M 0 18 Q 0 0 18 0 L 327 0 Q 345 0 345 18 L 345 74 L 0 74 Z" fill="rgba(245, 158, 11, 0.06)" />
+    <text x="24" y="32" fill="#f59e0b" font-size="11" font-weight="800" class="font-sans" letter-spacing="1">
+      LEVEL 2 • BẬN RỘN &amp; ĐI HỌC TRƯỜNG
+    </text>
+    <text x="24" y="58" fill="#ffffff" font-size="18" font-weight="800" class="font-sans">
+      🟡 Chế Độ Quan Trọng
+    </text>
+
+    <!-- Sub-info -->
+    <text x="24" y="98" fill="#64748b" font-size="11" font-style="italic" class="font-sans">
+      Khi có lịch học, ôn thi, việc gấp ngoài dự kiến.
+    </text>
+
+    <!-- Items Container -->
+    <!-- Item 1 -->
+    <g transform="translate(20, 120)">
+      <rect width="305" height="76" rx="10" fill="rgba(245, 158, 11, 0.04)" stroke="rgba(245, 158, 11, 0.15)" />
+      <rect x="12" y="12" width="70" height="18" rx="4" fill="rgba(245, 158, 11, 0.2)" />
+      <text x="17" y="25" fill="#f59e0b" font-size="10" font-weight="700" class="font-mono">SÁNG + TRƯA</text>
+      <text x="90" y="25" fill="#f59e0b" font-size="10.5" font-weight="700" class="font-sans">[BIO-SHIELD]</text>
+      <text x="12" y="48" fill="#ffffff" font-size="12.5" font-weight="700" class="font-sans">Uống thuốc mũi + Vitamin 100%</text>
+      <text x="12" y="65" fill="#94a3b8" font-size="10.5" class="font-sans">Dù bận mấy cũng không được quên thuốc</text>
+    </g>
+
+    <!-- Item 2 -->
+    <g transform="translate(20, 210)">
+      <rect width="305" height="90" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="12" width="60" height="18" rx="4" fill="rgba(245, 158, 11, 0.15)" />
+      <text x="17" y="25" fill="#f59e0b" font-size="10" font-weight="700" class="font-mono">BAN NGÀY</text>
+      <text x="80" y="25" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[ACADEMIC]</text>
+      <text x="12" y="48" fill="#f1f5f9" font-size="12.5" font-weight="600" class="font-sans">Tập trung 100% việc trường / Ôn thi</text>
+      <text x="12" y="66" fill="#64748b" font-size="10.5" class="font-sans">Lên lớp, giải quyết đồ án dứt điểm, không</text>
+      <text x="12" y="80" fill="#64748b" font-size="10.5" class="font-sans">để dây dưa sang tuần sau</text>
+    </g>
+
+    <!-- Item 3 (Highlight) -->
+    <g transform="translate(20, 315)">
+      <rect width="305" height="96" rx="10" fill="rgba(245, 158, 11, 0.08)" stroke="rgba(245, 158, 11, 0.3)" />
+      <rect x="12" y="12" width="75" height="18" rx="4" fill="rgba(245, 158, 11, 0.25)" />
+      <text x="16" y="25" fill="#f59e0b" font-size="10" font-weight="700" class="font-mono">CHIỀU / TỐI</text>
+      <text x="94" y="25" fill="#f59e0b" font-size="10.5" font-weight="800" class="font-sans">⭐ VIDEO EXPRESS</text>
+      <text x="12" y="48" fill="#ffffff" font-size="12.5" font-weight="700" class="font-sans">Video Editing: 60 - 90 phút cô đọng</text>
+      <text x="12" y="66" fill="#94a3b8" font-size="10.5" class="font-sans">Tối thiểu xem 1 bài Sean Kang &amp; cắt 1 đoạn.</text>
+      <text x="12" y="82" fill="#f59e0b" font-size="10.5" font-weight="600" class="font-sans">Giữ bàn tay luôn 'nóng' với timeline!</text>
+    </g>
+
+    <!-- Item 4 -->
+    <g transform="translate(20, 425)">
+      <rect width="305" height="80" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="12" width="46" height="18" rx="4" fill="rgba(245, 158, 11, 0.15)" />
+      <text x="17" y="25" fill="#f59e0b" font-size="10" font-weight="700" class="font-mono">18:00</text>
+      <text x="66" y="25" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[WORKOUT EXPRESS]</text>
+      <text x="12" y="48" fill="#f1f5f9" font-size="12.5" font-weight="600" class="font-sans">Calisthenics rút gọn (30 - 45 phút)</text>
+      <text x="12" y="66" fill="#64748b" font-size="10.5" class="font-sans">3 set Pull-up + 3 set Dip + 3 set Push-up</text>
+    </g>
+
+    <!-- Item 5 -->
+    <g transform="translate(20, 520)">
+      <rect width="305" height="85" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+      <rect x="12" y="12" width="60" height="18" rx="4" fill="rgba(245, 158, 11, 0.15)" />
+      <text x="17" y="25" fill="#f59e0b" font-size="10" font-weight="700" class="font-mono">BUỔI TỐI</text>
+      <text x="80" y="25" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[MICRO-CAPTURE]</text>
+      <text x="12" y="48" fill="#f1f5f9" font-size="12.5" font-weight="600" class="font-sans">Quick English (15p) + Fleeting Note</text>
+      <text x="12" y="66" fill="#64748b" font-size="10.5" class="font-sans">Đọc lướt 1 proposal mẫu + Ghi nhanh 1 ý</text>
+      <text x="12" y="80" fill="#64748b" font-size="10.5" class="font-sans">tưởng vào Inbox Obsidian trên mobile</text>
+    </g>
+
+    <!-- Item 6 -->
+    <g transform="translate(20, 620)">
+      <rect width="305" height="80" rx="10" fill="rgba(245, 158, 11, 0.05)" stroke="rgba(245, 158, 11, 0.2)" />
+      <rect x="12" y="12" width="85" height="18" rx="4" fill="rgba(245, 158, 11, 0.2)" />
+      <text x="16" y="25" fill="#f59e0b" font-size="10" font-weight="700" class="font-mono">23:30-00:15</text>
+      <text x="104" y="25" fill="#94a3b8" font-size="10.5" font-weight="700" class="font-sans">[SLEEP ANCHOR]</text>
+      <text x="12" y="48" fill="#ffffff" font-size="12" font-weight="600" class="font-sans">Giới nghiêm 23:30 + Ngủ trước 00:15</text>
+      <text x="12" y="66" fill="#64748b" font-size="10.5" class="font-sans">Đảm bảo năng lượng để mai lên trường</text>
+    </g>
+
+    <!-- Priority Quote Banner -->
+    <g transform="translate(20, 725)">
+      <rect width="305" height="155" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(245, 158, 11, 0.2)" />
+      <text x="16" y="32" fill="#f59e0b" font-size="12" font-weight="700" class="font-sans">💡 NGUYÊN TẮC MODE 2:</text>
+      <text x="16" y="58" fill="#94a3b8" font-size="11.5" class="font-sans">"Ngày bận rộn không phải là ngày vứt đi.</text>
+      <text x="16" y="78" fill="#94a3b8" font-size="11.5" class="font-sans">Chỉ cần giữ vững 4 trụ cột:</text>
+      <text x="16" y="102" fill="#ffffff" font-size="11.5" font-weight="600" class="font-sans">Thuốc → Việc trường → 60p Edit → Ngủ,</text>
+      <text x="16" y="122" fill="#94a3b8" font-size="11.5" class="font-sans">bạn vẫn đang tiến về phía trước 80%!"</text>
+    </g>
+
+    <!-- Column Footer Summary -->
+    <rect x="20" y="897" width="305" height="42" rx="8" fill="rgba(245, 158, 11, 0.1)" />
+    <text x="172" y="922" text-anchor="middle" fill="#f59e0b" font-size="11.5" font-weight="700" class="font-sans">
+      🛡️ 6 HABITS: BẢO VỆ TIẾN ĐỘ TỐI ĐA
+    </text>
+  </g>
+
+  <!-- ==================== COLUMN 3: CORE SURVIVAL MODE ==================== -->
+  <g transform="translate(800, 180)" filter="url(#shadow)">
+    <!-- Card Frame -->
+    <rect width="345" height="960" rx="18" fill="url(#card-grad)" stroke="rgba(239, 68, 68, 0.3)" stroke-width="1.2" />
+    
+    <!-- Header Banner -->
+    <rect width="345" height="74" rx="18" fill="rgba(239, 68, 68, 0.08)" />
+    <path d="M 0 18 Q 0 0 18 0 L 327 0 Q 345 0 345 18 L 345 74 L 0 74 Z" fill="rgba(239, 68, 68, 0.06)" />
+    <text x="24" y="32" fill="#ef4444" font-size="11" font-weight="800" class="font-sans" letter-spacing="1">
+      LEVEL 3 • KIỆT SỨC / ỐM / KHẨN CẤP
+    </text>
+    <text x="24" y="58" fill="#ffffff" font-size="18" font-weight="800" class="font-sans">
+      🔴 Chế Độ Sống Còn
+    </text>
+
+    <!-- Sub-info -->
+    <text x="24" y="98" fill="#64748b" font-size="11" font-style="italic" class="font-sans">
+      Áp dụng khi quá mệt, sốt dị ứng, stress cùng cực.
+    </text>
+
+    <!-- Items Container -->
+    <!-- Item 1 -->
+    <g transform="translate(20, 120)">
+      <rect width="305" height="96" rx="10" fill="rgba(239, 68, 68, 0.08)" stroke="rgba(239, 68, 68, 0.3)" />
+      <rect x="12" y="12" width="75" height="18" rx="4" fill="rgba(239, 68, 68, 0.25)" />
+      <text x="17" y="25" fill="#ef4444" font-size="10" font-weight="700" class="font-mono">BẤT KỲ LÚC NÀO</text>
+      <text x="96" y="25" fill="#ef4444" font-size="10.5" font-weight="800" class="font-sans">⚓ NEO 1: SỨC KHỎE</text>
+      <text x="12" y="50" fill="#ffffff" font-size="13" font-weight="700" class="font-sans">Uống thuốc mũi + Vitamin 100%</text>
+      <text x="12" y="70" fill="#fca5a5" font-size="11" class="font-sans">Không có sức khỏe, mọi dự định chấm dứt.</text>
+      <text x="12" y="85" fill="#fca5a5" font-size="11" class="font-sans">Bảo vệ cơ thể là nhiệm vụ số 1 hôm nay.</text>
+    </g>
+
+    <!-- Item 2 -->
+    <g transform="translate(20, 230)">
+      <rect width="305" height="106" rx="10" fill="rgba(239, 68, 68, 0.08)" stroke="rgba(239, 68, 68, 0.3)" />
+      <rect x="12" y="12" width="55" height="18" rx="4" fill="rgba(239, 68, 68, 0.25)" />
+      <text x="17" y="25" fill="#ef4444" font-size="10" font-weight="700" class="font-mono">15 PHÚT</text>
+      <text x="75" y="25" fill="#ef4444" font-size="10.5" font-weight="800" class="font-sans">⚓ NEO 2: NGHỀ NGHIỆP</text>
+      <text x="12" y="50" fill="#ffffff" font-size="13" font-weight="700" class="font-sans">Mở Premiere / Xem 1 clip Sean Kang</text>
+      <text x="12" y="70" fill="#fca5a5" font-size="11" class="font-sans">Chỉ cần 15 phút mở phần mềm hoặc xem 1</text>
+      <text x="12" y="86" fill="#fca5a5" font-size="11" class="font-sans">kỹ thuật phân tích nhịp dựng để não bộ</text>
+      <text x="12" y="100" fill="#fca5a5" font-size="11" class="font-sans">không quên cảm giác làm editor.</text>
+    </g>
+
+    <!-- Item 3 -->
+    <g transform="translate(20, 350)">
+      <rect width="305" height="96" rx="10" fill="rgba(239, 68, 68, 0.08)" stroke="rgba(239, 68, 68, 0.3)" />
+      <rect x="12" y="12" width="50" height="18" rx="4" fill="rgba(239, 68, 68, 0.25)" />
+      <text x="17" y="25" fill="#ef4444" font-size="10" font-weight="700" class="font-mono">5 PHÚT</text>
+      <text x="70" y="25" fill="#ef4444" font-size="10.5" font-weight="800" class="font-sans">⚓ NEO 3: THỂ CHẤT</text>
+      <text x="12" y="50" fill="#ffffff" font-size="13" font-weight="700" class="font-sans">2 Hiệp chống đẩy / Giãn cơ tại chỗ</text>
+      <text x="12" y="70" fill="#fca5a5" font-size="11" class="font-sans">Chỉ cần hít đất 15-20 cái tại giường để</text>
+      <text x="12" y="86" fill="#fca5a5" font-size="11" class="font-sans">nhắc nhở bản thân bạn là một chiến binh.</text>
+    </g>
+
+    <!-- Item 4 -->
+    <g transform="translate(20, 460)">
+      <rect width="305" height="106" rx="10" fill="rgba(239, 68, 68, 0.08)" stroke="rgba(239, 68, 68, 0.3)" />
+      <rect x="12" y="12" width="65" height="18" rx="4" fill="rgba(239, 68, 68, 0.25)" />
+      <text x="17" y="25" fill="#ef4444" font-size="10" font-weight="700" class="font-mono">BUỔI TỐI</text>
+      <text x="84" y="25" fill="#ef4444" font-size="10.5" font-weight="800" class="font-sans">⚓ NEO 4: HỒI PHỤC</text>
+      <text x="12" y="50" fill="#ffffff" font-size="13" font-weight="700" class="font-sans">Nghỉ ngơi không dằn vặt + Ngủ trước 23h</text>
+      <text x="12" y="70" fill="#fca5a5" font-size="11" class="font-sans">Tuyệt đối không tự trách móc bản thân.</text>
+      <text x="12" y="86" fill="#fca5a5" font-size="11" class="font-sans">Cho phép cơ thể ngủ sâu để sáng mai</text>
+      <text x="12" y="100" fill="#fca5a5" font-size="11" class="font-sans">tái khởi động lại với Mode 1 hoặc Mode 2.</text>
+    </g>
+
+    <!-- Rule 2-Day Warning Box -->
+    <g transform="translate(20, 580)">
+      <rect width="305" height="300" rx="12" fill="rgba(239, 68, 68, 0.05)" stroke="rgba(239, 68, 68, 0.3)" />
+      <text x="20" y="36" fill="#ef4444" font-size="13" font-weight="800" class="font-sans">🚨 QUY TẮC SỐNG CÒN:</text>
+      
+      <text x="20" y="68" fill="#ffffff" font-size="12.5" font-weight="700" class="font-sans">NEVER MISS TWICE!</text>
+      <text x="20" y="92" fill="#94a3b8" font-size="11.5" class="font-sans">Bật Mode 3 một ngày là bình thường.</text>
+      <text x="20" y="112" fill="#94a3b8" font-size="11.5" class="font-sans">Bật Mode 3 hai ngày liên tiếp là nguy hiểm.</text>
+      <text x="20" y="132" fill="#fca5a5" font-size="11.5" font-weight="600" class="font-sans">Bật Mode 3 ba ngày là mất thói quen!</text>
+
+      <line x1="20" y1="150" x2="285" y2="150" stroke="rgba(255,255,255,0.08)" />
+
+      <text x="20" y="178" fill="#ffffff" font-size="12" font-weight="700" class="font-sans">TÂM THẾ NGÀY TỒI TỆ:</text>
+      <text x="20" y="202" fill="#94a3b8" font-size="11.5" class="font-sans">"Chiến thắng không phải là làm hoàn hảo</text>
+      <text x="20" y="222" fill="#94a3b8" font-size="11.5" class="font-sans">vào những ngày đẹp trời.</text>
+      <text x="20" y="246" fill="#ef4444" font-size="11.5" font-weight="700" class="font-sans">Chiến thắng là không đầu hàng</text>
+      <text x="20" y="266" fill="#ef4444" font-size="11.5" font-weight="700" class="font-sans">vào những ngày tồi tệ nhất!"</text>
+    </g>
+
+    <!-- Column Footer Summary -->
+    <rect x="20" y="897" width="305" height="42" rx="8" fill="rgba(239, 68, 68, 0.12)" />
+    <text x="172" y="922" text-anchor="middle" fill="#ef4444" font-size="11.5" font-weight="700" class="font-sans">
+      ⚓ 4 ANCHORS: KHÔNG BAO GIỜ ĐỨT XÍCH
+    </text>
+  </g>
+
+  <!-- ==================== BOTTOM BANNER: MINDSET & WARNING ==================== -->
+  <g transform="translate(50, 1165)" filter="url(#shadow)">
+    <rect width="1100" height="100" rx="18" fill="url(#card-grad)" stroke="rgba(239, 68, 68, 0.4)" stroke-width="1.2" />
+    <rect width="1100" height="100" rx="18" fill="rgba(239, 68, 68, 0.05)" />
+    
+    <text x="35" y="40" fill="#f87171" font-size="13" font-weight="800" class="font-sans" letter-spacing="1">
+      ⚠️ MINDSET &amp; WARNING (LỜI NHẮC NHỞ CỦA BẢN THÂN)
+    </text>
+    <text x="35" y="70" fill="#fca5a5" font-size="14.5" font-weight="600" font-style="italic" class="font-sans">
+      "Do you want a brilliant future, or a life of poverty and humiliation? Đừng tìm kiếm sự hoàn hảo — Hãy tìm kiếm sự bền bỉ. Mọi cố gắng hôm nay là để có JOB trước Tết 2027!"
+    </text>
+  </g>
+
+  <!-- ==================== THREE CORE PRINCIPLES ==================== -->
+  <g transform="translate(50, 1285)" filter="url(#shadow)">
+    <!-- Box 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="345" height="90" rx="14" fill="url(#card-grad)" stroke="rgba(255,255,255,0.08)" />
+      <text x="20" y="32" fill="#ffffff" font-size="13" font-weight="700" class="font-sans">1. Never Miss Twice</text>
+      <text x="20" y="54" fill="#94a3b8" font-size="11.5" class="font-sans">Lỡ 1 ngày là sự cố ngoài ý muốn.</text>
+      <text x="20" y="72" fill="#94a3b8" font-size="11.5" class="font-sans">Lỡ 2 ngày là mầm mống của từ bỏ.</text>
+    </g>
+
+    <!-- Box 2 -->
+    <g transform="translate(375, 0)">
+      <rect width="345" height="90" rx="14" fill="url(#card-grad)" stroke="rgba(255,255,255,0.08)" />
+      <text x="20" y="32" fill="#ffffff" font-size="13" font-weight="700" class="font-sans">2. Hybrid Productivity Setup</text>
+      <text x="20" y="54" fill="#94a3b8" font-size="11.5" class="font-sans">Doom Emacs: Giữ Agenda &amp; GTD.</text>
+      <text x="20" y="72" fill="#94a3b8" font-size="11.5" class="font-sans">Obsidian + Neovim: Zettelkasten &amp; Visual.</text>
+    </g>
+
+    <!-- Box 3 -->
+    <g transform="translate(755, 0)">
+      <rect width="345" height="90" rx="14" fill="url(#card-grad)" stroke="rgba(255,255,255,0.08)" />
+      <text x="20" y="32" fill="#ffffff" font-size="13" font-weight="700" class="font-sans">3. Cần Câu Cơm 2027</text>
+      <text x="20" y="54" fill="#94a3b8" font-size="11.5" class="font-sans">Mọi lý thuyết phải quy về timeline dựng,</text>
+      <text x="20" y="72" fill="#94a3b8" font-size="11.5" class="font-sans">portfolio thực chiến và proposal Upwork!</text>
+    </g>
+  </g>
+
+</svg>

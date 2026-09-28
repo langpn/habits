@@ -15,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-dark: #0a0d14;
@@ -39,6 +39,7 @@
       padding: 0;
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -49,7 +50,7 @@
         radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.12) 0px, transparent 50%);
       color: var(--text-main);
       min-height: 100vh;
-      padding: 24px;
+      padding: env(safe-area-inset-top, 20px) 16px env(safe-area-inset-bottom, 24px) 16px;
       display: flex;
       justify-content: center;
     }
@@ -59,7 +60,7 @@
       max-width: 960px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
     }
 
     /* Header */
@@ -69,7 +70,7 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
       border-radius: 20px;
-      padding: 24px 28px;
+      padding: 20px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -77,22 +78,42 @@
     }
 
     .header-title h1 {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
       letter-spacing: -0.5px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .header-title p {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
-      margin-top: 4px;
+      margin-top: 3px;
       font-family: 'JetBrains Mono', monospace;
+    }
+
+    .header-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-streak {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .badge-target {
@@ -125,6 +146,53 @@
       100% { transform: scale(0.9); opacity: 0.8; }
     }
 
+    /* Date Controller Bar */
+    .date-bar {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .date-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .current-date-text {
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+    }
+
+    .date-status {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
     /* Mode Selector Buttons */
     .mode-selector {
       display: grid;
@@ -136,7 +204,7 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 16px;
+      padding: 14px 16px;
       cursor: pointer;
       text-align: left;
       transition: all 0.25s ease;
@@ -173,7 +241,7 @@
       letter-spacing: 0.8px;
       text-transform: uppercase;
       display: inline-block;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .mode-btn.strict .mode-tag { color: var(--accent-strict); }
@@ -181,16 +249,16 @@
     .mode-btn.core .mode-tag { color: var(--accent-core); }
 
     .mode-name {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #fff;
     }
 
     .mode-desc {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--text-dim);
-      margin-top: 4px;
-      line-height: 1.4;
+      margin-top: 3px;
+      line-height: 1.35;
     }
 
     /* Progress Card */
@@ -198,7 +266,7 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 18px 24px;
+      padding: 16px 20px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -242,13 +310,14 @@
       background: linear-gradient(90deg, #38bdf8, #10b981);
     }
 
-    /* Task List */
+    /* Task List Card */
     .task-list-card {
       background: var(--card-bg);
       backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
       border-radius: 20px;
-      padding: 24px;
+      padding: 20px 24px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -260,21 +329,29 @@
       align-items: center;
       padding-bottom: 12px;
       border-bottom: 1px solid var(--card-border);
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .list-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .copy-btn {
+    .list-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .action-btn {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--card-border);
       color: var(--text-muted);
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 8px;
       font-size: 12px;
       font-weight: 600;
@@ -285,16 +362,22 @@
       transition: all 0.2s;
     }
 
-    .copy-btn:hover {
+    .action-btn:hover {
       background: rgba(255, 255, 255, 0.12);
       color: #fff;
+    }
+
+    .action-btn.danger:hover {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
     }
 
     .task-item {
       display: flex;
       align-items: flex-start;
-      gap: 16px;
-      padding: 14px 16px;
+      gap: 14px;
+      padding: 12px 14px;
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid transparent;
@@ -353,13 +436,13 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
     }
 
     .task-meta {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       margin-bottom: 2px;
     }
 
@@ -369,7 +452,7 @@
       font-weight: 600;
       color: var(--accent-strict);
       background: rgba(56, 189, 248, 0.1);
-      padding: 2px 8px;
+      padding: 1px 7px;
       border-radius: 4px;
     }
 
@@ -384,7 +467,7 @@
     }
 
     .task-category {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       color: var(--text-dim);
       text-transform: uppercase;
@@ -392,26 +475,15 @@
     }
 
     .task-title {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 600;
       color: var(--text-main);
     }
 
     .task-desc {
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--text-muted);
-      line-height: 1.4;
-    }
-
-    .pill-tag {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text-muted);
-      display: inline-block;
-      margin-top: 4px;
+      line-height: 1.35;
     }
 
     /* Warning & Mindset */
@@ -419,64 +491,70 @@
       background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(20, 20, 30, 0.6) 100%);
       border: 1px solid rgba(239, 68, 68, 0.3);
       border-radius: 18px;
-      padding: 20px 24px;
+      padding: 18px 22px;
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
     }
 
     .mindset-icon {
-      font-size: 28px;
+      font-size: 26px;
       flex-shrink: 0;
     }
 
     .mindset-content h4 {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 800;
       color: #f87171;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .mindset-content p {
-      font-size: 14px;
+      font-size: 13px;
       font-style: italic;
       color: #fca5a5;
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
-    /* Bottom quick rules */
-    .principles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .principle-box {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 14px;
-      font-size: 12px;
-      line-height: 1.4;
-    }
-
-    .principle-box strong {
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
       color: #fff;
-      display: block;
-      margin-bottom: 4px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    #toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
     }
 
     @media (max-width: 768px) {
-      .mode-selector, .principles-grid {
+      .mode-selector {
         grid-template-columns: 1fr;
       }
       .header {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+      }
+      .header-badges {
+        width: 100%;
+        justify-content: space-between;
       }
     }
   </style>
@@ -487,14 +565,31 @@
     <!-- Header -->
     <header class="header">
       <div class="header-title">
-        <h1>⚡ ULTIMATE HABITS & ELASTIC COMPANION</h1>
-        <p>Hệ thống Kỷ luật Linh hoạt: Doom GTD + Obsidian Vault + Sean Kang Video Editing</p>
+        <h1>⚡ ULTIMATE HABITS</h1>
+        <p>Doom GTD • Obsidian Zettel • Sean Kang Video Editing</p>
       </div>
-      <div class="badge-target">
-        <span class="pulse-dot"></span>
-        Target: Job Before Tết 2027
+      <div class="header-badges">
+        <div class="badge-streak" id="streak-badge">
+          🔥 Chuỗi: <span id="streak-count">1</span> ngày
+        </div>
+        <div class="badge-target">
+          <span class="pulse-dot"></span>
+          Tết 2027
+        </div>
       </div>
     </header>
+
+    <!-- Date Navigation Bar -->
+    <div class="date-bar">
+      <div class="date-nav">
+        <button class="nav-btn" onclick="shiftDay(-1)">◀ Hôm qua</button>
+        <span class="current-date-text" id="display-date-label">Hôm nay</span>
+        <button class="nav-btn" id="next-day-btn" onclick="shiftDay(1)" style="display:none;">Hôm nay ▶</button>
+      </div>
+      <div class="date-status" id="date-status-badge">
+        <span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>
+      </div>
+    </div>
 
     <!-- Mode Selector -->
     <div class="mode-selector">
@@ -502,21 +597,21 @@
       <div class="mode-btn strict active-strict" id="btn-strict" onclick="switchMode('strict')">
         <span class="mode-tag">Level 1 • Rảnh & Khỏe</span>
         <div class="mode-name">🟢 Nghiêm Ngặt (Peak)</div>
-        <div class="mode-desc">Trạng thái tinh thần cao, toàn bộ thời gian ở nhà, đẩy tối đa hỏa lực.</div>
+        <div class="mode-desc">Trạng thái tinh thần cao, toàn bộ thời gian ở nhà, bung tối đa hỏa lực.</div>
       </div>
 
       <!-- Priority Mode -->
       <div class="mode-btn priority" id="btn-priority" onclick="switchMode('priority')">
         <span class="mode-tag">Level 2 • Bận & Đi Học</span>
         <div class="mode-name">🟡 Quan Trọng (School/Busy)</div>
-        <div class="mode-desc">Có lịch học trường, ôn thi, việc bận. Chỉ giữ 4 trụ cột không vỡ trận.</div>
+        <div class="mode-desc">Có lịch học trường, ôn thi, việc gấp. Giữ 4 trụ cột không để vỡ trận.</div>
       </div>
 
       <!-- Core Survival Mode -->
       <div class="mode-btn core" id="btn-core" onclick="switchMode('core')">
         <span class="mode-tag">Level 3 • Kiệt Sức / Ốm</span>
         <div class="mode-name">🔴 Sống Còn (Never Zero)</div>
-        <div class="mode-desc">Mệt mỏi, sốt mũi, deadline gấp. Giữ neo tối thiểu, không bỏ cuộc.</div>
+        <div class="mode-desc">Mệt mỏi, sốt mũi, stress. Chỉ giữ 4 sợi dây neo, không bao giờ bỏ cuộc.</div>
       </div>
     </div>
 
@@ -524,7 +619,7 @@
     <div class="progress-bar-container">
       <div class="progress-stats">
         <span class="progress-label" id="progress-mode-label">
-          <span>Tiến độ thực hiện:</span> 
+          <span>Tiến độ:</span> 
           <strong id="mode-display-name" style="color: var(--accent-strict)">Chế độ Nghiêm Ngặt</strong>
         </span>
         <span class="progress-percent" id="progress-percent-text">0 / 11 (0%)</span>
@@ -538,16 +633,21 @@
     <div class="task-list-card">
       <div class="list-header">
         <div class="list-title" id="list-title">
-          <span>📋</span> Danh sách Thói quen Hôm nay
+          <span>📋</span> Danh sách Thói quen
         </div>
-        <button class="copy-btn" onclick="copyObsidianMarkdown()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          Copy vào Obsidian
-        </button>
+        <div class="list-actions">
+          <button class="action-btn danger" onclick="clearCurrentDay()" title="Xóa các dấu tích của ngày đang xem">
+            ↺ Reset Ngày
+          </button>
+          <button class="action-btn" onclick="copyObsidianMarkdown()" title="Copy Markdown vào Obsidian">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Obsidian
+          </button>
+        </div>
       </div>
 
       <div id="tasks-container">
-        <!-- Rendered by JavaScript based on active mode -->
+        <!-- Rendered by JavaScript -->
       </div>
     </div>
 
@@ -556,27 +656,13 @@
       <div class="mindset-icon">⚠️</div>
       <div class="mindset-content">
         <h4>Mindset & Warning</h4>
-        <p>"Do you want a brilliant future, or a life of poverty and humiliation? Đừng tìm sự hoàn hảo, hãy tìm sự bền bỉ. Một ngày tồi tệ vẫn phải giữ lấy sợi dây neo!"</p>
-      </div>
-    </div>
-
-    <!-- Quick Principles -->
-    <div class="principles-grid">
-      <div class="principle-box">
-        <strong>1. Never Miss Twice</strong>
-        Nếu hôm nay phải dùng Mode 3 (Sống còn), tuyệt đối ngày mai phải bật lại Mode 1 hoặc 2.
-      </div>
-      <div class="principle-box">
-        <strong>2. Hybrid Tooling</strong>
-        Doom Emacs giữ GTD & Agenda. Obsidian + Neovim giữ Zettelkasten & Media Visual.
-      </div>
-      <div class="principle-box">
-        <strong>3. Cần câu cơm 2027</strong>
-        Mọi lý thuyết phải quy về timeline Premiere/AE và 1 proposal gửi khách hàng.
+        <p>"Do you want a brilliant future, or a life of poverty and humiliation? Đừng tìm sự hoàn hảo, hãy tìm sự bền bỉ. Một ngày tồi tệ nhất vẫn phải giữ lấy sợi dây neo!"</p>
       </div>
     </div>
 
   </div>
+
+  <div id="toast">Thông báo</div>
 
   <script>
     const MODES_DATA = {
@@ -616,48 +702,178 @@
         tasks: [
           { time: "Bất kỳ", cat: "Bio Shield", title: "Uống thuốc mũi + Vitamin trị mụn 100%", desc: "Cơ thể đang yếu, bảo vệ sức khỏe là ưu tiên số một." },
           { time: "15 Phút", cat: "Money Anchor", title: "Mở Premiere / Xem 1 video Sean Kang (15 phút)", desc: "Giữ liên kết não bộ với công việc dựng phim, không để 'nguội tay'." },
-          { time: "5 Phút", cat: "Body Anchor", title: "2 Hiệp chống đẩy / Giãn cơ nhẹ tại chỗ", desc: "Báo hiệu cho cơ thể biết bạn chưa bao giờ bỏ cuộc." },
+          { time: "5 Phút", cat: "Body Anchor", title: "2 Hiệp chống đẩy / Giãn cơ tại chỗ", desc: "Báo hiệu cho cơ thể biết bạn chưa bao giờ bỏ cuộc." },
           { time: "Tối", cat: "Recovery", title: "Nghỉ ngơi không tội lỗi + Ngủ sớm trước 23:00", desc: "Hồi phục hoàn toàn năng lượng để hôm sau chuyển lại Mode 1 hoặc 2." }
         ]
       }
     };
 
-    let currentMode = 'strict';
-    let checkedStates = JSON.parse(localStorage.getItem('habits_checked_states') || '{}');
+    /**
+     * BIOLOGICAL DAY THRESHOLD: 04:00 AM
+     * Nếu hiện tại đang trước 04:00 AM (nửa đêm), vẫn tính là phiên làm việc của ngày hôm qua.
+     * Sau 04:00 AM mới chính thức chuyển sang ngày mới!
+     */
+    function getBiologicalDate(offsetDays = 0) {
+      const d = new Date();
+      if (d.getHours() < 4) {
+        d.setDate(d.getDate() - 1);
+      }
+      if (offsetDays !== 0) {
+        d.setDate(d.getDate() + offsetDays);
+      }
+      return d.toISOString().slice(0, 10);
+    }
+
+    const todayDateKey = getBiologicalDate();
+    let viewedDateKey = todayDateKey;
+
+    // Load full history from localStorage
+    function getStoredHistory() {
+      try {
+        return JSON.parse(localStorage.getItem('habits_vault_history') || '{}');
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveStoredHistory(data) {
+      try {
+        localStorage.setItem('habits_vault_history', JSON.stringify(data));
+      } catch (e) {}
+    }
+
+    function getDayData(dateKey) {
+      const history = getStoredHistory();
+      if (!history[dateKey]) {
+        history[dateKey] = {
+          mode: 'strict',
+          checked: {}
+        };
+        saveStoredHistory(history);
+      }
+      return history[dateKey];
+    }
+
+    function updateDayData(dateKey, partial) {
+      const history = getStoredHistory();
+      if (!history[dateKey]) history[dateKey] = { mode: 'strict', checked: {} };
+      history[dateKey] = { ...history[dateKey], ...partial };
+      saveStoredHistory(history);
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'show';
+      setTimeout(() => { t.className = ''; }, 2200);
+    }
+
+    function updateDateUI() {
+      const isToday = (viewedDateKey === todayDateKey);
+      const displayLabel = document.getElementById('display-date-label');
+      const nextBtn = document.getElementById('next-day-btn');
+      const statusBadge = document.getElementById('date-status-badge');
+
+      if (isToday) {
+        displayLabel.textContent = `Hôm nay (${viewedDateKey})`;
+        nextBtn.style.display = 'none';
+        statusBadge.innerHTML = '<span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>';
+      } else {
+        displayLabel.textContent = `Lịch sử: ${viewedDateKey}`;
+        nextBtn.style.display = 'inline-block';
+        statusBadge.innerHTML = '<span style="color: #f59e0b">👀 Đang xem lại ngày cũ</span>';
+      }
+
+      updateStreak();
+    }
+
+    function shiftDay(direction) {
+      if (direction === -1) {
+        // Go back 1 day
+        const current = new Date(viewedDateKey);
+        current.setDate(current.getDate() - 1);
+        viewedDateKey = current.toISOString().slice(0, 10);
+      } else {
+        // Go back to today
+        viewedDateKey = todayDateKey;
+      }
+      updateDateUI();
+      renderTasks();
+    }
 
     function switchMode(mode) {
-      currentMode = mode;
-      
-      // Update Button Styles
-      document.getElementById('btn-strict').className = 'mode-btn strict ' + (mode === 'strict' ? 'active-strict' : '');
-      document.getElementById('btn-priority').className = 'mode-btn priority ' + (mode === 'priority' ? 'active-priority' : '');
-      document.getElementById('btn-core').className = 'mode-btn core ' + (mode === 'core' ? 'active-core' : '');
-
-      // Update Labels
-      const data = MODES_DATA[mode];
-      document.getElementById('mode-display-name').textContent = data.name;
-      document.getElementById('mode-display-name').style.color = data.color;
-
+      updateDayData(viewedDateKey, { mode: mode });
       renderTasks();
     }
 
     function toggleTask(mode, index) {
+      const dayData = getDayData(viewedDateKey);
       const key = `${mode}_${index}`;
-      checkedStates[key] = !checkedStates[key];
-      localStorage.setItem('habits_checked_states', JSON.stringify(checkedStates));
+      dayData.checked[key] = !dayData.checked[key];
+      updateDayData(viewedDateKey, { checked: dayData.checked });
       renderTasks();
+      updateStreak();
+    }
+
+    function clearCurrentDay() {
+      if (confirm(`Bạn có chắc chắn muốn làm mới (reset) tất cả thói quen của ngày ${viewedDateKey}?`)) {
+        updateDayData(viewedDateKey, { checked: {} });
+        renderTasks();
+        updateStreak();
+        showToast("Đã làm mới danh sách ngày hôm nay!");
+      }
+    }
+
+    function updateStreak() {
+      const history = getStoredHistory();
+      let streak = 0;
+      let checkDate = new Date();
+      if (checkDate.getHours() < 4) checkDate.setDate(checkDate.getDate() - 1);
+
+      // Check consecutive days with at least 1 habit completed
+      for (let i = 0; i < 365; i++) {
+        const key = checkDate.toISOString().slice(0, 10);
+        const dayRecord = history[key];
+        let hasDone = false;
+        if (dayRecord && dayRecord.checked) {
+          hasDone = Object.values(dayRecord.checked).some(v => v === true);
+        }
+
+        if (hasDone) {
+          streak++;
+        } else if (i === 0) {
+          // If today has 0 done yet, still check yesterday before breaking
+        } else {
+          break;
+        }
+        checkDate.setDate(checkDate.getDate() - 1);
+      }
+
+      const streakEl = document.getElementById('streak-count');
+      if (streakEl) streakEl.textContent = Math.max(streak, 1);
     }
 
     function renderTasks() {
+      const dayData = getDayData(viewedDateKey);
+      const currentMode = dayData.mode || 'strict';
+
+      // Update button active styles
+      document.getElementById('btn-strict').className = 'mode-btn strict ' + (currentMode === 'strict' ? 'active-strict' : '');
+      document.getElementById('btn-priority').className = 'mode-btn priority ' + (currentMode === 'priority' ? 'active-priority' : '');
+      document.getElementById('btn-core').className = 'mode-btn core ' + (currentMode === 'core' ? 'active-core' : '');
+
+      // Update Labels
+      const modeInfo = MODES_DATA[currentMode];
+      document.getElementById('mode-display-name').textContent = modeInfo.name;
+      document.getElementById('mode-display-name').style.color = modeInfo.color;
+
       const container = document.getElementById('tasks-container');
       container.innerHTML = '';
-
-      const modeInfo = MODES_DATA[currentMode];
       let completedCount = 0;
 
       modeInfo.tasks.forEach((task, idx) => {
         const key = `${currentMode}_${idx}`;
-        const isDone = !!checkedStates[key];
+        const isDone = !!(dayData.checked && dayData.checked[key]);
         if (isDone) completedCount++;
 
         const item = document.createElement('div');
@@ -683,12 +899,12 @@
         container.appendChild(item);
       });
 
-      // Update progress
+      // Update progress bar
       const total = modeInfo.tasks.length;
       const pct = Math.round((completedCount / total) * 100);
       document.getElementById('progress-percent-text').textContent = `${completedCount} / ${total} (${pct}%)`;
       document.getElementById('progress-fill').style.width = `${pct}%`;
-      
+
       if (pct === 100) {
         document.getElementById('progress-fill').style.background = '#10b981';
       } else {
@@ -700,13 +916,15 @@
     }
 
     function copyObsidianMarkdown() {
+      const dayData = getDayData(viewedDateKey);
+      const currentMode = dayData.mode || 'strict';
       const modeInfo = MODES_DATA[currentMode];
-      const today = new Date().toISOString().slice(0, 10);
-      let md = `## ⚡ Habits Checklist - ${modeInfo.name} (${today})\n\n`;
+      
+      let md = `## ⚡ Habits Checklist - ${modeInfo.name} (${viewedDateKey})\n\n`;
 
       modeInfo.tasks.forEach((task, idx) => {
         const key = `${currentMode}_${idx}`;
-        const isDone = !!checkedStates[key];
+        const isDone = !!(dayData.checked && dayData.checked[key]);
         const mark = isDone ? 'x' : ' ';
         md += `- [${mark}] **${task.time}** [${task.cat}] ${task.title}\n  > ${task.desc}\n`;
       });
@@ -714,11 +932,14 @@
       md += `\n*Target: Have a Video Editing job before Lunar New Year 2027!*\n`;
 
       navigator.clipboard.writeText(md).then(() => {
-        alert("Đã copy Markdown checklist vào clipboard! Bạn có thể dán (Cmd+V) ngay vào Daily Note Obsidian.");
+        showToast("Đã copy Markdown vào clipboard cho Obsidian!");
+      }).catch(() => {
+        showToast("Lỗi sao chép! Hãy cấp quyền clipboard.");
       });
     }
 
-    // Initialize
+    // Init App
+    updateDateUI();
     renderTasks();
   </script>
 </body>
