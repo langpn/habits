@@ -16,6 +16,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Firebase SDKs (Compat for maximum stability across iOS/macOS) -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+
   <style>
     :root {
       --bg-dark: #0a0d14;
@@ -100,6 +106,64 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge-sync {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #38bdf8;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      user-select: none;
+    }
+
+    .badge-sync:hover {
+      background: rgba(56, 189, 248, 0.18);
+    }
+
+    .sync-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      transition: all 0.25s ease;
+    }
+
+    .badge-sync.syncing .sync-dot {
+      background: #f59e0b;
+      box-shadow: 0 0 8px #f59e0b;
+    }
+
+    .badge-sync.unauthed {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
+    }
+
+    .badge-sync.unauthed .sync-dot {
+      background: #f59e0b;
+      box-shadow: none;
+    }
+
+    .badge-sync.offline {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--text-dim);
+    }
+
+    .badge-sync.offline .sync-dot {
+      background: #64748b;
+      box-shadow: none;
     }
 
     .badge-streak {
@@ -548,6 +612,138 @@
       line-height: 1.45;
     }
 
+    /* Modal Styling */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 24px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input-group label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .input-group input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 14px;
+      color: #fff;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .input-group input:focus {
+      border-color: var(--accent-strict);
+      box-shadow: 0 0 10px var(--accent-strict-glow);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .btn-primary {
+      flex: 1;
+      background: linear-gradient(135deg, #38bdf8, #10b981);
+      border: none;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 13.5px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+      font-weight: 600;
+      font-size: 13.5px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .error-msg {
+      font-size: 12px;
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: none;
+    }
+
     /* Toast Notification */
     #toast {
       position: fixed;
@@ -564,7 +760,7 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 9999;
+      z-index: 99999;
       pointer-events: none;
     }
 
@@ -599,9 +795,16 @@
         <p>Doom GTD • Obsidian • Sean Kang Edit • TOP with AI</p>
       </div>
       <div class="header-badges">
+        <!-- Cloud Sync Badge -->
+        <div class="badge-sync unauthed" id="sync-badge" onclick="openAuthModal()" title="Bấm để đăng nhập/quản lý đồng bộ">
+          <span class="sync-dot"></span>
+          <span id="sync-text">🔒 Đăng nhập Sync</span>
+        </div>
+        <!-- Streak Badge -->
         <div class="badge-streak" id="streak-badge">
           🔥 Chuỗi: <span id="streak-count">1</span> ngày
         </div>
+        <!-- Target Badge -->
         <div class="badge-target">
           <span class="pulse-dot"></span>
           Tết 2027
@@ -692,9 +895,76 @@
 
   </div>
 
+  <!-- Auth Modal -->
+  <div class="modal-backdrop" id="auth-modal" onclick="closeAuthModalOnBg(event)">
+    <div class="modal-card">
+      <div id="modal-unauthed">
+        <h3>🔐 Đăng nhập Đồng bộ Cloud</h3>
+        <p>Đăng nhập 1 lần duy nhất để iPhone và MacBook tự động đồng bộ thời gian thực qua Firebase.</p>
+        <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 12px;">
+          <div class="input-group">
+            <label for="auth-email">Email tài khoản</label>
+            <input type="email" id="auth-email" placeholder="langpn.dev@gmail.com" autocomplete="email">
+          </div>
+          <div class="input-group">
+            <label for="auth-pass">Mật khẩu</label>
+            <input type="password" id="auth-pass" placeholder="••••••••" autocomplete="current-password">
+          </div>
+          <div class="error-msg" id="auth-error">Email hoặc mật khẩu không chính xác.</div>
+          <div class="modal-actions">
+            <button class="btn-primary" onclick="handleLogin()">Đăng nhập &amp; Sync</button>
+            <button class="btn-secondary" onclick="closeAuthModal()">Đóng</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="modal-authed" style="display: none;">
+        <h3>☁️ Trạng thái Đồng bộ</h3>
+        <p id="authed-user-desc">Đã kết nối với tài khoản: <strong>...</strong></p>
+        <p style="font-size: 12px; color: #10b981; margin-top: 6px;">
+          ✓ Dữ liệu được bảo mật và tự động đồng bộ 2 chiều (iPhone ⇄ MacBook).
+        </p>
+        <div class="modal-actions" style="margin-top: 16px;">
+          <button class="btn-danger" onclick="handleLogout()">Đăng xuất</button>
+          <button class="btn-secondary" onclick="closeAuthModal()">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="toast">Thông báo</div>
 
   <script>
+    // ==================== FIREBASE CONFIG ====================
+    const firebaseConfig = {
+      apiKey: "AIzaSyBfj1pBg6Px0pUhERNuRxzPJCqwL9h0G1k",
+      authDomain: "my-habits-bbe5b.firebaseapp.com",
+      databaseURL: "https://my-habits-bbe5b-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "my-habits-bbe5b",
+      storageBucket: "my-habits-bbe5b.firebasestorage.app",
+      messagingSenderId: "46496314879",
+      appId: "1:46496314879:web:0011dad743b74200f423ca"
+    };
+
+    let auth = null;
+    let db = null;
+    let habitsRef = null;
+    let isFirebaseInit = false;
+
+    try {
+      firebase.initializeApp(firebaseConfig);
+      auth = firebase.auth();
+      db = firebase.database();
+      habitsRef = db.ref('habits_vault_history');
+      isFirebaseInit = true;
+
+      // Set permanent local persistence for login
+      auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    } catch (e) {
+      console.warn("Firebase Init notice:", e);
+    }
+
+    // ==================== HABITS DATA DEFINITION ====================
     const MODES_DATA = {
       strict: {
         name: "Chế độ Nghiêm Ngặt (Peak)",
@@ -742,8 +1012,8 @@
 
     /**
      * BIOLOGICAL DAY THRESHOLD: 04:00 AM
-     * Nếu hiện tại đang trước 04:00 AM (nửa đêm), vẫn tính là phiên làm việc của ngày hôm qua.
-     * Sau 04:00 AM mới chính thức chuyển sang ngày mới!
+     * Trước 04:00 AM vẫn là phiên làm việc của ngày hôm qua.
+     * Sau 04:00 AM mới tự động khởi động ngày mới!
      */
     function getBiologicalDate(offsetDays = 0) {
       const d = new Date();
@@ -759,7 +1029,6 @@
     const todayDateKey = getBiologicalDate();
     let viewedDateKey = todayDateKey;
 
-    // Load full history from localStorage
     function getStoredHistory() {
       try {
         return JSON.parse(localStorage.getItem('habits_vault_history') || '{}');
@@ -791,6 +1060,17 @@
       if (!history[dateKey]) history[dateKey] = { mode: 'strict', checked: {} };
       history[dateKey] = { ...history[dateKey], ...partial };
       saveStoredHistory(history);
+
+      // Realtime Cloud Sync
+      if (isFirebaseInit && auth && auth.currentUser && habitsRef) {
+        setSyncBadge('syncing');
+        habitsRef.child(dateKey).update(history[dateKey])
+          .then(() => setSyncBadge('synced'))
+          .catch((err) => {
+            console.error("Cloud push error:", err);
+            setSyncBadge('offline');
+          });
+      }
     }
 
     function showToast(msg) {
@@ -798,6 +1078,26 @@
       t.textContent = msg;
       t.className = 'show';
       setTimeout(() => { t.className = ''; }, 2200);
+    }
+
+    function setSyncBadge(state) {
+      const badge = document.getElementById('sync-badge');
+      const text = document.getElementById('sync-text');
+      if (!badge || !text) return;
+
+      if (state === 'synced') {
+        badge.className = 'badge-sync authed';
+        text.textContent = '☁️ Đã đồng bộ';
+      } else if (state === 'syncing') {
+        badge.className = 'badge-sync syncing';
+        text.textContent = '⏳ Đang lưu...';
+      } else if (state === 'unauthed') {
+        badge.className = 'badge-sync unauthed';
+        text.textContent = '🔒 Đăng nhập Sync';
+      } else {
+        badge.className = 'badge-sync offline';
+        text.textContent = '⚡ Cục bộ (Offline)';
+      }
     }
 
     function updateDateUI() {
@@ -821,12 +1121,10 @@
 
     function shiftDay(direction) {
       if (direction === -1) {
-        // Go back 1 day
         const current = new Date(viewedDateKey);
         current.setDate(current.getDate() - 1);
         viewedDateKey = current.toISOString().slice(0, 10);
       } else {
-        // Go back to today
         viewedDateKey = todayDateKey;
       }
       updateDateUI();
@@ -862,7 +1160,6 @@
       let checkDate = new Date();
       if (checkDate.getHours() < 4) checkDate.setDate(checkDate.getDate() - 1);
 
-      // Check consecutive days with at least 1 habit completed
       for (let i = 0; i < 365; i++) {
         const key = checkDate.toISOString().slice(0, 10);
         const dayRecord = history[key];
@@ -874,7 +1171,7 @@
         if (hasDone) {
           streak++;
         } else if (i === 0) {
-          // If today has 0 done yet, still check yesterday before breaking
+          // Today not done yet, continue checking past days
         } else {
           break;
         }
@@ -889,12 +1186,10 @@
       const dayData = getDayData(viewedDateKey);
       const currentMode = dayData.mode || 'strict';
 
-      // Update button active styles
       document.getElementById('btn-strict').className = 'mode-btn strict ' + (currentMode === 'strict' ? 'active-strict' : '');
       document.getElementById('btn-priority').className = 'mode-btn priority ' + (currentMode === 'priority' ? 'active-priority' : '');
       document.getElementById('btn-core').className = 'mode-btn core ' + (currentMode === 'core' ? 'active-core' : '');
 
-      // Update Labels
       const modeInfo = MODES_DATA[currentMode];
       document.getElementById('mode-display-name').textContent = modeInfo.name;
       document.getElementById('mode-display-name').style.color = modeInfo.color;
@@ -981,7 +1276,99 @@
       });
     }
 
-    // Init App
+    // ==================== AUTH MODAL HANDLERS ====================
+    function openAuthModal() {
+      document.getElementById('auth-modal').className = 'modal-backdrop open';
+      document.getElementById('auth-error').style.display = 'none';
+
+      if (auth && auth.currentUser) {
+        document.getElementById('modal-unauthed').style.display = 'none';
+        document.getElementById('modal-authed').style.display = 'block';
+        document.getElementById('authed-user-desc').innerHTML = `Đang đăng nhập với: <strong>${auth.currentUser.email}</strong>`;
+      } else {
+        document.getElementById('modal-unauthed').style.display = 'block';
+        document.getElementById('modal-authed').style.display = 'none';
+      }
+    }
+
+    function closeAuthModal() {
+      document.getElementById('auth-modal').className = 'modal-backdrop';
+    }
+
+    function closeAuthModalOnBg(e) {
+      if (e.target.id === 'auth-modal') {
+        closeAuthModal();
+      }
+    }
+
+    function handleLogin() {
+      const email = document.getElementById('auth-email').value.trim();
+      const pass = document.getElementById('auth-pass').value;
+      const errBox = document.getElementById('auth-error');
+
+      if (!email || !pass) {
+        errBox.textContent = "Vui lòng nhập đầy đủ Email và Mật khẩu.";
+        errBox.style.display = 'block';
+        return;
+      }
+
+      errBox.style.display = 'none';
+      auth.signInWithEmailAndPassword(email, pass)
+        .then((cred) => {
+          closeAuthModal();
+          showToast(`Đăng nhập thành công: ${cred.user.email}`);
+        })
+        .catch((err) => {
+          console.error("Login fail:", err);
+          errBox.textContent = "Lỗi đăng nhập: " + (err.message || "Vui lòng kiểm tra lại mật khẩu.");
+          errBox.style.display = 'block';
+        });
+    }
+
+    function handleLogout() {
+      if (auth) {
+        auth.signOut().then(() => {
+          closeAuthModal();
+          setSyncBadge('unauthed');
+          showToast("Đã đăng xuất Cloud Sync!");
+        });
+      }
+    }
+
+    // ==================== AUTH STATE & REALTIME LISTENER ====================
+    if (isFirebaseInit && auth) {
+      auth.onAuthStateChanged((user) => {
+        if (user) {
+          setSyncBadge('synced');
+
+          // Attach Realtime DB listener
+          habitsRef.on('value', (snapshot) => {
+            const cloudHistory = snapshot.val();
+            if (cloudHistory && typeof cloudHistory === 'object') {
+              saveStoredHistory(cloudHistory);
+              updateDateUI();
+              renderTasks();
+              setSyncBadge('synced');
+            } else {
+              // If cloud is empty, upload existing local data
+              const localHistory = getStoredHistory();
+              if (Object.keys(localHistory).length > 0) {
+                habitsRef.set(localHistory);
+              }
+            }
+          }, (err) => {
+            console.error("Firebase read error (check rules):", err);
+            setSyncBadge('offline');
+          });
+
+        } else {
+          setSyncBadge('unauthed');
+          if (habitsRef) habitsRef.off();
+        }
+      });
+    }
+
+    // ==================== INITIALIZE ====================
     updateDateUI();
     renderTasks();
   </script>
