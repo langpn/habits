@@ -405,6 +405,36 @@
       color: #475569;
     }
 
+    /* Bonus / Leisure Task Styling */
+    .task-item.bonus {
+      background: rgba(168, 85, 247, 0.04);
+      border: 1px dashed rgba(168, 85, 247, 0.35);
+    }
+
+    .task-item.bonus:hover {
+      background: rgba(168, 85, 247, 0.08);
+      border-color: rgba(168, 85, 247, 0.6);
+    }
+
+    .task-item.bonus .task-time {
+      color: #c084fc;
+      background: rgba(168, 85, 247, 0.15);
+    }
+
+    .task-item.bonus .task-category {
+      color: #c084fc;
+    }
+
+    .task-item.bonus.completed {
+      background: rgba(168, 85, 247, 0.12);
+      border-color: #a855f7;
+    }
+
+    .task-item.bonus.completed .checkbox-custom {
+      background: #a855f7;
+      border-color: #a855f7;
+    }
+
     .checkbox-custom {
       width: 22px;
       height: 22px;
@@ -566,7 +596,7 @@
     <header class="header">
       <div class="header-title">
         <h1>⚡ ULTIMATE HABITS</h1>
-        <p>Doom GTD • Obsidian Zettel • Sean Kang Video Editing</p>
+        <p>Doom GTD • Obsidian • Sean Kang Edit • TOP with AI</p>
       </div>
       <div class="header-badges">
         <div class="badge-streak" id="streak-badge">
@@ -678,9 +708,10 @@
           { time: "13:30 - 15:30", cat: "Academic", title: "School Tasks: Làm bài tập & đồ án tốt nghiệp", desc: "Giải quyết dứt điểm các môn ở trường, đảm bảo đủ điều kiện tốt nghiệp." },
           { time: "15:45 - 17:30", cat: "Portfolio", title: "Hands-on Edit: Dựng sample reel / Portfolio Upwork", desc: "Thực chiến dựng video hoàn chỉnh để chuẩn bị show cho khách." },
           { time: "17:45 - 19:15", cat: "Workout", title: "Calisthenics (Hypertrophy) / Boxing (Rest day)", desc: "Tập trung tăng cơ (pull-up, dip, push-up), không tập skill phức tạp." },
-          { time: "20:15 - 21:15", cat: "English ESP", title: "Học Tiếng Anh Freelance (Upwork/Fiverr)", desc: "Luyện đọc hiểu brief, viết template proposal, nghe podcast editing." },
+          { time: "20:15 - 21:15", cat: "English ESP", title: "Học Tiếng Anh Freelance (Upwork/Fiverr)", desc: "Luyện đọc hiểu brief, viết template proposal, nghe podcast editing (60p)." },
           { time: "21:15 - 22:00", cat: "Zettelkasten", title: "Viết 1 Zettelkasten trong Obsidian/Neovim", desc: "Đúc kết 1 kỹ thuật dựng hoặc 1 kiến thức trường vào Permanent Note." },
-          { time: "23:00 - 00:00", cat: "Sleep Anchor", title: "Giới nghiêm thiết bị + Đi ngủ trước 00:00", desc: "Tắt toàn bộ màn hình, để não thư giãn, bảo vệ chu kỳ ngủ 7.5 tiếng." }
+          { time: "23:00 - 00:00", cat: "Sleep Anchor", title: "Giới nghiêm thiết bị + Đi ngủ trước 00:00", desc: "Tắt toàn bộ màn hình, để não thư giãn, bảo vệ chu kỳ ngủ 7.5 tiếng." },
+          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ TOP with AI Agent (Bonus)", desc: "Khám phá kiến trúc, mental models cùng AI khi có thời gian — giải trí trí tuệ, không áp lực syntax." }
         ]
       },
       priority: {
@@ -693,7 +724,8 @@
           { time: "Chiều / Tối", cat: "Money Focus", title: "Video Editing Express (60 - 90 phút)", desc: "Tối thiểu mở Premiere xem 1 bài Sean Kang hoặc cắt nháp 1 đoạn clip ngắn." },
           { time: "18:00", cat: "Workout", title: "Calisthenics Express (30 - 45 phút)", desc: "3 hiệp hít xà + 3 hiệp chống đẩy + 3 hiệp squat tại phòng." },
           { time: "Tối", cat: "English / Note", title: "Quick English (15p) + Fleeting Note Obsidian", desc: "Đọc lướt 1 proposal mẫu + note nhanh 1 ý tưởng vào Inbox Obsidian." },
-          { time: "23:30", cat: "Sleep Anchor", title: "Giới nghiêm thiết bị + Ngủ trước 00:15", desc: "Duy trì giờ ngủ ổn định để mai dậy sớm đi học." }
+          { time: "23:30", cat: "Sleep Anchor", title: "Giới nghiêm thiết bị + Ngủ trước 00:15", desc: "Duy trì giờ ngủ ổn định để mai dậy sớm đi học." },
+          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ Đàm đạo 1 concept TOP với AI (Bonus)", desc: "Hỏi AI Agent 1 concept cốt lõi của TOP nếu có thời gian rảnh rỗi." }
         ]
       },
       core: {
@@ -869,15 +901,21 @@
 
       const container = document.getElementById('tasks-container');
       container.innerHTML = '';
-      let completedCount = 0;
+      
+      const coreTasks = modeInfo.tasks.filter(t => !t.isBonus);
+      let coreCompleted = 0;
+      let bonusCompleted = 0;
 
       modeInfo.tasks.forEach((task, idx) => {
         const key = `${currentMode}_${idx}`;
         const isDone = !!(dayData.checked && dayData.checked[key]);
-        if (isDone) completedCount++;
+        if (isDone) {
+          if (task.isBonus) bonusCompleted++;
+          else coreCompleted++;
+        }
 
         const item = document.createElement('div');
-        item.className = `task-item ${isDone ? 'completed' : ''}`;
+        item.className = `task-item ${task.isBonus ? 'bonus' : ''} ${isDone ? 'completed' : ''}`;
         item.setAttribute('data-mode', currentMode);
         item.onclick = () => toggleTask(currentMode, idx);
 
@@ -891,6 +929,7 @@
             <div class="task-meta">
               <span class="task-time">${task.time}</span>
               <span class="task-category">${task.cat}</span>
+              ${task.isBonus ? '<span style="font-size:10px; color:#c084fc; font-weight:700; background:rgba(168,85,247,0.15); padding:1px 6px; border-radius:4px;">TÙY CHỌN / GIẢI TRÍ</span>' : ''}
             </div>
             <div class="task-title">${task.title}</div>
             <div class="task-desc">${task.desc}</div>
@@ -899,11 +938,15 @@
         container.appendChild(item);
       });
 
-      // Update progress bar
-      const total = modeInfo.tasks.length;
-      const pct = Math.round((completedCount / total) * 100);
-      document.getElementById('progress-percent-text').textContent = `${completedCount} / ${total} (${pct}%)`;
-      document.getElementById('progress-fill').style.width = `${pct}%`;
+      // Update progress bar based on CORE tasks
+      const totalCore = coreTasks.length;
+      const pct = Math.round((coreCompleted / totalCore) * 100);
+      let pctLabel = `${coreCompleted} / ${totalCore} (${pct}%)`;
+      if (bonusCompleted > 0) {
+        pctLabel += ` + ⭐ ${bonusCompleted} Bonus`;
+      }
+      document.getElementById('progress-percent-text').textContent = pctLabel;
+      document.getElementById('progress-fill').style.width = `${Math.min(pct, 100)}%`;
 
       if (pct === 100) {
         document.getElementById('progress-fill').style.background = '#10b981';
