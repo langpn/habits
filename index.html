@@ -220,27 +220,38 @@
       justify-content: space-between;
       align-items: center;
       font-size: 13px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .date-nav {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .nav-btn {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--card-border);
       color: var(--text-main);
-      padding: 4px 10px;
-      border-radius: 6px;
+      padding: 5px 12px;
+      border-radius: 8px;
       font-size: 12px;
       cursor: pointer;
       transition: all 0.2s;
+      font-weight: 600;
     }
 
     .nav-btn:hover {
       background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .nav-btn.jump-today {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
     }
 
     .current-date-text {
@@ -415,7 +426,7 @@
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid var(--card-border);
       color: var(--text-muted);
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 8px;
       font-size: 12px;
       font-weight: 600;
@@ -429,12 +440,6 @@
     .action-btn:hover {
       background: rgba(255, 255, 255, 0.12);
       color: #fff;
-    }
-
-    .action-btn.danger:hover {
-      background: rgba(239, 68, 68, 0.2);
-      border-color: rgba(239, 68, 68, 0.4);
-      color: #fca5a5;
     }
 
     .task-item {
@@ -661,6 +666,13 @@
       line-height: 1.4;
     }
 
+    .fixed-account-card {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
     .input-group {
       display: flex;
       flex-direction: column;
@@ -802,7 +814,7 @@
         </div>
         <!-- Streak Badge -->
         <div class="badge-streak" id="streak-badge">
-          🔥 Chuỗi: <span id="streak-count">1</span> ngày
+          🔥 Chuỗi: <span id="streak-count">0</span> ngày
         </div>
         <!-- Target Badge -->
         <div class="badge-target">
@@ -815,9 +827,10 @@
     <!-- Date Navigation Bar -->
     <div class="date-bar">
       <div class="date-nav">
-        <button class="nav-btn" onclick="shiftDay(-1)">◀ Hôm qua</button>
+        <button class="nav-btn" onclick="shiftDay(-1)" title="Xem ngày trước">◀ Ngày trước</button>
         <span class="current-date-text" id="display-date-label">Hôm nay</span>
-        <button class="nav-btn" id="next-day-btn" onclick="shiftDay(1)" style="display:none;">Hôm nay ▶</button>
+        <button class="nav-btn" id="next-day-btn" onclick="shiftDay(1)" style="display:none;" title="Xem ngày sau">Ngày sau ▶</button>
+        <button class="nav-btn jump-today" id="jump-today-btn" onclick="jumpToToday()" style="display:none;" title="Quay về hôm nay">Về Hôm Nay</button>
       </div>
       <div class="date-status" id="date-status-badge">
         <span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>
@@ -869,9 +882,6 @@
           <span>📋</span> Danh sách Thói quen
         </div>
         <div class="list-actions">
-          <button class="action-btn danger" onclick="clearCurrentDay()" title="Xóa các dấu tích của ngày đang xem">
-            ↺ Reset Ngày
-          </button>
           <button class="action-btn" onclick="copyObsidianMarkdown()" title="Copy Markdown vào Obsidian">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
             Obsidian
@@ -900,19 +910,21 @@
     <div class="modal-card">
       <div id="modal-unauthed">
         <h3>🔐 Đăng nhập Đồng bộ Cloud</h3>
-        <p>Đăng nhập 1 lần duy nhất để iPhone và MacBook tự động đồng bộ thời gian thực qua Firebase.</p>
+        <p>Nhập mật khẩu tài khoản cá nhân để kích hoạt đồng bộ 2 chiều iPhone &amp; MacBook.</p>
         <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 12px;">
-          <div class="input-group">
-            <label for="auth-email">Email tài khoản</label>
-            <input type="email" id="auth-email" placeholder="langpn.dev@gmail.com" autocomplete="email">
+          <div class="fixed-account-card">
+            <span style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px;">Tài khoản cá nhân cố định</span>
+            <div style="font-size: 14.5px; font-weight: 700; color: #38bdf8; font-family: 'JetBrains Mono', monospace; margin-top: 3px;">
+              👤 langpn.dev@gmail.com
+            </div>
           </div>
           <div class="input-group">
             <label for="auth-pass">Mật khẩu</label>
-            <input type="password" id="auth-pass" placeholder="••••••••" autocomplete="current-password">
+            <input type="password" id="auth-pass" placeholder="Nhập mật khẩu..." autocomplete="current-password" onkeydown="if(event.key==='Enter') handleLogin()">
           </div>
-          <div class="error-msg" id="auth-error">Email hoặc mật khẩu không chính xác.</div>
+          <div class="error-msg" id="auth-error">Mật khẩu không chính xác.</div>
           <div class="modal-actions">
-            <button class="btn-primary" onclick="handleLogin()">Đăng nhập &amp; Sync</button>
+            <button class="btn-primary" onclick="handleLogin()">Đăng nhập &amp; Bắt đầu Sync</button>
             <button class="btn-secondary" onclick="closeAuthModal()">Đóng</button>
           </div>
         </div>
@@ -920,9 +932,14 @@
 
       <div id="modal-authed" style="display: none;">
         <h3>☁️ Trạng thái Đồng bộ</h3>
-        <p id="authed-user-desc">Đã kết nối với tài khoản: <strong>...</strong></p>
-        <p style="font-size: 12px; color: #10b981; margin-top: 6px;">
-          ✓ Dữ liệu được bảo mật và tự động đồng bộ 2 chiều (iPhone ⇄ MacBook).
+        <div class="fixed-account-card" style="margin-top: 10px;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Đang kết nối tài khoản</span>
+          <div style="font-size: 14px; font-weight: 700; color: #10b981; font-family: 'JetBrains Mono', monospace; margin-top: 2px;" id="authed-user-display">
+            👤 langpn.dev@gmail.com
+          </div>
+        </div>
+        <p style="font-size: 12.5px; color: #10b981; margin-top: 8px;">
+          ✓ Dữ liệu được bảo mật và tự động đồng bộ thời gian thực (iPhone ⇄ MacBook).
         </p>
         <div class="modal-actions" style="margin-top: 16px;">
           <button class="btn-danger" onclick="handleLogout()">Đăng xuất</button>
@@ -945,6 +962,8 @@
       messagingSenderId: "46496314879",
       appId: "1:46496314879:web:0011dad743b74200f423ca"
     };
+
+    const FIXED_USER_EMAIL = "langpn.dev@gmail.com";
 
     let auth = null;
     let db = null;
@@ -1010,23 +1029,35 @@
       }
     };
 
+    // ==================== TIMEZONE SAFE DATE UTILITIES ====================
+    function formatLocalDate(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+
+    function parseLocalDate(dateStr) {
+      if (!dateStr || typeof dateStr !== 'string') return new Date();
+      const parts = dateStr.split('-').map(Number);
+      if (parts.length !== 3 || isNaN(parts[0])) return new Date();
+      return new Date(parts[0], parts[1] - 1, parts[2], 12, 0, 0); // Noon avoids DST/time shift
+    }
+
     /**
      * BIOLOGICAL DAY THRESHOLD: 04:00 AM
      * Trước 04:00 AM vẫn là phiên làm việc của ngày hôm qua.
-     * Sau 04:00 AM mới tự động khởi động ngày mới!
+     * Sau 04:00 AM mới tự động sang ngày mới!
      */
-    function getBiologicalDate(offsetDays = 0) {
-      const d = new Date();
-      if (d.getHours() < 4) {
-        d.setDate(d.getDate() - 1);
+    function getBiologicalToday() {
+      const now = new Date();
+      if (now.getHours() < 4) {
+        now.setDate(now.getDate() - 1);
       }
-      if (offsetDays !== 0) {
-        d.setDate(d.getDate() + offsetDays);
-      }
-      return d.toISOString().slice(0, 10);
+      return formatLocalDate(now);
     }
 
-    const todayDateKey = getBiologicalDate();
+    let todayDateKey = getBiologicalToday();
     let viewedDateKey = todayDateKey;
 
     function getStoredHistory() {
@@ -1063,14 +1094,16 @@
 
     function updateDayData(dateKey, partial) {
       const history = getStoredHistory();
-      if (!history[dateKey]) history[dateKey] = { mode: 'strict', checked: {} };
+      if (!history[dateKey]) {
+        history[dateKey] = { mode: 'strict', checked: {} };
+      }
       history[dateKey] = { ...history[dateKey], ...partial };
       if (!history[dateKey].checked || typeof history[dateKey].checked !== 'object') {
         history[dateKey].checked = {};
       }
       saveStoredHistory(history);
 
-      // Realtime Cloud Sync
+      // Realtime Cloud Sync to Firebase
       if (isFirebaseInit && auth && auth.currentUser && habitsRef) {
         setSyncBadge('syncing');
         habitsRef.child(dateKey).set(history[dateKey])
@@ -1110,32 +1143,51 @@
     }
 
     function updateDateUI() {
+      todayDateKey = getBiologicalToday();
       const isToday = (viewedDateKey === todayDateKey);
       const displayLabel = document.getElementById('display-date-label');
       const nextBtn = document.getElementById('next-day-btn');
+      const jumpBtn = document.getElementById('jump-today-btn');
       const statusBadge = document.getElementById('date-status-badge');
 
+      const d = parseLocalDate(viewedDateKey);
+      const dayNames = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+      const dayName = dayNames[d.getDay()];
+      const formattedVN = `${dayName}, ${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
+
       if (isToday) {
-        displayLabel.textContent = `Hôm nay (${viewedDateKey})`;
-        nextBtn.style.display = 'none';
-        statusBadge.innerHTML = '<span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>';
+        displayLabel.textContent = `Hôm nay (${formattedVN})`;
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (jumpBtn) jumpBtn.style.display = 'none';
+        if (statusBadge) statusBadge.innerHTML = '<span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>';
       } else {
-        displayLabel.textContent = `Lịch sử: ${viewedDateKey}`;
-        nextBtn.style.display = 'inline-block';
-        statusBadge.innerHTML = '<span style="color: #f59e0b">👀 Đang xem lại ngày cũ</span>';
+        displayLabel.textContent = formattedVN;
+        if (nextBtn) nextBtn.style.display = 'inline-block';
+        if (jumpBtn) jumpBtn.style.display = 'inline-block';
+        if (statusBadge) statusBadge.innerHTML = '<span style="color: #f59e0b">👀 Đang xem lại ngày cũ</span>';
       }
 
       updateStreak();
     }
 
     function shiftDay(direction) {
-      if (direction === -1) {
-        const current = new Date(viewedDateKey);
-        current.setDate(current.getDate() - 1);
-        viewedDateKey = current.toISOString().slice(0, 10);
-      } else {
+      todayDateKey = getBiologicalToday();
+      const curr = parseLocalDate(viewedDateKey);
+      curr.setDate(curr.getDate() + direction);
+      const newKey = formatLocalDate(curr);
+
+      if (newKey > todayDateKey) {
         viewedDateKey = todayDateKey;
+      } else {
+        viewedDateKey = newKey;
       }
+      updateDateUI();
+      renderTasks();
+    }
+
+    function jumpToToday() {
+      todayDateKey = getBiologicalToday();
+      viewedDateKey = todayDateKey;
       updateDateUI();
       renderTasks();
     }
@@ -1157,41 +1209,42 @@
       updateStreak();
     }
 
-    function clearCurrentDay() {
-      if (confirm(`Bạn có chắc chắn muốn làm mới (reset) tất cả thói quen của ngày ${viewedDateKey}?`)) {
-        updateDayData(viewedDateKey, { checked: {} });
-        renderTasks();
-        updateStreak();
-        showToast("Đã làm mới danh sách ngày hôm nay!");
-      }
-    }
-
     function updateStreak() {
       const history = getStoredHistory();
+      todayDateKey = getBiologicalToday();
+
+      // Check if today has at least one checked habit
+      const todayRec = history[todayDateKey];
+      const doneToday = Boolean(todayRec && todayRec.checked && Object.values(todayRec.checked).some(v => v === true));
+
       let streak = 0;
-      let checkDate = new Date();
-      if (checkDate.getHours() < 4) checkDate.setDate(checkDate.getDate() - 1);
+      let cursor = parseLocalDate(todayDateKey);
 
-      for (let i = 0; i < 365; i++) {
-        const key = checkDate.toISOString().slice(0, 10);
-        const dayRecord = history[key];
-        let hasDone = false;
-        if (dayRecord && dayRecord.checked) {
-          hasDone = Object.values(dayRecord.checked).some(v => v === true);
+      if (doneToday) {
+        streak = 1;
+        while (true) {
+          cursor.setDate(cursor.getDate() - 1);
+          const key = formatLocalDate(cursor);
+          const rec = history[key];
+          const done = Boolean(rec && rec.checked && Object.values(rec.checked).some(v => v === true));
+          if (done) streak++;
+          else break;
         }
-
-        if (hasDone) {
-          streak++;
-        } else if (i === 0) {
-          // Today not done yet, continue checking past days
-        } else {
-          break;
+      } else {
+        // Today in progress, count consecutive days up to yesterday
+        cursor.setDate(cursor.getDate() - 1);
+        while (true) {
+          const key = formatLocalDate(cursor);
+          const rec = history[key];
+          const done = Boolean(rec && rec.checked && Object.values(rec.checked).some(v => v === true));
+          if (done) streak++;
+          else break;
+          cursor.setDate(cursor.getDate() - 1);
         }
-        checkDate.setDate(checkDate.getDate() - 1);
       }
 
       const streakEl = document.getElementById('streak-count');
-      if (streakEl) streakEl.textContent = Math.max(streak, 1);
+      if (streakEl) streakEl.textContent = streak;
     }
 
     function renderTasks() {
@@ -1215,7 +1268,7 @@
 
       modeInfo.tasks.forEach((task, idx) => {
         const key = `${currentMode}_${idx}`;
-        const isDone = !!(dayData.checked && dayData.checked[key]);
+        const isDone = Boolean(dayData.checked && dayData.checked[key]);
         if (isDone) {
           if (task.isBonus) bonusCompleted++;
           else coreCompleted++;
@@ -1247,7 +1300,7 @@
 
       // Update progress bar based on CORE tasks
       const totalCore = coreTasks.length;
-      const pct = Math.round((coreCompleted / totalCore) * 100);
+      const pct = totalCore > 0 ? Math.round((coreCompleted / totalCore) * 100) : 0;
       let pctLabel = `${coreCompleted} / ${totalCore} (${pct}%)`;
       if (bonusCompleted > 0) {
         pctLabel += ` + ⭐ ${bonusCompleted} Bonus`;
@@ -1274,7 +1327,7 @@
 
       modeInfo.tasks.forEach((task, idx) => {
         const key = `${currentMode}_${idx}`;
-        const isDone = !!(dayData.checked && dayData.checked[key]);
+        const isDone = Boolean(dayData.checked && dayData.checked[key]);
         const mark = isDone ? 'x' : ' ';
         md += `- [${mark}] **${task.time}** [${task.cat}] ${task.title}\n  > ${task.desc}\n`;
       });
@@ -1296,10 +1349,14 @@
       if (auth && auth.currentUser) {
         document.getElementById('modal-unauthed').style.display = 'none';
         document.getElementById('modal-authed').style.display = 'block';
-        document.getElementById('authed-user-desc').innerHTML = `Đang đăng nhập với: <strong>${auth.currentUser.email}</strong>`;
+        document.getElementById('authed-user-display').textContent = `👤 ${auth.currentUser.email}`;
       } else {
         document.getElementById('modal-unauthed').style.display = 'block';
         document.getElementById('modal-authed').style.display = 'none';
+        setTimeout(() => {
+          const passInput = document.getElementById('auth-pass');
+          if (passInput) passInput.focus();
+        }, 100);
       }
     }
 
@@ -1314,25 +1371,32 @@
     }
 
     function handleLogin() {
-      const email = document.getElementById('auth-email').value.trim();
       const pass = document.getElementById('auth-pass').value;
       const errBox = document.getElementById('auth-error');
 
-      if (!email || !pass) {
-        errBox.textContent = "Vui lòng nhập đầy đủ Email và Mật khẩu.";
+      if (!pass) {
+        errBox.textContent = "Vui lòng nhập mật khẩu tài khoản.";
         errBox.style.display = 'block';
         return;
       }
 
       errBox.style.display = 'none';
-      auth.signInWithEmailAndPassword(email, pass)
+      auth.signInWithEmailAndPassword(FIXED_USER_EMAIL, pass)
         .then((cred) => {
           closeAuthModal();
           showToast(`Đăng nhập thành công: ${cred.user.email}`);
         })
         .catch((err) => {
           console.error("Login fail:", err);
-          errBox.textContent = "Lỗi đăng nhập: " + (err.message || "Vui lòng kiểm tra lại mật khẩu.");
+          let msg = "Mật khẩu không chính xác.";
+          if (err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+            msg = "Mật khẩu không đúng. Vui lòng kiểm tra lại.";
+          } else if (err.code === 'auth/user-not-found') {
+            msg = "Tài khoản chưa được tạo trên Firebase Console.";
+          } else if (err.message) {
+            msg = err.message;
+          }
+          errBox.textContent = msg;
           errBox.style.display = 'block';
         });
     }
@@ -1353,31 +1417,46 @@
         if (user) {
           setSyncBadge('synced');
 
-          // Attach Realtime DB listener
+          // Realtime listener with deep merge (no data loss)
           habitsRef.on('value', (snapshot) => {
-            const cloudHistory = snapshot.val();
-            if (cloudHistory && typeof cloudHistory === 'object') {
-              for (const k in cloudHistory) {
-                if (cloudHistory[k] && typeof cloudHistory[k] === 'object') {
-                  if (!cloudHistory[k].checked || typeof cloudHistory[k].checked !== 'object') {
-                    cloudHistory[k].checked = {};
-                  }
-                  if (!cloudHistory[k].mode) {
-                    cloudHistory[k].mode = 'strict';
-                  }
-                }
+            const cloudHistory = snapshot.val() || {};
+            const localHistory = getStoredHistory() || {};
+            
+            const allDates = new Set([...Object.keys(localHistory), ...Object.keys(cloudHistory)]);
+            const merged = {};
+
+            allDates.forEach((dateKey) => {
+              const cloudItem = cloudHistory[dateKey];
+              const localItem = localHistory[dateKey];
+
+              if (cloudItem && localItem) {
+                merged[dateKey] = {
+                  mode: cloudItem.mode || localItem.mode || 'strict',
+                  checked: { ...(localItem.checked || {}), ...(cloudItem.checked || {}) }
+                };
+              } else if (cloudItem) {
+                merged[dateKey] = {
+                  mode: cloudItem.mode || 'strict',
+                  checked: cloudItem.checked || {}
+                };
+              } else if (localItem) {
+                merged[dateKey] = {
+                  mode: localItem.mode || 'strict',
+                  checked: localItem.checked || {}
+                };
               }
-              saveStoredHistory(cloudHistory);
-              updateDateUI();
-              renderTasks();
-              setSyncBadge('synced');
-            } else {
-              // If cloud is empty, upload existing local data
-              const localHistory = getStoredHistory();
-              if (Object.keys(localHistory).length > 0) {
-                habitsRef.set(localHistory);
-              }
+            });
+
+            saveStoredHistory(merged);
+
+            // Upload any local-only dates to cloud
+            if (Object.keys(localHistory).length > 0 && JSON.stringify(merged) !== JSON.stringify(cloudHistory)) {
+              habitsRef.set(merged).catch(() => {});
             }
+
+            updateDateUI();
+            renderTasks();
+            setSyncBadge('synced');
           }, (err) => {
             console.error("Firebase read error (check rules):", err);
             setSyncBadge('offline');
