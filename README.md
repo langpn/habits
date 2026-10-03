@@ -159,4 +159,31 @@ Dành 45 phút bước lên "tầng cao 10.000 feet" để nhìn lại toàn c�
 
 ---
 
+## 🇬🇧 10. QUY TRÌNH LUYỆN VIẾT TIẾNG ANH THỰC CHIẾN (DAILY & WEEKLY ENGLISH WORKFLOW)
+
+Để chuẩn bị nhận hợp đồng quốc tế trên Upwork/Fiverr, bạn không học tiếng Anh bằng cách làm bài tập ngữ pháp mà **tập viết trực tiếp vào nhật ký công việc** bằng phương pháp "Khung đỡ nhận thức" (Scaffolded Prompts):
+
+### A. Daily Micro-Journal (60 giây trước khi đi ngủ):
+* **Thao tác:** Gõ lệnh **`today`** trong Terminal. Cuộn xuống mục số 3.
+* **Quy tắc:** Chỉ viết đúng **2 – 3 câu** dựa trên các mẫu câu có sẵn (Sentence Starters):
+  * **Work:** *"Today, I practiced [feature/skill] in DaVinci Resolve. The most interesting part was..."*
+  * **Fix:** *"I struggled with [...], but I managed to solve it by [...]"*
+  * **Mood:** *"I feel [focused / productive / exhausted] today because..."*
+* **Ví dụ mẫu:**
+  > *Today, I practiced the Q-W-E rough cutting workflow in DaVinci Resolve. I struggled with audio sync, but I managed to solve it by using waveform alignment. I feel productive today because I finished the first scene.*
+
+### B. Weekly Client Update Practice (3 phút chiều Chủ Nhật):
+* **Thao tác:** Gõ lệnh **`week`** trong Terminal. Cuộn xuống mục số 4.
+* **Mục đích:** Tập dượt phản xạ viết email báo cáo tiến độ cho khách hàng phương Tây:
+  * *"This week, I dedicated [X] hours to post-production in DaVinci Resolve, focusing heavily on [Rough cut / Pacing / Color grading]..."*
+  * *"My biggest technical breakthrough was mastering [Q-W-E workflow / Fairlight ducking / Hook retention]..."*
+  * *"Looking ahead, my top deliverable for next week is to finalize [Project name / Portfolio sample]..."*
+
+### C. 3 Nguyên tắc "Vàng" bảo vệ dòng chảy:
+1. **Ưu tiên sự trôi chảy (Fluency > Accuracy):** Viết sai ngữ pháp cũng được, tuyệt đối không dừng lại để sửa.
+2. **Không tra từ điển trong lúc viết:** Từ nào bí cứ gõ tiếng Việt hoặc từ đơn giản để giữ mạch suy nghĩ.
+3. **AI Feedback:** Cứ cuối tuần, copy các đoạn đã viết đưa cho AI nhờ sửa lỗi và học cách người bản xứ diễn đạt.
+
+---
+
 *Tài liệu này là kim chỉ nam tối thượng. Khi cảm thấy mông lung, hãy mở file này ra đọc lại để định vị bản thân và tiếp tục bước đi!*
