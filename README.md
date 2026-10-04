@@ -48,16 +48,16 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 | :--- | :--- | :--- |
 | **07:30** | Thức dậy + Uống nước ấm + Ăn sáng | Bù nước sau đêm, sạc pin tự nhiên, không thuốc ngủ. |
 | **08:15** | Thiền định 15 phút (Reset Dopamine) | Ngồi tĩnh lặng, thở sâu bằng mũi, đưa sóng não về Alpha. |
-| **08:35** | Doom Emacs: Review GTD | Bấm `C-c SPC` xem Agenda, chọn Top 3 việc `NEXT`. |
-| **08:45 – 12:00** | **DEEP WORK 1: DaVinci Resolve (Sean Kang)** | Bật **Flow Pomodoro (50/10)** bằng Raycast (`⌃ ⌥ Space`). Cắt nhịp trong `~/studio/` bằng phím tắt `Q - W - E`. |
+| **08:35** | Doom Emacs: Review GTD | Bấm `C-c SPC` xem Agenda, khóa Top 3 việc `NEXT`. |
+| **08:45 – 12:00** | **DEEP WORK 1: Elite Sprint (DaVinci)** | Cày Sprint 1/2 Sean Kang trên **Elite Roadmap**. Bật **Flow Pomodoro (50/10)** bằng Raycast (`⌃ ⌥ Space`), phím tắt `Q - W - E`. |
 | *10p Break* | *Phục hồi thực chất (Mỗi 50 phút)* | Nhìn xa >6m, uống nước, **Shadowboxing nhẹ nhàng 3 phút** thở mũi xả căng cơ vai gáy. |
-| **12:00 – 13:30** | Ăn trưa + Power Nap 20 phút | Giảm tinh bột nhanh. Hẹn giờ 20p chợp mắt trên sofa. |
+| **12:00 – 13:30** | Ăn trưa + Power Nap 20 phút | Giảm tinh bột nhanh. Hẹn giờ 20p chợp mắt trên sofa (không uống MySpa trưa). |
 | **13:30 – 15:30** | **DEEP WORK 2: School Tasks** | Giải quyết bài tập lớn, đồ án trường để tốt nghiệp đúng hạn. |
-| **15:45 – 17:30** | **DaVinci Hands-on / Portfolio Samples** | Thực chiến dựng video mẫu hoàn chỉnh up Upwork/Fiverr. |
+| **15:45 – 17:30** | **Elite Deliverable: Dựng Reel / Mẫu Portfolio** | Dựng sản phẩm hoàn chỉnh để chuẩn bị Gig Fiverr & Profile Upwork theo chỉ tiêu Sprint. |
 | **17:45 – 19:15** | **Workout: Calisthenics / Boxing** | Calisthenics Hypertrophy (Pull-up, Dip, Push-up) / Rest day Boxing. |
 | **19:30** | **Ăn tối + Uống Telfor 120mg & MySpa** | Dồn tác dụng phụ an dịu vào ban đêm! |
 | **20:30 – 21:15** | Tiếng Anh Freelance (Upwork/Fiverr) | Soạn template proposal, học từ vựng brief, nghe podcast 45p. |
-| **21:15 – 22:00** | **Zettelkasten & Spaced Repetition** | Ôn 3p Spaced Repetition + Gõ `today` trong Terminal viết 1 note. |
+| **21:15 – 22:00** | **Duo Sync & Zettelkasten** | Mở **Elite Roadmap** tick bài cùng Diễm + Gõ `today` viết 1 Zettel tiếng Anh. |
 | **22:15** | Rửa mũi nước muối + 2 viên Magnesium | Thông mũi thở 100% + thư giãn cơ bắp trước ngủ. |
 | **23:00** | Giới nghiêm thiết bị điện tử | Tắt mọi màn hình xanh, đọc sách giấy nhẹ. |
 | **00:00** | Lên giường ngủ | Đảm bảo 7.5 tiếng ngủ sâu không đứt đoạn. |
@@ -69,18 +69,19 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 
 Để không bao giờ bị rơi vào cảm giác buông xuôi khi có biến cố:
 
-* 🟢 **MODE 1: NGHIÊM NGẶT (Peak Focus)** — Áp dụng khi ở nhà, năng lượng dồi dào. Thực hiện đủ 100% lịch trình trên.
-* 🟡 **MODE 2: QUAN TRỌNG (School/Busy)** — Áp dụng khi bận đi học trên trường cả ngày hoặc ôn thi:
-  1. Ban ngày: 100% việc trường học.
-  2. Chiều/Tối: DaVinci Resolve Express (60 – 90 phút).
+* 🟢 **MODE 1: NGHIÊM NGẶT (Peak Focus)** — Áp dụng khi ở nhà toàn thời gian, năng lượng dồi dào. Cày sâu Sprint 1/2 trên Elite Roadmap, hoàn thành 4 REEL mẫu và trọn vẹn 100% lịch trình.
+* 🟡 **MODE 2: QUAN TRỌNG (School/Busy)** — Áp dụng khi bận đi học trên trường cả ngày hoặc ôn thi đồ án:
+  1. Ban ngày: 100% việc trường học / đồ án tốt nghiệp.
+  2. Chiều/Tối: **Elite Roadmap Express (45 – 60 phút)** — Hoàn thành tối thiểu 1 bài hoặc 1 phân cảnh DaVinci để giữ chỉ tiêu 5–6h/tuần cùng Diễm.
   3. Thể dục: Calisthenics rút gọn (30 – 45 phút).
   4. Thuốc men: Telfor + MySpa tối, Magnesium trước ngủ.
-  5. Giới nghiêm 23:30, ngủ trước 00:15.
+  5. Buổi tối: **Duo Check-in** trên Elite Roadmap cùng Diễm + Ghi 1 Fleeting Note.
+  6. Giới nghiêm 23:30, ngủ trước 00:15.
 * 🔴 **MODE 3: SỐNG CÒN (Never Zero)** — Áp dụng khi kiệt sức, ốm sốt:
   1. Y tế sinh tồn: Telfor + MySpa + Rửa mũi & Magnesium 100%.
-  2. Nghề nghiệp: 15 phút mở DaVinci xem 1 clip Sean Kang (không để nguội tay).
-  3. Thể chất: 2 hiệp hít đất 5 phút.
-  4. Nghỉ ngơi không dằn vặt, ngủ sớm trước 23:00.
+  2. **Elite Anchor (15 phút):** Mở DaVinci / Xem 1 clip Sean Kang / Mở Elite Roadmap kiểm tra để giữ sợi dây liên kết tâm lý nhận lương trước Tết.
+  3. Thể chất: 2 hiệp chống đẩy nhẹ 5 phút.
+  4. Hồi phục: Nghỉ ngơi không dằn vặt, ngủ sớm trước 23:00 (Never Miss Twice!).
   👉 **Quy tắc: Never Miss Twice — Bật Mode 3 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1 hoặc 2!**
 
 ---
