@@ -57,7 +57,8 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 | **17:45 – 19:15** | **Workout: Calisthenics / Boxing** | Calisthenics Hypertrophy (Pull-up, Dip, Push-up) / Rest day Boxing. |
 | **19:30** | **Ăn tối + Uống Telfor 120mg & MySpa** | Dồn tác dụng phụ an dịu vào ban đêm! |
 | **20:30 – 21:15** | Tiếng Anh Freelance (Upwork/Fiverr) | Soạn template proposal, học từ vựng brief, nghe podcast 45p. |
-| **21:15 – 22:00** | **Duo Sync & Zettelkasten** | Mở **Elite Roadmap** tick bài cùng Diễm + Gõ `today` viết 1 Zettel tiếng Anh. |
+| **21:15 – 21:30** | **Đọc lại 3 – 5 Zettel (Spaced Repetition 3p)** | Mở icon review trên Obsidian (iPhone/Mac), đọc 60s active recall nạp phản xạ vào tiềm thức. |
+| **21:30 – 22:00** | **Duo Sync & Daily Log** | Mở **Elite Roadmap** tick bài cùng Diễm + Gõ `today` viết 2 câu tiếng Anh. |
 | **22:15** | Rửa mũi nước muối + 2 viên Magnesium | Thông mũi thở 100% + thư giãn cơ bắp trước ngủ. |
 | **23:00** | Giới nghiêm thiết bị điện tử | Tắt mọi màn hình xanh, đọc sách giấy nhẹ. |
 | **00:00** | Lên giường ngủ | Đảm bảo 7.5 tiếng ngủ sâu không đứt đoạn. |
@@ -69,18 +70,19 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 
 Để không bao giờ bị rơi vào cảm giác buông xuôi khi có biến cố:
 
-* 🟢 **MODE 1: NGHIÊM NGẶT (Peak Focus)** — Áp dụng khi ở nhà toàn thời gian, năng lượng dồi dào. Cày sâu Sprint 1/2 trên Elite Roadmap, hoàn thành 4 REEL mẫu và trọn vẹn 100% lịch trình.
+* 🟢 **MODE 1: NGHIÊM NGẶT (Peak Focus)** — Áp dụng khi ở nhà toàn thời gian, năng lượng dồi dào. Cày sâu Sprint 1/2 trên Elite Roadmap, hoàn thành 4 REEL mẫu, ôn 3–5 Zettel và trọn vẹn 100% lịch trình.
 * 🟡 **MODE 2: TINH GỌN / NỬA NGÀY (Compressed / Half-Day Focus Mode)** — Áp dụng khi ngủ quá giờ / dậy trưa, lười biếng buổi sáng, có việc nghiên cứu phát sinh hoặc bận việc trường (chỉ còn nửa ngày từ chiều):
   1. **Khởi động nhanh:** Dù dậy 11h–12h, uống 1 ly nước ấm lớn, rửa mặt tỉnh táo, mở Doom GTD chọn đúng **2 việc NEXT** (1 DaVinci + 1 Việc trường/Nghiên cứu).
   2. **DaVinci Resolve Nén (60 – 90 phút):** Cắt gọt 1 phân cảnh hoặc cày 1 bài Sprint trên Elite Roadmap bằng phím tắt `Q - W - E`, giữ chỉ tiêu tuần cùng Diễm.
   3. **Khối trọng tâm cấp bách (60 – 90 phút):** Giải quyết đồ án trường HOẶC việc nghiên cứu/tìm tòi phát sinh trong ngày.
   4. **Thể dục nhanh:** Calisthenics rút gọn (30 – 45 phút) với 3 set xà + chống đẩy + squat tại phòng để giữ lửa cơ bắp.
   5. **Dược lý buổi tối (19:30):** Ăn tối + uống Telfor 120mg & MySpa (Isotretinoin).
-  6. **Duo Check-in & Review (21:30):** Tick tiến độ trên Elite Roadmap cùng Diễm + Gõ `today` trong Terminal ghi nhận 2 phút.
-  7. **Phòng ngự đêm & Giấc ngủ:** Rửa mũi nước muối + 2 viên Magnesium Glycinate, ngủ trước 00:15 để mai quay lại Mode 1.
+  6. **Đọc lại 1 – 3 Zettel (21:15):** Mở icon review trên Obsidian (Mac/iPhone), đọc 60s active recall nạp phản xạ vào tiềm thức.
+  7. **Duo Check-in & Review (21:30):** Tick tiến độ trên Elite Roadmap cùng Diễm + Gõ `today` trong Terminal ghi nhận 2 phút.
+  8. **Phòng ngự đêm & Giấc ngủ:** Rửa mũi nước muối + 2 viên Magnesium Glycinate, ngủ trước 00:15 để mai quay lại Mode 1.
 * 🔴 **MODE 3: SỐNG CÒN (Never Zero)** — Áp dụng khi kiệt sức, ốm sốt:
   1. Y tế sinh tồn: Telfor + MySpa + Rửa mũi & Magnesium 100%.
-  2. **Elite Anchor (15 phút):** Mở DaVinci / Xem 1 clip Sean Kang / Mở Elite Roadmap kiểm tra để giữ sợi dây liên kết tâm lý nhận lương trước Tết.
+  2. **Elite & Review Anchor (15 phút):** Đọc 1 Zettel tiếng Anh trên iPhone (60s) + mở Elite Roadmap kiểm tra để giữ sợi dây liên kết tâm lý nhận lương trước Tết.
   3. Thể chất: 2 hiệp chống đẩy nhẹ 5 phút.
   4. Hồi phục: Nghỉ ngơi không dằn vặt, ngủ sớm trước 23:00 (Never Miss Twice!).
   👉 **Quy tắc: Never Miss Twice — Bật Mode 3 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1 hoặc 2!**
