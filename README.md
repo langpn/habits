@@ -70,13 +70,14 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 Để không bao giờ bị rơi vào cảm giác buông xuôi khi có biến cố:
 
 * 🟢 **MODE 1: NGHIÊM NGẶT (Peak Focus)** — Áp dụng khi ở nhà toàn thời gian, năng lượng dồi dào. Cày sâu Sprint 1/2 trên Elite Roadmap, hoàn thành 4 REEL mẫu và trọn vẹn 100% lịch trình.
-* 🟡 **MODE 2: QUAN TRỌNG (School/Busy)** — Áp dụng khi bận đi học trên trường cả ngày hoặc ôn thi đồ án:
-  1. Ban ngày: 100% việc trường học / đồ án tốt nghiệp.
-  2. Chiều/Tối: **Elite Roadmap Express (45 – 60 phút)** — Hoàn thành tối thiểu 1 bài hoặc 1 phân cảnh DaVinci để giữ chỉ tiêu 5–6h/tuần cùng Diễm.
-  3. Thể dục: Calisthenics rút gọn (30 – 45 phút).
-  4. Thuốc men: Telfor + MySpa tối, Magnesium trước ngủ.
-  5. Buổi tối: **Duo Check-in** trên Elite Roadmap cùng Diễm + Ghi 1 Fleeting Note.
-  6. Giới nghiêm 23:30, ngủ trước 00:15.
+* 🟡 **MODE 2: TINH GỌN / NỬA NGÀY (Compressed / Half-Day Focus Mode)** — Áp dụng khi ngủ quá giờ / dậy trưa, lười biếng buổi sáng, có việc nghiên cứu phát sinh hoặc bận việc trường (chỉ còn nửa ngày từ chiều):
+  1. **Khởi động nhanh:** Dù dậy 11h–12h, uống 1 ly nước ấm lớn, rửa mặt tỉnh táo, mở Doom GTD chọn đúng **2 việc NEXT** (1 DaVinci + 1 Việc trường/Nghiên cứu).
+  2. **DaVinci Resolve Nén (60 – 90 phút):** Cắt gọt 1 phân cảnh hoặc cày 1 bài Sprint trên Elite Roadmap bằng phím tắt `Q - W - E`, giữ chỉ tiêu tuần cùng Diễm.
+  3. **Khối trọng tâm cấp bách (60 – 90 phút):** Giải quyết đồ án trường HOẶC việc nghiên cứu/tìm tòi phát sinh trong ngày.
+  4. **Thể dục nhanh:** Calisthenics rút gọn (30 – 45 phút) với 3 set xà + chống đẩy + squat tại phòng để giữ lửa cơ bắp.
+  5. **Dược lý buổi tối (19:30):** Ăn tối + uống Telfor 120mg & MySpa (Isotretinoin).
+  6. **Duo Check-in & Review (21:30):** Tick tiến độ trên Elite Roadmap cùng Diễm + Gõ `today` trong Terminal ghi nhận 2 phút.
+  7. **Phòng ngự đêm & Giấc ngủ:** Rửa mũi nước muối + 2 viên Magnesium Glycinate, ngủ trước 00:15 để mai quay lại Mode 1.
 * 🔴 **MODE 3: SỐNG CÒN (Never Zero)** — Áp dụng khi kiệt sức, ốm sốt:
   1. Y tế sinh tồn: Telfor + MySpa + Rửa mũi & Magnesium 100%.
   2. **Elite Anchor (15 phút):** Mở DaVinci / Xem 1 clip Sean Kang / Mở Elite Roadmap kiểm tra để giữ sợi dây liên kết tâm lý nhận lương trước Tết.
