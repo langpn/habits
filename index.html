@@ -291,10 +291,10 @@
       gap: 6px;
     }
 
-    /* Mode Selector Buttons */
+    /* Mode Selector Buttons (Binary System: 2 Modes) */
     .mode-selector {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
 
@@ -864,27 +864,20 @@
       </div>
     </div>
 
-    <!-- Mode Selector -->
+    <!-- Mode Selector (Binary System: 2 Modes) -->
     <div class="mode-selector">
-      <!-- Strict Mode -->
+      <!-- Mode 1: Strict / Peak Attack -->
       <div class="mode-btn strict active-strict" id="btn-strict" onclick="switchMode('strict')">
         <span class="mode-tag">Level 1 • Rảnh & Khỏe</span>
-        <div class="mode-name">🟢 Nghiêm Ngặt (Peak)</div>
-        <div class="mode-desc">Trạng thái tinh thần cao, toàn bộ thời gian ở nhà, bung tối đa hỏa lực.</div>
+        <div class="mode-name">🟢 Tấn Công Toàn Lực (Peak Focus)</div>
+        <div class="mode-desc">Trạng thái tinh thần cao, toàn bộ thời gian ở nhà, bung tối đa hỏa lực 6 Khối Điểm Tựa.</div>
       </div>
 
-      <!-- Priority Mode -->
-      <div class="mode-btn priority" id="btn-priority" onclick="switchMode('priority')">
-        <span class="mode-tag">Level 2 • Nửa Ngày / Bận / Lười</span>
-        <div class="mode-name">🟡 Tinh Gọn (Half-Day / Nén)</div>
-        <div class="mode-desc">Dậy muộn, chỉ còn nửa ngày, nghiên cứu phát sinh hoặc bận việc trường. Hoàn thành 100% việc cốt lõi.</div>
-      </div>
-
-      <!-- Core Survival Mode -->
+      <!-- Mode 2: Core Survival Keystones -->
       <div class="mode-btn core" id="btn-core" onclick="switchMode('core')">
-        <span class="mode-tag">Level 3 • Kiệt Sức / Ốm</span>
-        <div class="mode-name">🔴 Sống Còn (Never Zero)</div>
-        <div class="mode-desc">Mệt mỏi, sốt mũi, stress. Chỉ giữ 4 sợi dây neo, không bao giờ bỏ cuộc.</div>
+        <span class="mode-tag" style="color: var(--accent-priority);">Level 2 • Nén / Biến Cố / Never Zero</span>
+        <div class="mode-name">🟡 Điểm Tựa Sống Còn (Never Zero)</div>
+        <div class="mode-desc">Dậy muộn, bận việc trường, mệt mỏi. Cắt bỏ việc râu ria, bảo vệ 100% các Keystones quyết định cuộc đời.</div>
       </div>
     </div>
 
@@ -1010,10 +1003,10 @@
       console.warn("Firebase Init notice:", e);
     }
 
-    // ==================== HABITS DATA DEFINITION (WITH ACTIVE KNOWLEDGE RESURFACING) ====================
+    // ==================== HABITS DATA DEFINITION (BINARY SYSTEM: 2 MODES) ====================
     const MODES_DATA = {
       strict: {
-        name: "Chế độ Nghiêm Ngặt (Peak)",
+        name: "Chế độ Tấn Công (Peak Focus)",
         color: "var(--accent-strict)",
         tasks: [
           { time: "08:15", cat: "Khởi động", title: "Khởi động tâm trí: Thiền 15p + Doom GTD khóa Top 3 NEXT", desc: "Hít thở sâu reset dopamine, mở org-agenda (C-c SPC) khóa 3 mục tiêu ngày, chuẩn bị bấm giờ Clock-in (I)." },
@@ -1026,26 +1019,16 @@
           { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ Đàm đạo 1 concept TOP với AI (Bonus)", desc: "Khám phá kiến trúc, mental models cùng AI khi có thời gian — giải trí trí tuệ, không áp lực syntax." }
         ]
       },
-      priority: {
-        name: "Chế độ Tinh Gọn (Nửa Ngày / Nén)",
+      core: {
+        name: "Chế độ Điểm Tựa Sống Còn (Survival Keystones - Never Zero)",
         color: "var(--accent-priority)",
         tasks: [
-          { time: "Khởi động", cat: "Khởi động nén", title: "Khởi động nén: Nước ấm + Doom GTD khóa đúng 2 việc", desc: "Dù dậy trưa, rửa mặt tỉnh táo, mở org-agenda khóa đúng 2 việc: 1 DaVinci + 1 Việc trường/Nghiên cứu. Không tham lam." },
-          { time: "Chiều / Tối", cat: "Deep Work Kép", title: "Khối cày nén: DaVinci Resolve (60-90p) + Đồ án trường (60-90p)", desc: "Hoàn thành 1 bài/phân cảnh trên Elite Roadmap giữ chỉ tiêu tuần cùng Diễm + giải quyết dứt điểm đồ án trường." },
-          { time: "18:00", cat: "Thân thể", title: "Calisthenics rút gọn: 3 set xà + chống đẩy + squat tại phòng", desc: "Chỉ mất 30 phút giữ lửa cơ bắp và lưu thông máu, không bỏ cuộc dù ngày bận hoặc lười biếng." },
-          { time: "19:30", cat: "Dược lý tối", title: "Ăn tối + Uống Telfor 120mg & MySpa (sau ăn)", desc: "Dồn tác dụng phụ an dịu vào ban đêm, bảo vệ sự tỉnh táo ban ngày." },
-          { time: "21:15", cat: "Tri thức", title: "Gợi nhớ tri thức: Đọc lướt 1 - 2 Zettel (Option + R / 2 phút)", desc: "Bấm Option+R trong Obsidian đọc lướt 1-2 note, bảo tồn dòng chảy tri thức ngay cả trong ngày bận rộn." },
-          { time: "21:30", cat: "Đồng bộ đêm", title: "Duo Sync Elite Roadmap + Rửa mũi & Magnesium", desc: "Tick tiến độ cùng Diễm + gõ 'today' + rửa mũi thông thở & Magnesium, ngủ trước 00:15 để mai quay lại Mode 1." },
-          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ Đàm đạo 1 concept với AI (Bonus)", desc: "Hỏi AI Agent 1 concept cốt lõi khi có thời gian rảnh rỗi." }
-        ]
-      },
-      core: {
-        name: "Chế độ Sống Còn (Never Zero)",
-        color: "var(--accent-core)",
-        tasks: [
-          { time: "Tối", cat: "Dược lý", title: "Dược lý sinh tồn: Telfor + MySpa + Rửa mũi & Magnesium 100%", desc: "Phòng ngự y tế tối đa, cơ thể đang yếu thì bảo vệ đường thở và uống thuốc đúng giờ là ưu tiên sống còn số một." },
-          { time: "15 Phút", cat: "Tri thức & Tết", title: "Neo tri thức & Mục tiêu Tết: Đọc 1 Zettel (Option + R) + Elite Roadmap", desc: "Bấm Option+R đọc lướt 1 Zettel 60s nạp tiềm thức + mở elite-roadmap giữ sợi dây liên kết tâm lý nhận lương trước Tết." },
-          { time: "5 Phút", cat: "Hồi phục", title: "2 Hiệp chống đẩy nhẹ tại chỗ + Ngủ sớm trước 22:30", desc: "Nhắc nhở cơ thể bạn là một chiến binh không bao giờ đầu hàng. Ngủ sớm hồi phục hoàn toàn (Never Miss Twice)." }
+          { time: "Keystone 1", cat: "DaVinci Nén", title: "DaVinci Resolve Nén: Cắt gọt 45 - 60 phút", desc: "Cắt tối thiểu 1 phân cảnh / 1 bài trên Elite Roadmap bằng phím Q-W-E. Không bao giờ để nguội tay nghề và giữ nhịp tiến độ cùng Diễm!" },
+          { time: "Keystone 2", cat: "Đồ án Nén", title: "Đồ án trường Nén: Giải quyết dứt điểm 45 - 60 phút", desc: "Tập trung giải quyết dứt điểm 1 phần bài tập hoặc báo cáo tốt nghiệp. Nhất quyết không để trễ hạn ra trường!" },
+          { time: "Keystone 3", cat: "Thân thể", title: "Thể chất giữ lửa: 3 set chống đẩy + xà + squat tại phòng", desc: "Chỉ mất 15-20 phút giữ lửa cơ bắp và lưu thông máu, nhắc nhở cơ thể bạn là một chiến binh không bao giờ bỏ cuộc." },
+          { time: "Keystone 4", cat: "Dược lý", title: "Dược lý sinh tồn: Telfor + MySpa + Rửa mũi & Magnesium 100%", desc: "Uống thuốc sau ăn tối + rửa mũi nước muối & 2 viên Magnesium trước ngủ. Bảo vệ đường thở và giấc ngủ là ưu tiên sống còn số một." },
+          { time: "Keystone 5", cat: "Tri thức", title: "Neo tri thức: Đọc lướt 1 Zettel gợi nhớ (Option + R / 60s)", desc: "Mở Obsidian bấm Option+R đọc lướt 1 note trong 60 giây nạp tiềm thức, bảo tồn dòng chảy tri thức không bao giờ bị đứt đoạn." },
+          { time: "Keystone 6", cat: "Đồng bộ", title: "Duo Sync Elite Roadmap + Ngủ sớm trước 23:00", desc: "Mở elite-roadmap giữ liên kết tâm lý nhận lương trước Tết cùng Diễm + ngủ sớm hồi phục cơ thể (Never Miss Twice)." }
         ]
       }
     };
@@ -1270,10 +1253,10 @@
 
     function renderTasks() {
       const dayData = getDayData(viewedDateKey);
-      const currentMode = dayData.mode || 'strict';
+      let currentMode = dayData.mode || 'strict';
+      if (!MODES_DATA[currentMode]) currentMode = 'strict';
 
       document.getElementById('btn-strict').className = 'mode-btn strict ' + (currentMode === 'strict' ? 'active-strict' : '');
-      document.getElementById('btn-priority').className = 'mode-btn priority ' + (currentMode === 'priority' ? 'active-priority' : '');
       document.getElementById('btn-core').className = 'mode-btn core ' + (currentMode === 'core' ? 'active-core' : '');
 
       const modeInfo = MODES_DATA[currentMode];
@@ -1334,8 +1317,7 @@
       } else {
         document.getElementById('progress-fill').style.background = 
           currentMode === 'strict' ? 'linear-gradient(90deg, #38bdf8, #10b981)' :
-          currentMode === 'priority' ? 'linear-gradient(90deg, #f59e0b, #10b981)' :
-          'linear-gradient(90deg, #ef4444, #f59e0b)';
+          'linear-gradient(90deg, #f59e0b, #10b981)';
       }
     }
 

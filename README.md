@@ -58,25 +58,26 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 
 ---
 
-## 🛡️ 4. HỆ THỐNG 3 CHẾ ĐỘ ĐÀN HỒI (ELASTIC HABITS)
+## 🛡️ 4. HỆ THỐNG NHỊ PHÂN TINH GỌN (2-MODE BINARY SYSTEM)
+> *"Triệt tiêu 100% sự do dự buổi sáng (Zero Decision Fatigue). Chỉ có 2 trạng thái rõ ràng: Tấn công toàn lực hoặc Bảo vệ các điểm tựa sinh tồn!"*
 
-Để không bao giờ bị rơi vào cảm giác buông xuôi khi có biến cố:
+* 🟢 **MODE 1: TẤN CÔNG TOÀN LỰC (Peak Focus - 6 Khối Điểm Tựa)** — Áp dụng cho mọi ngày bình thường, ở nhà toàn thời gian, năng lượng dồi dào:
+  1. **[08:15] Khởi động tâm trí:** Thiền 15p + Doom Emacs khóa Top 3 `NEXT`.
+  2. **[08:45 – 12:00] Deep Work Ca Sáng:** DaVinci Resolve cày Sprint 1/2 trên Elite Roadmap (phím tắt `Q - W - E - S - D`).
+  3. **[13:30 – 15:30] Deep Work Ca Chiều:** Đồ án trường & bài tập lớn để tốt nghiệp đại học đúng hạn.
+  4. **[17:45 – 19:15] Thân thể chiến binh:** Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Boxing.
+  5. **[19:30] Phòng ngự Dược lý tối:** Ăn tối + Uống Telfor 120mg & MySpa (dồn an dịu vào đêm).
+  6. **[21:15] Tái hiện tri thức (Note Review):** Bấm `Option + R` đọc lướt 2–3 Zettel trong 3 phút nạp tiềm thức.
+  7. **[21:30] Đồng bộ đêm & Giấc ngủ sâu:** Duo Sync Elite Roadmap cùng Diễm + Gõ `today` 2p + Rửa mũi & Magnesium, ngủ trước 00:00.
 
-* 🟢 **MODE 1: NGHIÊM NGẶT (Peak Focus)** — Áp dụng khi ở nhà toàn thời gian, năng lượng dồi dào. Cày sâu Sprint 1/2 trên Elite Roadmap, giải quyết việc trường, tập luyện, đọc 2–3 Zettel và ngủ chuẩn giờ.
-* 🟡 **MODE 2: TINH GỌN / NỬA NGÀY (Half-Day / Nén)** — Áp dụng khi ngủ dậy trưa, lười biếng buổi sáng, có việc nghiên cứu phát sinh hoặc bận việc trường đột xuất:
-  1. **Khởi động nén:** Dù dậy 11h–12h, uống nước ấm, rửa mặt tỉnh táo, mở Doom GTD chọn đúng **2 việc NEXT** (1 DaVinci + 1 Việc trường/Nghiên cứu).
-  2. **DaVinci Resolve nén (60 – 90 phút):** Cắt gọt 1 bài Sprint trên Elite Roadmap bằng phím tắt `Q - W - E`, giữ chỉ tiêu tuần cùng Diễm.
-  3. **Khối việc trường/Nghiên cứu (60 – 90 phút):** Giải quyết dứt điểm khối việc cấp bách phát sinh trong ngày.
-  4. **Thể dục rút gọn (30 – 45 phút):** 3 hiệp xà + chống đẩy + squat tại phòng để giữ lửa cơ bắp.
-  5. **Dược lý tối (19:30):** Ăn tối + uống Telfor 120mg & MySpa (Isotretinoin).
-  6. **Gợi nhớ tri thức (21:15):** Mở Obsidian bấm **`Option + R`** đọc lướt 1–2 note (2 phút), bảo tồn dòng chảy tri thức dù ngày bận rộn.
-  7. **Đồng bộ đêm & Giấc ngủ (21:30):** Duo Check-in Elite Roadmap cùng Diễm + gõ `today` + Rửa mũi & Magnesium, ngủ trước 00:15 để mai quay lại Mode 1.
-* 🔴 **MODE 3: SỐNG CÒN (Never Zero - 4 Neo)** — Áp dụng khi kiệt sức, ốm sốt:
-  1. **Y tế sinh tồn:** Telfor + MySpa + Rửa mũi & Magnesium 100%.
-  2. **Neo tri thức:** Bấm **`Option + R`** đọc lướt 1 Zettel gợi nhớ trong 60 giây, không để sợi dây tri thức bị đứt đoạn.
-  3. **Elite Anchor:** Mở Elite Roadmap kiểm tra giữ sợi dây liên kết tâm lý nhận lương trước Tết.
-  4. **Thể chất & Hồi phục:** 2 hiệp chống đẩy nhẹ 5 phút tại chỗ + Ngủ sớm trước 22:30 (Never Miss Twice!).
-  👉 **Quy tắc: Never Miss Twice — Bật Mode 3 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1 hoặc 2!**
+* 🟡 **MODE 2: ĐIỂM TỰA SỐNG CÒN (Survival Keystones - Never Zero)** — Áp dụng khi dậy muộn, bận việc trường đột xuất, ốm mệt hoặc biến cố trong ngày. Cắt bỏ mọi việc râu ria, nhưng **BẢO VỆ 100% CÁC KEYSTONES QUYẾT ĐỊNH CUỘC ĐỜI**:
+  1. ⚡ **[DaVinci Nén - 45 đến 60 phút]:** Cắt tối thiểu 1 phân cảnh / 1 bài trên Elite Roadmap bằng phím `Q-W-E`. Không bao giờ để nguội tay nghề và giữ nhịp cùng Diễm!
+  2. 🎓 **[Đồ án trường Nén - 45 đến 60 phút]:** Tập trung dứt điểm 1 phần bài tập trường hoặc đồ án tốt nghiệp. Nhất quyết không để trễ hạn ra trường!
+  3. 🏋️ **[Thể chất giữ lửa - 15 đến 20 phút]:** 3 set chống đẩy + xà + squat tại phòng để duy trì cơ bắp và lưu thông máu.
+  4. 🧬 **[Dược lý sinh tồn 100%]:** Uống Telfor 120mg & MySpa sau ăn tối + Rửa mũi nước muối & 2 viên Magnesium Glycinate trước ngủ.
+  5. 🧠 **[Neo tri thức 60 giây]:** Bấm `Option + R` đọc lướt 1 Zettelkasten nạp tiềm thức, không để sợi dây tri thức bị đứt đoạn.
+  6. 🌙 **[Duo Sync & Ngủ sớm]:** Mở Elite Roadmap giữ liên kết tâm lý nhận lương trước Tết cùng Diễm + ngủ sớm trước 23:00 hồi phục (Never Miss Twice).
+  👉 **Quy tắc: Never Miss Twice — Bật Mode 2 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1!**
 
 ---
 
