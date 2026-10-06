@@ -1010,50 +1010,40 @@
       console.warn("Firebase Init notice:", e);
     }
 
-    // ==================== HABITS DATA DEFINITION ====================
+    // ==================== HABITS DATA DEFINITION (6 KEYSTONE BLOCKS) ====================
     const MODES_DATA = {
       strict: {
         name: "Chế độ Nghiêm Ngặt (Peak)",
         color: "var(--accent-strict)",
         tasks: [
-          { time: "07:30", cat: "Morning Reset", title: "Thức dậy + Uống nước ấm + Ăn sáng nhẹ", desc: "Đánh thức hệ tiêu hóa, bù nước sau đêm. Không uống thuốc gây ngủ buổi sáng." },
-          { time: "08:15", cat: "Mindset", title: "Thiền định 15 phút (Reset Dopamine)", desc: "Hít thở sâu bằng mũi, đưa sóng não về trạng thái Alpha thư thái, tập trung." },
-          { time: "08:35", cat: "Planning", title: "Doom Emacs: Review GTD & Khóa Top 3 NEXT", desc: "Mở org-agenda (C-c SPC), khóa mục tiêu ngày và chuẩn bị bấm giờ Clock-in (I)." },
-          { time: "08:45 - 12:00", cat: "Elite Sprint", title: "DaVinci Resolve: Cày Sprint 1/2 Sean Kang (Deep Work 50/10)", desc: "Bật Flow Pomodoro (50/10), luyện cụm phím Q-W-E, cày bài tập trọng điểm trên Elite Roadmap." },
-          { time: "12:00", cat: "Lunch & Nap", title: "Ăn trưa kiểm soát tinh bột + Chợp mắt 20 phút", desc: "Giảm cơm trắng/đồ ngọt chống tụt đường huyết; nap 20p reset não (không uống MySpa trưa)." },
-          { time: "13:30 - 15:30", cat: "Academic", title: "School Tasks: Hoàn thành bài tập & đồ án tốt nghiệp", desc: "Giải quyết dứt điểm các môn ở trường, đảm bảo tiến độ ra trường đúng hạn." },
-          { time: "15:45 - 17:30", cat: "Elite Deliverable", title: "Dựng Reel Thực Chiến / Mẫu Portfolio (Upwork & Fiverr)", desc: "Làm ra sản phẩm hoàn chỉnh để chuẩn bị Gig Fiverr & Profile Upwork theo chỉ tiêu Sprint." },
-          { time: "17:45 - 19:15", cat: "Workout", title: "Calisthenics Hypertrophy / Boxing (Rest day)", desc: "Tăng cơ bắp (Pull-up, Dip, Push-up) / Đấm bao cát & Shadowboxing xả stress." },
-          { time: "19:30", cat: "Bio-Armor", title: "Ăn tối + Uống Telfor 120mg & MySpa (Isotretinoin)", desc: "Chuyển toàn bộ thuốc gây mệt/buồn ngủ sang sau bữa ăn tối để hỗ trợ giấc ngủ đêm!" },
-          { time: "20:30 - 21:15", cat: "English ESP", title: "Tiếng Anh Freelance (Upwork/Fiverr Proposals & Briefs)", desc: "Đọc brief khách hàng, soạn template chào thầu, nghe podcast editing 45 phút." },
-          { time: "21:15 - 21:30", cat: "Spaced Review", title: "Đọc lại 3 - 5 Zettel (Spaced Repetition 3 phút)", desc: "Mở icon review trên Obsidian (Mac/iPhone), đọc 60s active recall nạp phản xạ vào tiềm thức." },
-          { time: "21:30 - 22:00", cat: "Duo Sync & Log", title: "Cập nhật Elite Roadmap + Ghi nhật ký 'today' 2 phút", desc: "Tick bài tập trên elite-roadmap đồng bộ tiến độ cùng Diễm + Gõ 'today' viết 2 câu tiếng Anh." },
-          { time: "22:15", cat: "Night Bio", title: "Rửa mũi nước muối + Xịt mũi + 2 viên Magnesium Glycinate", desc: "Thông thoáng đường thở để thở mũi 100% khi ngủ + Magnesium Doctor's Best giúp ngủ sâu." },
-          { time: "23:00 - 00:00", cat: "Sleep Anchor", title: "Giới nghiêm thiết bị + Ngủ trước 00:00", desc: "Tắt toàn bộ màn hình, để não chìm vào giấc ngủ phục hồi 7.5 tiếng tự nhiên." },
-          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ TOP with AI Agent (Bonus)", desc: "Khám phá kiến trúc, mental models cùng AI khi có thời gian — giải trí trí tuệ, không áp lực syntax." }
+          { time: "08:15", cat: "Khởi động", title: "Khởi động tâm trí: Thiền 15p + Doom GTD khóa Top 3 NEXT", desc: "Hít thở sâu reset dopamine, mở org-agenda (C-c SPC) khóa 3 mục tiêu ngày, chuẩn bị bấm giờ Clock-in (I)." },
+          { time: "08:45 - 12:00", cat: "Elite Sprint", title: "Deep Work: DaVinci Resolve (Cày Sprint Sean Kang)", desc: "Bật Flow Pomodoro (50/10), luyện cụm phím Q-W-E-S-D, cắt thô A-Roll & xuất xưởng Reel theo lộ trình." },
+          { time: "13:30 - 15:30", cat: "Đồ án trường", title: "School Focus: Giải quyết dứt điểm bài tập & đồ án", desc: "Khung giờ vàng giải quyết các môn đại học, đảm bảo tiến độ bảo vệ đồ án ra trường đúng hạn trước Tết." },
+          { time: "17:45 - 19:15", cat: "Thân thể", title: "Thân thể chiến binh: Calisthenics Hypertrophy / Boxing", desc: "Kéo xà, chống đẩy, squat tăng cơ bắp hoặc xả stress bao cát. Cơ thể khỏe thì não mới sáng suốt." },
+          { time: "19:30", cat: "Dược lý tối", title: "Ăn tối + Uống Telfor 120mg & MySpa (Isotretinoin)", desc: "Dồn toàn bộ tác dụng phụ an dịu vào ban đêm để hỗ trợ giấc ngủ sâu, triệt tiêu cơn buồn ngủ ban ngày!" },
+          { time: "21:30", cat: "Đồng bộ đêm", title: "Duo Sync Elite Roadmap + Rửa mũi & 2 viên Magnesium", desc: "Tick bài cùng Diễm trên elite-roadmap + gõ 'today' 2 phút + thông mũi thở 100% & ngủ trước 00:00." },
+          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ TOP with AI Agent / Note Review (Option)", desc: "Bấm Option+R đọc lướt 1 Zettel hoặc đàm đạo concept cùng AI khi rảnh rỗi — thư thái, không áp lực." }
         ]
       },
       priority: {
         name: "Chế độ Tinh Gọn (Nửa Ngày / Nén)",
         color: "var(--accent-priority)",
         tasks: [
-          { time: "Khởi động", cat: "Quick Reset", title: "Khởi động ngày (Dù dậy trưa): Nước ấm + Doom GTD chọn 2 việc", desc: "Uống 1 ly nước lớn, rửa mặt tỉnh táo, mở Agenda khóa đúng 2 việc: 1 DaVinci + 1 Việc trường/Nghiên cứu." },
-          { time: "Chiều / Tối", cat: "Elite Sprint", title: "DaVinci Resolve Nén (60 - 90 phút)", desc: "Cày 1 bài hoặc 1 phân cảnh trên Elite Roadmap với cụm phím Q-W-E, giữ chỉ tiêu tuần cùng Diễm." },
-          { time: "Linh hoạt", cat: "Focus Block", title: "Việc trường HOẶC Nghiên cứu phát sinh (60 - 90 phút)", desc: "Giải quyết dứt điểm đồ án trường hoặc vấn đề nghiên cứu/tìm tòi phát sinh trong ngày." },
-          { time: "18:00", cat: "Workout", title: "Calisthenics rút gọn (30 - 45 phút)", desc: "3 hiệp hít xà + 3 hiệp chống đẩy + 3 hiệp squat tại phòng, giữ lửa cơ bắp dù ngày bận/lười." },
-          { time: "19:30", cat: "Bio-Armor", title: "Ăn tối + Uống Telfor 120mg & MySpa (Isotretinoin)", desc: "Uống sau ăn tối để tác dụng phụ an dịu dồn trọn vào ban đêm, không phá hoại ban ngày." },
-          { time: "21:15", cat: "Spaced Review", title: "Đọc lại 1 - 3 Zettel (Spaced Repetition 2 phút)", desc: "Mở icon review trên Obsidian (Mac/iPhone), đọc 60s active recall từng note tiếng Anh nạp vào tiềm thức." },
-          { time: "21:30", cat: "Duo Sync", title: "Duo Check-in Elite Roadmap + Ghi 'today' 2 phút", desc: "Tick tiến độ trên elite-roadmap cùng Diễm + Gõ 'today' ghi nhận con số và 1 câu tiếng Anh." },
-          { time: "22:30", cat: "Night Bio", title: "Rửa mũi + 2 viên Magnesium Glycinate + Ngủ trước 00:15", desc: "Bảo vệ đường thở thở mũi 100%, thư giãn cơ bắp, ngủ đủ giấc để mai trở lại Mode 1." },
-          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ Đàm đạo 1 concept TOP với AI (Bonus)", desc: "Hỏi AI Agent 1 concept cốt lõi của TOP nếu có thời gian rảnh rỗi." }
+          { time: "Khởi động", cat: "Quick Reset", title: "Nước ấm + Doom GTD: Khóa đúng 2 việc quan trọng nhất", desc: "Dù dậy trưa, rửa mặt tỉnh táo, mở Agenda khóa đúng 2 việc: 1 DaVinci + 1 Việc trường/Nghiên cứu." },
+          { time: "Chiều / Tối", cat: "Elite Sprint", title: "DaVinci Resolve nén (60 - 90 phút)", desc: "Cắt gọt 1 bài/phân cảnh trên Elite Roadmap với cụm phím Q-W-E, giữ chỉ tiêu tuần cùng Diễm." },
+          { time: "Linh hoạt", cat: "Đồ án trường", title: "Xử lý đồ án trường HOẶC việc nghiên cứu phát sinh (60 - 90p)", desc: "Tập trung giải quyết dứt điểm khối việc cấp bách phát sinh trong ngày." },
+          { time: "18:00", cat: "Thân thể", title: "Calisthenics rút gọn (30 - 45 phút)", desc: "3 hiệp hít xà + 3 hiệp chống đẩy + squat tại phòng, giữ lửa cơ bắp dù ngày bận/lười." },
+          { time: "19:30", cat: "Dược lý tối", title: "Ăn tối + Uống Telfor 120mg & MySpa (sau ăn)", desc: "Dồn tác dụng phụ an dịu vào ban đêm, bảo vệ sự tỉnh táo ban ngày." },
+          { time: "21:30", cat: "Đồng bộ đêm", title: "Duo Check-in Elite Roadmap + Rửa mũi & Magnesium", desc: "Tick tiến độ cùng Diễm + gõ 'today' + rửa mũi thông thở & Magnesium, ngủ trước 00:15 để mai quay lại Mode 1." },
+          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ Đàm đạo 1 concept với AI (Bonus)", desc: "Hỏi AI Agent 1 concept cốt lõi khi có thời gian rảnh rỗi." }
         ]
       },
       core: {
         name: "Chế độ Sống Còn (Never Zero)",
         color: "var(--accent-core)",
         tasks: [
-          { time: "Tối", cat: "Bio Shield", title: "Telfor + MySpa (sau ăn tối) + Rửa mũi & Magnesium 100%", desc: "Phòng ngự y tế tối đa, cơ thể đang yếu sức khỏe là ưu tiên số một." },
-          { time: "15 Phút", cat: "Elite & Review", title: "Đọc 1 Zettel tiếng Anh + Kiểm tra Elite Roadmap", desc: "Đọc 1 Zettel trên iPhone (60s active recall) + mở elite-roadmap giữ liên kết tâm lý nhận lương trước Tết." },
+          { time: "Tối", cat: "Bio Shield", title: "Telfor + MySpa (sau ăn tối) + Rửa mũi & Magnesium 100%", desc: "Phòng ngự y tế tối đa, cơ thể đang yếu thì sức khỏe là ưu tiên số một." },
+          { time: "15 Phút", cat: "Elite Anchor", title: "Kiểm tra Elite Roadmap + Đọc 1 Zettel gợi nhớ", desc: "Mở elite-roadmap giữ liên kết tâm lý nhận lương trước Tết + bấm Option+R đọc lướt 60s." },
           { time: "5 Phút", cat: "Body Anchor", title: "2 Hiệp chống đẩy / Giãn cơ nhẹ tại chỗ", desc: "Nhắc nhở cơ thể bạn là một chiến binh không bao giờ bỏ cuộc." },
           { time: "Tối", cat: "Recovery", title: "Nghỉ ngơi không dằn vặt + Ngủ sớm trước 23:00", desc: "Hồi phục hoàn toàn năng lượng để hôm sau chuyển lại Mode 1 hoặc 2 (Never Miss Twice)." }
         ]
