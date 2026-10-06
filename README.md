@@ -42,8 +42,8 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 
 ---
 
-## 📅 3. LỊCH TRÌNH 6 KHỐI TÁC CHIẾN ĐIỂM TỰA (MODE 1: NGHIÊM NGẶT / PEAK FOCUS)
-> *"Triệt tiêu vi quản lý (Micro-Habit Fatigue). Gom 14 đầu việc con thành đúng 6 Khối Điểm Tựa không thể phá vỡ!"*
+## 📅 3. LỊCH TRÌNH CÁC KHỐI TÁC CHIẾN ĐIỂM TỰA (MODE 1: NGHIÊM NGẶT / PEAK FOCUS)
+> *"Triệt tiêu vi quản lý (Micro-Habit Fatigue). Tập trung vào các Khối Điểm Tựa ra tiền & bảo tồn tri thức sống động!"*
 
 | Khung Giờ | Khối Tác Chiến Điểm Tựa | Chi Tiết Thực Thi & Tinh Thần |
 | :--- | :--- | :--- |
@@ -52,8 +52,9 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 | **13:30 – 15:30** | 🎓 **3. Ca chiều: Đồ án trường** | **Mục tiêu học vấn:** Giải quyết dứt điểm bài tập lớn & đồ án tốt nghiệp để ra trường đúng hạn trước Tết. |
 | **17:45 – 19:15** | 🏋️ **4. Thân thể chiến binh** | Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Rest day Boxing xả stress. |
 | **19:30** | 🧬 **5. Phòng ngự Dược lý tối** | Ăn tối + Uống **Telfor 120mg & MySpa (Isotretinoin)**. Dồn toàn bộ tác dụng phụ an dịu vào giấc ngủ đêm! |
-| **21:30** | 🌙 **6. Đồng bộ đêm & Giấc ngủ** | Tick **Elite Roadmap** cùng Diễm + Gõ `today` 2 phút + Rửa mũi nước muối & 2 viên **Magnesium Glycinate** + Ngủ trước 00:00. |
-| *Khi rảnh* | ☕ **⭐ Bonus / Giải trí trí tuệ** | Bấm `Option + R` đọc lướt 60s một Zettel hoặc đàm đạo mental models cùng AI — thư thái, không áp lực syntax. |
+| **21:15** | 🧠 **6. Tái hiện tri thức (Note Review)** | **Nhiệm vụ cốt lõi:** Mở Obsidian bấm **`Option + R`** đọc lướt 2–3 Zettel (60s/note). Giữ kho tri thức luôn sống, tưới nước tiềm thức, ngăn ngừa note bị đóng băng! |
+| **21:30** | 🌙 **7. Đồng bộ đêm & Giấc ngủ** | Tick **Elite Roadmap** cùng Diễm + Gõ `today` 2 phút + Rửa mũi nước muối & 2 viên **Magnesium Glycinate** + Ngủ trước 00:00. |
+| *Khi rảnh* | ☕ **⭐ Bonus / Giải trí trí tuệ** | Đàm đạo concept cùng AI khi rảnh rỗi — thư thái, không áp lực syntax. |
 
 ---
 
@@ -61,19 +62,20 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 
 Để không bao giờ bị rơi vào cảm giác buông xuôi khi có biến cố:
 
-* 🟢 **MODE 1: NGHIÊM NGẶT (Peak Focus - 6 Khối)** — Áp dụng khi ở nhà toàn thời gian, năng lượng dồi dào. Cày sâu Sprint 1/2 trên Elite Roadmap, giải quyết việc trường, tập luyện và ngủ chuẩn giờ.
+* 🟢 **MODE 1: NGHIÊM NGẶT (Peak Focus)** — Áp dụng khi ở nhà toàn thời gian, năng lượng dồi dào. Cày sâu Sprint 1/2 trên Elite Roadmap, giải quyết việc trường, tập luyện, đọc 2–3 Zettel và ngủ chuẩn giờ.
 * 🟡 **MODE 2: TINH GỌN / NỬA NGÀY (Half-Day / Nén)** — Áp dụng khi ngủ dậy trưa, lười biếng buổi sáng, có việc nghiên cứu phát sinh hoặc bận việc trường đột xuất:
-  1. **Khởi động nhanh:** Dù dậy 11h–12h, uống nước ấm, rửa mặt tỉnh táo, mở Doom GTD chọn đúng **2 việc NEXT** (1 DaVinci + 1 Việc trường/Nghiên cứu).
-  2. **DaVinci Resolve Nén (60 – 90 phút):** Cắt gọt 1 bài Sprint trên Elite Roadmap bằng phím tắt `Q - W - E`, giữ chỉ tiêu tuần cùng Diễm.
+  1. **Khởi động nén:** Dù dậy 11h–12h, uống nước ấm, rửa mặt tỉnh táo, mở Doom GTD chọn đúng **2 việc NEXT** (1 DaVinci + 1 Việc trường/Nghiên cứu).
+  2. **DaVinci Resolve nén (60 – 90 phút):** Cắt gọt 1 bài Sprint trên Elite Roadmap bằng phím tắt `Q - W - E`, giữ chỉ tiêu tuần cùng Diễm.
   3. **Khối việc trường/Nghiên cứu (60 – 90 phút):** Giải quyết dứt điểm khối việc cấp bách phát sinh trong ngày.
   4. **Thể dục rút gọn (30 – 45 phút):** 3 hiệp xà + chống đẩy + squat tại phòng để giữ lửa cơ bắp.
   5. **Dược lý tối (19:30):** Ăn tối + uống Telfor 120mg & MySpa (Isotretinoin).
-  6. **Đồng bộ đêm & Giấc ngủ (21:30):** Duo Check-in Elite Roadmap cùng Diễm + gõ `today` + Rửa mũi & Magnesium, ngủ trước 00:15 để mai quay lại Mode 1.
+  6. **Gợi nhớ tri thức (21:15):** Mở Obsidian bấm **`Option + R`** đọc lướt 1–2 note (2 phút), bảo tồn dòng chảy tri thức dù ngày bận rộn.
+  7. **Đồng bộ đêm & Giấc ngủ (21:30):** Duo Check-in Elite Roadmap cùng Diễm + gõ `today` + Rửa mũi & Magnesium, ngủ trước 00:15 để mai quay lại Mode 1.
 * 🔴 **MODE 3: SỐNG CÒN (Never Zero - 4 Neo)** — Áp dụng khi kiệt sức, ốm sốt:
   1. **Y tế sinh tồn:** Telfor + MySpa + Rửa mũi & Magnesium 100%.
-  2. **Elite Anchor:** Mở Elite Roadmap kiểm tra giữ sợi dây liên kết tâm lý nhận lương trước Tết + bấm `Option + R` đọc lướt 1 Zettel gợi nhớ.
-  3. **Thể chất tối thiểu:** 2 hiệp chống đẩy nhẹ 5 phút tại chỗ.
-  4. **Hồi phục không dằn vặt:** Nghỉ ngơi tuyệt đối, ngủ sớm trước 23:00 (Never Miss Twice!).
+  2. **Neo tri thức:** Bấm **`Option + R`** đọc lướt 1 Zettel gợi nhớ trong 60 giây, không để sợi dây tri thức bị đứt đoạn.
+  3. **Elite Anchor:** Mở Elite Roadmap kiểm tra giữ sợi dây liên kết tâm lý nhận lương trước Tết.
+  4. **Thể chất & Hồi phục:** 2 hiệp chống đẩy nhẹ 5 phút tại chỗ + Ngủ sớm trước 22:30 (Never Miss Twice!).
   👉 **Quy tắc: Never Miss Twice — Bật Mode 3 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1 hoặc 2!**
 
 ---

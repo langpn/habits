@@ -1010,7 +1010,7 @@
       console.warn("Firebase Init notice:", e);
     }
 
-    // ==================== HABITS DATA DEFINITION (6 KEYSTONE BLOCKS) ====================
+    // ==================== HABITS DATA DEFINITION (WITH ACTIVE KNOWLEDGE RESURFACING) ====================
     const MODES_DATA = {
       strict: {
         name: "Chế độ Nghiêm Ngặt (Peak)",
@@ -1021,20 +1021,21 @@
           { time: "13:30 - 15:30", cat: "Đồ án trường", title: "School Focus: Giải quyết dứt điểm bài tập & đồ án", desc: "Khung giờ vàng giải quyết các môn đại học, đảm bảo tiến độ bảo vệ đồ án ra trường đúng hạn trước Tết." },
           { time: "17:45 - 19:15", cat: "Thân thể", title: "Thân thể chiến binh: Calisthenics Hypertrophy / Boxing", desc: "Kéo xà, chống đẩy, squat tăng cơ bắp hoặc xả stress bao cát. Cơ thể khỏe thì não mới sáng suốt." },
           { time: "19:30", cat: "Dược lý tối", title: "Ăn tối + Uống Telfor 120mg & MySpa (Isotretinoin)", desc: "Dồn toàn bộ tác dụng phụ an dịu vào ban đêm để hỗ trợ giấc ngủ sâu, triệt tiêu cơn buồn ngủ ban ngày!" },
+          { time: "21:15", cat: "Tri thức", title: "Tái hiện tri thức: Đọc lướt 2 - 3 Zettel (Option + R / 3 phút)", desc: "Bấm Option+R trong Obsidian đọc lướt 60s/note. Giữ kho tri thức luôn sống, tưới nước tiềm thức và kích hoạt liên kết mới!" },
           { time: "21:30", cat: "Đồng bộ đêm", title: "Duo Sync Elite Roadmap + Rửa mũi & 2 viên Magnesium", desc: "Tick bài cùng Diễm trên elite-roadmap + gõ 'today' 2 phút + thông mũi thở 100% & ngủ trước 00:00." },
-          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ TOP with AI Agent / Note Review (Option)", desc: "Bấm Option+R đọc lướt 1 Zettel hoặc đàm đạo concept cùng AI khi rảnh rỗi — thư thái, không áp lực." }
+          { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ Đàm đạo 1 concept TOP với AI (Bonus)", desc: "Khám phá kiến trúc, mental models cùng AI khi có thời gian — giải trí trí tuệ, không áp lực syntax." }
         ]
       },
       priority: {
         name: "Chế độ Tinh Gọn (Nửa Ngày / Nén)",
         color: "var(--accent-priority)",
         tasks: [
-          { time: "Khởi động", cat: "Quick Reset", title: "Nước ấm + Doom GTD: Khóa đúng 2 việc quan trọng nhất", desc: "Dù dậy trưa, rửa mặt tỉnh táo, mở Agenda khóa đúng 2 việc: 1 DaVinci + 1 Việc trường/Nghiên cứu." },
-          { time: "Chiều / Tối", cat: "Elite Sprint", title: "DaVinci Resolve nén (60 - 90 phút)", desc: "Cắt gọt 1 bài/phân cảnh trên Elite Roadmap với cụm phím Q-W-E, giữ chỉ tiêu tuần cùng Diễm." },
-          { time: "Linh hoạt", cat: "Đồ án trường", title: "Xử lý đồ án trường HOẶC việc nghiên cứu phát sinh (60 - 90p)", desc: "Tập trung giải quyết dứt điểm khối việc cấp bách phát sinh trong ngày." },
-          { time: "18:00", cat: "Thân thể", title: "Calisthenics rút gọn (30 - 45 phút)", desc: "3 hiệp hít xà + 3 hiệp chống đẩy + squat tại phòng, giữ lửa cơ bắp dù ngày bận/lười." },
+          { time: "Khởi động", cat: "Khởi động nén", title: "Khởi động nén: Nước ấm + Doom GTD khóa đúng 2 việc", desc: "Dù dậy trưa, rửa mặt tỉnh táo, mở org-agenda khóa đúng 2 việc: 1 DaVinci + 1 Việc trường/Nghiên cứu. Không tham lam." },
+          { time: "Chiều / Tối", cat: "Deep Work Kép", title: "Khối cày nén: DaVinci Resolve (60-90p) + Đồ án trường (60-90p)", desc: "Hoàn thành 1 bài/phân cảnh trên Elite Roadmap giữ chỉ tiêu tuần cùng Diễm + giải quyết dứt điểm đồ án trường." },
+          { time: "18:00", cat: "Thân thể", title: "Calisthenics rút gọn: 3 set xà + chống đẩy + squat tại phòng", desc: "Chỉ mất 30 phút giữ lửa cơ bắp và lưu thông máu, không bỏ cuộc dù ngày bận hoặc lười biếng." },
           { time: "19:30", cat: "Dược lý tối", title: "Ăn tối + Uống Telfor 120mg & MySpa (sau ăn)", desc: "Dồn tác dụng phụ an dịu vào ban đêm, bảo vệ sự tỉnh táo ban ngày." },
-          { time: "21:30", cat: "Đồng bộ đêm", title: "Duo Check-in Elite Roadmap + Rửa mũi & Magnesium", desc: "Tick tiến độ cùng Diễm + gõ 'today' + rửa mũi thông thở & Magnesium, ngủ trước 00:15 để mai quay lại Mode 1." },
+          { time: "21:15", cat: "Tri thức", title: "Gợi nhớ tri thức: Đọc lướt 1 - 2 Zettel (Option + R / 2 phút)", desc: "Bấm Option+R trong Obsidian đọc lướt 1-2 note, bảo tồn dòng chảy tri thức ngay cả trong ngày bận rộn." },
+          { time: "21:30", cat: "Đồng bộ đêm", title: "Duo Sync Elite Roadmap + Rửa mũi & Magnesium", desc: "Tick tiến độ cùng Diễm + gõ 'today' + rửa mũi thông thở & Magnesium, ngủ trước 00:15 để mai quay lại Mode 1." },
           { time: "Khi rảnh", cat: "Giải trí", isBonus: true, title: "☕ Đàm đạo 1 concept với AI (Bonus)", desc: "Hỏi AI Agent 1 concept cốt lõi khi có thời gian rảnh rỗi." }
         ]
       },
@@ -1042,10 +1043,9 @@
         name: "Chế độ Sống Còn (Never Zero)",
         color: "var(--accent-core)",
         tasks: [
-          { time: "Tối", cat: "Bio Shield", title: "Telfor + MySpa (sau ăn tối) + Rửa mũi & Magnesium 100%", desc: "Phòng ngự y tế tối đa, cơ thể đang yếu thì sức khỏe là ưu tiên số một." },
-          { time: "15 Phút", cat: "Elite Anchor", title: "Kiểm tra Elite Roadmap + Đọc 1 Zettel gợi nhớ", desc: "Mở elite-roadmap giữ liên kết tâm lý nhận lương trước Tết + bấm Option+R đọc lướt 60s." },
-          { time: "5 Phút", cat: "Body Anchor", title: "2 Hiệp chống đẩy / Giãn cơ nhẹ tại chỗ", desc: "Nhắc nhở cơ thể bạn là một chiến binh không bao giờ bỏ cuộc." },
-          { time: "Tối", cat: "Recovery", title: "Nghỉ ngơi không dằn vặt + Ngủ sớm trước 23:00", desc: "Hồi phục hoàn toàn năng lượng để hôm sau chuyển lại Mode 1 hoặc 2 (Never Miss Twice)." }
+          { time: "Tối", cat: "Dược lý", title: "Dược lý sinh tồn: Telfor + MySpa + Rửa mũi & Magnesium 100%", desc: "Phòng ngự y tế tối đa, cơ thể đang yếu thì bảo vệ đường thở và uống thuốc đúng giờ là ưu tiên sống còn số một." },
+          { time: "15 Phút", cat: "Tri thức & Tết", title: "Neo tri thức & Mục tiêu Tết: Đọc 1 Zettel (Option + R) + Elite Roadmap", desc: "Bấm Option+R đọc lướt 1 Zettel 60s nạp tiềm thức + mở elite-roadmap giữ sợi dây liên kết tâm lý nhận lương trước Tết." },
+          { time: "5 Phút", cat: "Hồi phục", title: "2 Hiệp chống đẩy nhẹ tại chỗ + Ngủ sớm trước 22:30", desc: "Nhắc nhở cơ thể bạn là một chiến binh không bao giờ đầu hàng. Ngủ sớm hồi phục hoàn toàn (Never Miss Twice)." }
         ]
       }
     };
