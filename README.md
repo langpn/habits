@@ -48,14 +48,14 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 | Khung Giờ | Khối Tác Chiến Điểm Tựa | Chi Tiết Thực Thi & Tinh Thần |
 | :--- | :--- | :--- |
 | **08:15** | 🌅 **1. Khởi động tâm trí** | Thiền định 15 phút (Reset Dopamine) + Mở Doom Emacs (`C-c SPC`) khóa Top 3 việc `NEXT`. |
-| **08:45 – 12:00** | ⚡ **2. Ca sáng: DaVinci Resolve** | **Deep Work trọng điểm:** Cày Sprint Sean Kang trên **Elite Roadmap** (Flow Pomodoro 50/10, phím tắt `Q - W - E - S - D`). |
-| **13:30 – 15:30** | 🎓 **3. Ca chiều: Đồ án trường** | **Mục tiêu học vấn:** Giải quyết dứt điểm bài tập lớn & đồ án tốt nghiệp để ra trường đúng hạn trước Tết. |
-| **17:45 – 19:15** | 🏋️ **4. Thân thể chiến binh** | Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Rest day Boxing xả stress. |
-| **19:30** | 💊 **5. Phòng ngự Dược lý tối** | Ăn tối + Uống **Telfor 120mg & MySpa (Isotretinoin)**. Dồn toàn bộ tác dụng phụ mệt mỏi/an dịu vào ban đêm để hỗ trợ ngủ sâu, triệt tiêu cơn buồn ngủ ban ngày! |
-| **20:15** | 📡 **6. Radar Công nghệ & AI Agent** | **Nạp sóng mới (10–15p):** Xem 1 video / tin tức công nghệ hoặc AI Agent mới nhất trên YouTube/FB/X (AI Jason, MCP, Fireship...). Giữ góc nhìn nhạy bén của người Thuyền Trưởng! |
-| **21:15** | 🧠 **7. Tái hiện tri thức (Note Review)** | **Nhiệm vụ cốt lõi:** Mở Obsidian bấm **`Option + R`** đọc lướt 2–3 Zettel (60s/note). Giữ kho tri thức luôn sống, tưới nước tiềm thức, ngăn ngừa note bị đóng băng! |
-| **21:30** | 👥 **8. Duo Sync Elite Roadmap** | Mở **Elite Roadmap** tick bài học & kiểm tra tiến độ cùng Diễm để cùng nhau giữ vững mục tiêu nhận lương trước Tết. |
-| **21:45** | 📝 **9. Viết nhật ký ngày (Daily Log & Tiếng Anh)** | **Chốt lại ngày:** Gõ **`today`** trong Terminal (hoặc mở Daily Note trên iPhone): Ghi lại 3 con số (giờ DaVinci, Mode, Zettel), Top 3 chiến thắng và viết 2–3 câu tiếng Anh phản tư. |
+| **08:45 – 12:00** | ⚡ **2. Ca sáng: DaVinci Resolve** | **Deep Work trọng điểm:** Kiểm tra **Elite Roadmap** trước khi làm ➔ Bật Flow Pomodoro (50/10), luyện cụm phím `Q - W - E - S - D` cày Sprint Sean Kang. |
+| **12:00** | 🥗 **3. Nạp vi chất & Ăn trưa** | Uống **Omega-3 & Vitamin D3/K2** ngay sau bữa ăn trưa để chất béo hòa tan hấp thu 100%. Giảm tinh bột nhanh chống buồn ngủ + Chợp mắt 20p. |
+| **13:30 – 15:30** | 🎓 **4. Ca chiều: Đồ án trường** | **Mục tiêu học vấn:** Giải quyết dứt điểm bài tập lớn & đồ án tốt nghiệp để ra trường đúng hạn trước Tết. |
+| **17:45 – 19:15** | 🏋️ **5. Thân thể chiến binh** | Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Rest day Boxing xả stress. |
+| **19:30** | 💊 **6. Phòng ngự Dược lý tối** | Ăn tối + Uống **Telfor 120mg & MySpa (Isotretinoin)**. Dồn toàn bộ tác dụng phụ mệt mỏi/an dịu vào ban đêm để hỗ trợ ngủ sâu, triệt tiêu cơn buồn ngủ ban ngày! |
+| **20:15** | 📡 **7. Radar Công nghệ & AI Agent** | **Nạp sóng mới (10–15p):** Xem 1 video / tin tức công nghệ hoặc AI Agent mới nhất trên YouTube/FB/X (AI Jason, MCP, Fireship...). Giữ góc nhìn nhạy bén của người Thuyền Trưởng! |
+| **21:15** | 🧠 **8. Tái hiện tri thức (Note Review)** | **Nhiệm vụ cốt lõi:** Mở Obsidian bấm **`Option + R`** đọc lướt 2–3 Zettel (60s/note). Giữ kho tri thức luôn sống, tưới nước tiềm thức, ngăn ngừa note bị đóng băng! |
+| **21:30** | 📝 **9. Viết nhật ký ngày (Daily Log & Tiếng Anh)** | **Chốt lại ngày:** Gõ **`today`** trong Terminal (hoặc mở Daily Note trên iPhone): Ghi lại 3 con số (giờ DaVinci, Mode, Zettel), Top 3 chiến thắng và viết 2–3 câu tiếng Anh phản tư. |
 | **22:00** | 🌙 **10. Phòng ngự đêm & Giấc ngủ sâu** | Rửa mũi nước muối sinh lý + Xịt mũi + 2 viên **Magnesium Glycinate** + Giới nghiêm và ngủ trước 00:00 (thở mũi 100%). |
 | *Khi rảnh* | ☕ **⭐ Bonus / Giải trí trí tuệ** | Đàm đạo concept cùng AI khi rảnh rỗi — thư thái, không áp lực syntax. |
 
@@ -66,22 +66,24 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 
 * 🟢 **MODE 1: TẤN CÔNG TOÀN LỰC (Peak Focus - Các Khối Điểm Tựa)** — Áp dụng cho mọi ngày bình thường, ở nhà toàn thời gian, năng lượng dồi dào:
   1. **[08:15] Khởi động tâm trí:** Thiền 15p + Doom Emacs khóa Top 3 `NEXT`.
-  2. **[08:45 – 12:00] Deep Work Ca Sáng:** DaVinci Resolve cày Sprint 1/2 trên Elite Roadmap (phím tắt `Q - W - E - S - D`).
-  3. **[13:30 – 15:30] Deep Work Ca Chiều:** Đồ án trường & bài tập lớn để tốt nghiệp đại học đúng hạn.
-  4. **[17:45 – 19:15] Thân thể chiến binh:** Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Boxing.
-  5. **[19:30] Phòng ngự Dược lý tối:** Ăn tối + Uống Telfor 120mg & MySpa (dồn an dịu vào đêm).
-  6. **[20:15] Radar Công nghệ & AI Agent (10 - 15p):** Mở YouTube/FB xem 1 video cập nhật xu hướng AI Agent, MCP, công nghệ mới.
-  7. **[21:15] Tái hiện tri thức (Note Review):** Bấm `Option + R` đọc lướt 2–3 Zettel trong 3 phút nạp tiềm thức.
-  8. **[21:30] Duo Sync:** Mở Elite Roadmap kiểm tra và đồng bộ tiến độ cùng Diễm.
-  9. **[21:45] Viết nhật ký ngày (2p):** Gõ `today` ghi nhận 3 con số và 2 câu tiếng Anh phản tư.
+  2. **[08:45 – 12:00] Deep Work Ca Sáng:** Kiểm tra Elite Roadmap ➔ DaVinci Resolve cày Sprint Sean Kang (phím tắt `Q - W - E - S - D`).
+  3. **[12:00] Nạp vi chất:** Ăn trưa kiểm soát tinh bột + Uống Omega-3 & Vitamin D3/K2 + Chợp mắt 20p.
+  4. **[13:30 – 15:30] Deep Work Ca Chiều:** Đồ án trường & bài tập lớn để tốt nghiệp đại học đúng hạn.
+  5. **[17:45 – 19:15] Thân thể chiến binh:** Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Boxing.
+  6. **[19:30] Phòng ngự Dược lý tối:** Ăn tối + Uống Telfor 120mg & MySpa (dồn an dịu vào đêm).
+  7. **[20:15] Radar Công nghệ & AI Agent (10 - 15p):** Mở YouTube/FB xem 1 video cập nhật xu hướng AI Agent, MCP, công nghệ mới.
+  8. **[21:15] Tái hiện tri thức (Note Review):** Bấm `Option + R` đọc lướt 2–3 Zettel trong 3 phút nạp tiềm thức.
+  9. **[21:30] Viết nhật ký ngày (2p):** Gõ `today` ghi nhận 3 con số và 2 câu tiếng Anh phản tư.
   10. **[22:00] Phòng ngự đêm & Giấc ngủ sâu:** Rửa mũi & 2 viên Magnesium, ngủ trước 00:00 (thở mũi 100%).
 
-* 🟡 **MODE 2: ĐIỂM TỰA SỐNG CÒN (Survival Keystones - Never Zero)** — Áp dụng khi dậy muộn, bận việc trường đột xuất, ốm mệt hoặc biến cố trong ngày. Cắt bỏ mọi việc râu ria, **CHỈ GIỮ ĐÚNG 5 ĐIỂM TỰA SINH TỬ QUYẾT ĐỊNH CUỘC ĐỜI**:
-  1. ⚡ **[DaVinci Nén - 45 đến 60 phút]:** Cắt tối thiểu 1 phân cảnh / 1 bài trên Elite Roadmap bằng phím `Q-W-E`. Không bao giờ để nguội tay nghề và giữ nhịp cùng Diễm!
+* 🟡 **MODE 2: ĐIỂM TỰA SỐNG CÒN (Survival Keystones - Never Zero)** — Áp dụng khi dậy muộn, bận việc trường đột xuất, ốm mệt hoặc biến cố trong ngày. Cắt bỏ mọi việc râu ria, **BẢO VỆ 100% CÁC KEYSTONES QUYẾT ĐỊNH CUỘC ĐỜI & XU THẾ TƯƠNG LAI**:
+  1. ⚡ **[DaVinci Nén - 45 đến 60 phút]:** Kiểm tra Elite Roadmap ➔ Cắt tối thiểu 1 phân cảnh / 1 bài bằng phím `Q-W-E`. Không bao giờ để nguội tay nghề!
   2. 🎓 **[Đồ án trường Nén - 45 đến 60 phút]:** Tập trung dứt điểm 1 phần bài tập trường hoặc đồ án tốt nghiệp. Nhất quyết không để trễ hạn ra trường!
   3. 🏋️ **[Thể chất giữ lửa - 15 đến 20 phút]:** 3 set chống đẩy + xà + squat tại phòng để duy trì cơ bắp và lưu thông máu.
-  4. 🧬 **[Dược lý sinh tồn 100%]:** Uống Telfor 120mg & MySpa sau ăn tối + Rửa mũi nước muối & 2 viên Magnesium Glycinate trước ngủ. Bảo vệ đường thở và giấc ngủ là số 1.
-  5. 🌙 **[Duo Sync & Gõ 'today' 2p + Ngủ sớm trước 23:00]:** Mở Elite Roadmap giữ liên kết tâm lý cùng Diễm + gõ `today` ghi nhận con số + ngủ sớm hồi phục (Never Miss Twice).
+  4. 🥗 **[Nạp vi chất & Dược lý sinh tồn 100%]:** Uống Omega-3 & D3/K2 sau ăn trưa/tối + Uống Telfor 120mg & MySpa sau ăn tối + Rửa mũi nước muối & 2 viên Magnesium Glycinate trước ngủ. Bảo vệ giấc ngủ là số 1.
+  5. 📡 **[Radar AI nhanh - 5 đến 10 phút]:** Lướt nhanh 1 tin tức/video ngắn về AI Agent & công nghệ để không bao giờ bị tụt lại phía sau làn sóng mới.
+  6. 🧠 **[Neo tri thức 60 giây]:** Bấm `Option + R` đọc lướt 1–2 Zettelkasten nạp tiềm thức, bảo tồn tri thức và xu thế tương lai.
+  7. 📝 **[Nhật ký nhanh 2 phút & Hồi phục]:** Gõ `today` trong Terminal ghi nhận số giờ DaVinci và cảm xúc + Ngủ sớm trước 23:00 hồi phục cơ thể (Never Miss Twice).
   👉 **Quy tắc: Never Miss Twice — Bật Mode 2 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1!**
 
 ---
