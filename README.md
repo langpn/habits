@@ -52,8 +52,10 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 | **13:30 – 15:30** | 🎓 **3. Ca chiều: Đồ án trường** | **Mục tiêu học vấn:** Giải quyết dứt điểm bài tập lớn & đồ án tốt nghiệp để ra trường đúng hạn trước Tết. |
 | **17:45 – 19:15** | 🏋️ **4. Thân thể chiến binh** | Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Rest day Boxing xả stress. |
 | **19:30** | 🧬 **5. Phòng ngự Dược lý tối** | Ăn tối + Uống **Telfor 120mg & MySpa (Isotretinoin)**. Dồn toàn bộ tác dụng phụ an dịu vào giấc ngủ đêm! |
-| **21:15** | 🧠 **6. Tái hiện tri thức (Note Review)** | **Nhiệm vụ cốt lõi:** Mở Obsidian bấm **`Option + R`** đọc lướt 2–3 Zettel (60s/note). Giữ kho tri thức luôn sống, tưới nước tiềm thức, ngăn ngừa note bị đóng băng! |
-| **21:30** | 🌙 **7. Đồng bộ đêm & Giấc ngủ** | Tick **Elite Roadmap** cùng Diễm + Gõ `today` 2 phút + Rửa mũi nước muối & 2 viên **Magnesium Glycinate** + Ngủ trước 00:00. |
+| **19:30** | 💊 **5. Phòng ngự Dược lý tối** | Ăn tối + Uống **Telfor 120mg & MySpa (Isotretinoin)**. Dồn toàn bộ tác dụng phụ mệt mỏi/an dịu vào ban đêm để hỗ trợ ngủ sâu, triệt tiêu cơn buồn ngủ ban ngày! |
+| **20:15** | 📡 **6. Radar Công nghệ & AI Agent** | **Nạp sóng mới (10–15p):** Xem 1 video / tin tức công nghệ hoặc AI Agent mới nhất trên YouTube/FB/X (AI Jason, MCP, Fireship...). Giữ góc nhìn nhạy bén của người Thuyền Trưởng! |
+| **21:15** | 🧠 **7. Tái hiện tri thức (Note Review)** | **Nhiệm vụ cốt lõi:** Mở Obsidian bấm **`Option + R`** đọc lướt 2–3 Zettel (60s/note). Giữ kho tri thức luôn sống, tưới nước tiềm thức, ngăn ngừa note bị đóng băng! |
+| **21:30** | 🌙 **8. Đồng bộ đêm & Giấc ngủ** | Tick **Elite Roadmap** cùng Diễm + Gõ `today` 2 phút + Rửa mũi nước muối & 2 viên **Magnesium Glycinate** + Ngủ trước 00:00. |
 | *Khi rảnh* | ☕ **⭐ Bonus / Giải trí trí tuệ** | Đàm đạo concept cùng AI khi rảnh rỗi — thư thái, không áp lực syntax. |
 
 ---
@@ -61,22 +63,24 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 ## 🛡️ 4. HỆ THỐNG NHỊ PHÂN TINH GỌN (2-MODE BINARY SYSTEM)
 > *"Triệt tiêu 100% sự do dự buổi sáng (Zero Decision Fatigue). Chỉ có 2 trạng thái rõ ràng: Tấn công toàn lực hoặc Bảo vệ các điểm tựa sinh tồn!"*
 
-* 🟢 **MODE 1: TẤN CÔNG TOÀN LỰC (Peak Focus - 6 Khối Điểm Tựa)** — Áp dụng cho mọi ngày bình thường, ở nhà toàn thời gian, năng lượng dồi dào:
+* 🟢 **MODE 1: TẤN CÔNG TOÀN LỰC (Peak Focus - Các Khối Điểm Tựa)** — Áp dụng cho mọi ngày bình thường, ở nhà toàn thời gian, năng lượng dồi dào:
   1. **[08:15] Khởi động tâm trí:** Thiền 15p + Doom Emacs khóa Top 3 `NEXT`.
   2. **[08:45 – 12:00] Deep Work Ca Sáng:** DaVinci Resolve cày Sprint 1/2 trên Elite Roadmap (phím tắt `Q - W - E - S - D`).
   3. **[13:30 – 15:30] Deep Work Ca Chiều:** Đồ án trường & bài tập lớn để tốt nghiệp đại học đúng hạn.
   4. **[17:45 – 19:15] Thân thể chiến binh:** Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Boxing.
   5. **[19:30] Phòng ngự Dược lý tối:** Ăn tối + Uống Telfor 120mg & MySpa (dồn an dịu vào đêm).
-  6. **[21:15] Tái hiện tri thức (Note Review):** Bấm `Option + R` đọc lướt 2–3 Zettel trong 3 phút nạp tiềm thức.
-  7. **[21:30] Đồng bộ đêm & Giấc ngủ sâu:** Duo Sync Elite Roadmap cùng Diễm + Gõ `today` 2p + Rửa mũi & Magnesium, ngủ trước 00:00.
+  6. **[20:15] Radar Công nghệ & AI Agent (10 - 15p):** Mở YouTube/FB xem 1 video cập nhật xu hướng AI Agent, MCP, công nghệ mới.
+  7. **[21:15] Tái hiện tri thức (Note Review):** Bấm `Option + R` đọc lướt 2–3 Zettel trong 3 phút nạp tiềm thức.
+  8. **[21:30] Đồng bộ đêm & Giấc ngủ sâu:** Duo Sync Elite Roadmap cùng Diễm + Gõ `today` 2p + Rửa mũi & Magnesium, ngủ trước 00:00.
 
 * 🟡 **MODE 2: ĐIỂM TỰA SỐNG CÒN (Survival Keystones - Never Zero)** — Áp dụng khi dậy muộn, bận việc trường đột xuất, ốm mệt hoặc biến cố trong ngày. Cắt bỏ mọi việc râu ria, nhưng **BẢO VỆ 100% CÁC KEYSTONES QUYẾT ĐỊNH CUỘC ĐỜI**:
   1. ⚡ **[DaVinci Nén - 45 đến 60 phút]:** Cắt tối thiểu 1 phân cảnh / 1 bài trên Elite Roadmap bằng phím `Q-W-E`. Không bao giờ để nguội tay nghề và giữ nhịp cùng Diễm!
   2. 🎓 **[Đồ án trường Nén - 45 đến 60 phút]:** Tập trung dứt điểm 1 phần bài tập trường hoặc đồ án tốt nghiệp. Nhất quyết không để trễ hạn ra trường!
   3. 🏋️ **[Thể chất giữ lửa - 15 đến 20 phút]:** 3 set chống đẩy + xà + squat tại phòng để duy trì cơ bắp và lưu thông máu.
   4. 🧬 **[Dược lý sinh tồn 100%]:** Uống Telfor 120mg & MySpa sau ăn tối + Rửa mũi nước muối & 2 viên Magnesium Glycinate trước ngủ.
-  5. 🧠 **[Neo tri thức 60 giây]:** Bấm `Option + R` đọc lướt 1 Zettelkasten nạp tiềm thức, không để sợi dây tri thức bị đứt đoạn.
-  6. 🌙 **[Duo Sync & Ngủ sớm]:** Mở Elite Roadmap giữ liên kết tâm lý nhận lương trước Tết cùng Diễm + ngủ sớm trước 23:00 hồi phục (Never Miss Twice).
+  5. 📡 **[Radar AI nhanh - 5 đến 10 phút]:** Lướt nhanh 1 tin tức/video ngắn về AI Agent & công nghệ để không bao giờ bị tụt lại phía sau.
+  6. 🧠 **[Neo tri thức 60 giây]:** Bấm `Option + R` đọc lướt 1 Zettelkasten nạp tiềm thức, không để sợi dây tri thức bị đứt đoạn.
+  7. 🌙 **[Duo Sync & Ngủ sớm]:** Mở Elite Roadmap giữ liên kết tâm lý nhận lương trước Tết cùng Diễm + ngủ sớm trước 23:00 hồi phục (Never Miss Twice).
   👉 **Quy tắc: Never Miss Twice — Bật Mode 2 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1!**
 
 ---
