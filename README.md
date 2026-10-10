@@ -51,11 +51,12 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 | **08:45 – 12:00** | ⚡ **2. Ca sáng: DaVinci Resolve** | **Deep Work trọng điểm:** Cày Sprint Sean Kang trên **Elite Roadmap** (Flow Pomodoro 50/10, phím tắt `Q - W - E - S - D`). |
 | **13:30 – 15:30** | 🎓 **3. Ca chiều: Đồ án trường** | **Mục tiêu học vấn:** Giải quyết dứt điểm bài tập lớn & đồ án tốt nghiệp để ra trường đúng hạn trước Tết. |
 | **17:45 – 19:15** | 🏋️ **4. Thân thể chiến binh** | Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Rest day Boxing xả stress. |
-| **19:30** | 🧬 **5. Phòng ngự Dược lý tối** | Ăn tối + Uống **Telfor 120mg & MySpa (Isotretinoin)**. Dồn toàn bộ tác dụng phụ an dịu vào giấc ngủ đêm! |
 | **19:30** | 💊 **5. Phòng ngự Dược lý tối** | Ăn tối + Uống **Telfor 120mg & MySpa (Isotretinoin)**. Dồn toàn bộ tác dụng phụ mệt mỏi/an dịu vào ban đêm để hỗ trợ ngủ sâu, triệt tiêu cơn buồn ngủ ban ngày! |
 | **20:15** | 📡 **6. Radar Công nghệ & AI Agent** | **Nạp sóng mới (10–15p):** Xem 1 video / tin tức công nghệ hoặc AI Agent mới nhất trên YouTube/FB/X (AI Jason, MCP, Fireship...). Giữ góc nhìn nhạy bén của người Thuyền Trưởng! |
 | **21:15** | 🧠 **7. Tái hiện tri thức (Note Review)** | **Nhiệm vụ cốt lõi:** Mở Obsidian bấm **`Option + R`** đọc lướt 2–3 Zettel (60s/note). Giữ kho tri thức luôn sống, tưới nước tiềm thức, ngăn ngừa note bị đóng băng! |
-| **21:30** | 🌙 **8. Đồng bộ đêm & Giấc ngủ** | Tick **Elite Roadmap** cùng Diễm + Gõ `today` 2 phút + Rửa mũi nước muối & 2 viên **Magnesium Glycinate** + Ngủ trước 00:00. |
+| **21:30** | 👥 **8. Duo Sync Elite Roadmap** | Mở **Elite Roadmap** tick bài học & kiểm tra tiến độ cùng Diễm để cùng nhau giữ vững mục tiêu nhận lương trước Tết. |
+| **21:45** | 📝 **9. Viết nhật ký ngày (Daily Log & Tiếng Anh)** | **Chốt lại ngày:** Gõ **`today`** trong Terminal (hoặc mở Daily Note trên iPhone): Ghi lại 3 con số (giờ DaVinci, Mode, Zettel), Top 3 chiến thắng và viết 2–3 câu tiếng Anh phản tư. |
+| **22:00** | 🌙 **10. Phòng ngự đêm & Giấc ngủ sâu** | Rửa mũi nước muối sinh lý + Xịt mũi + 2 viên **Magnesium Glycinate** + Giới nghiêm và ngủ trước 00:00 (thở mũi 100%). |
 | *Khi rảnh* | ☕ **⭐ Bonus / Giải trí trí tuệ** | Đàm đạo concept cùng AI khi rảnh rỗi — thư thái, không áp lực syntax. |
 
 ---
@@ -71,7 +72,9 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
   5. **[19:30] Phòng ngự Dược lý tối:** Ăn tối + Uống Telfor 120mg & MySpa (dồn an dịu vào đêm).
   6. **[20:15] Radar Công nghệ & AI Agent (10 - 15p):** Mở YouTube/FB xem 1 video cập nhật xu hướng AI Agent, MCP, công nghệ mới.
   7. **[21:15] Tái hiện tri thức (Note Review):** Bấm `Option + R` đọc lướt 2–3 Zettel trong 3 phút nạp tiềm thức.
-  8. **[21:30] Đồng bộ đêm & Giấc ngủ sâu:** Duo Sync Elite Roadmap cùng Diễm + Gõ `today` 2p + Rửa mũi & Magnesium, ngủ trước 00:00.
+  8. **[21:30] Duo Sync:** Mở Elite Roadmap kiểm tra và đồng bộ tiến độ cùng Diễm.
+  9. **[21:45] Viết nhật ký ngày (2p):** Gõ `today` ghi nhận 3 con số và 2 câu tiếng Anh phản tư.
+  10. **[22:00] Phòng ngự đêm & Giấc ngủ sâu:** Rửa mũi & 2 viên Magnesium, ngủ trước 00:00 (thở mũi 100%).
 
 * 🟡 **MODE 2: ĐIỂM TỰA SỐNG CÒN (Survival Keystones - Never Zero)** — Áp dụng khi dậy muộn, bận việc trường đột xuất, ốm mệt hoặc biến cố trong ngày. Cắt bỏ mọi việc râu ria, nhưng **BẢO VỆ 100% CÁC KEYSTONES QUYẾT ĐỊNH CUỘC ĐỜI**:
   1. ⚡ **[DaVinci Nén - 45 đến 60 phút]:** Cắt tối thiểu 1 phân cảnh / 1 bài trên Elite Roadmap bằng phím `Q-W-E`. Không bao giờ để nguội tay nghề và giữ nhịp cùng Diễm!
@@ -80,7 +83,9 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
   4. 🧬 **[Dược lý sinh tồn 100%]:** Uống Telfor 120mg & MySpa sau ăn tối + Rửa mũi nước muối & 2 viên Magnesium Glycinate trước ngủ.
   5. 📡 **[Radar AI nhanh - 5 đến 10 phút]:** Lướt nhanh 1 tin tức/video ngắn về AI Agent & công nghệ để không bao giờ bị tụt lại phía sau.
   6. 🧠 **[Neo tri thức 60 giây]:** Bấm `Option + R` đọc lướt 1 Zettelkasten nạp tiềm thức, không để sợi dây tri thức bị đứt đoạn.
-  7. 🌙 **[Duo Sync & Ngủ sớm]:** Mở Elite Roadmap giữ liên kết tâm lý nhận lương trước Tết cùng Diễm + ngủ sớm trước 23:00 hồi phục (Never Miss Twice).
+  7. 👥 **[Duo Sync]:** Mở Elite Roadmap giữ liên kết tâm lý nhận lương trước Tết cùng Diễm.
+  8. 📝 **[Nhật ký nhanh 2 phút]:** Gõ `today` trong Terminal ghi nhận số giờ DaVinci và 1 dòng cảm xúc/tiếng Anh.
+  9. 🌙 **[Ngủ sớm hồi phục]:** Ngủ sớm trước 23:00 hồi phục cơ thể để ngày mai quay lại Mode 1 (Never Miss Twice).
   👉 **Quy tắc: Never Miss Twice — Bật Mode 2 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1!**
 
 ---
