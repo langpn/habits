@@ -76,16 +76,12 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
   9. **[21:45] Viết nhật ký ngày (2p):** Gõ `today` ghi nhận 3 con số và 2 câu tiếng Anh phản tư.
   10. **[22:00] Phòng ngự đêm & Giấc ngủ sâu:** Rửa mũi & 2 viên Magnesium, ngủ trước 00:00 (thở mũi 100%).
 
-* 🟡 **MODE 2: ĐIỂM TỰA SỐNG CÒN (Survival Keystones - Never Zero)** — Áp dụng khi dậy muộn, bận việc trường đột xuất, ốm mệt hoặc biến cố trong ngày. Cắt bỏ mọi việc râu ria, nhưng **BẢO VỆ 100% CÁC KEYSTONES QUYẾT ĐỊNH CUỘC ĐỜI**:
+* 🟡 **MODE 2: ĐIỂM TỰA SỐNG CÒN (Survival Keystones - Never Zero)** — Áp dụng khi dậy muộn, bận việc trường đột xuất, ốm mệt hoặc biến cố trong ngày. Cắt bỏ mọi việc râu ria, **CHỈ GIỮ ĐÚNG 5 ĐIỂM TỰA SINH TỬ QUYẾT ĐỊNH CUỘC ĐỜI**:
   1. ⚡ **[DaVinci Nén - 45 đến 60 phút]:** Cắt tối thiểu 1 phân cảnh / 1 bài trên Elite Roadmap bằng phím `Q-W-E`. Không bao giờ để nguội tay nghề và giữ nhịp cùng Diễm!
   2. 🎓 **[Đồ án trường Nén - 45 đến 60 phút]:** Tập trung dứt điểm 1 phần bài tập trường hoặc đồ án tốt nghiệp. Nhất quyết không để trễ hạn ra trường!
   3. 🏋️ **[Thể chất giữ lửa - 15 đến 20 phút]:** 3 set chống đẩy + xà + squat tại phòng để duy trì cơ bắp và lưu thông máu.
-  4. 🧬 **[Dược lý sinh tồn 100%]:** Uống Telfor 120mg & MySpa sau ăn tối + Rửa mũi nước muối & 2 viên Magnesium Glycinate trước ngủ.
-  5. 📡 **[Radar AI nhanh - 5 đến 10 phút]:** Lướt nhanh 1 tin tức/video ngắn về AI Agent & công nghệ để không bao giờ bị tụt lại phía sau.
-  6. 🧠 **[Neo tri thức 60 giây]:** Bấm `Option + R` đọc lướt 1 Zettelkasten nạp tiềm thức, không để sợi dây tri thức bị đứt đoạn.
-  7. 👥 **[Duo Sync]:** Mở Elite Roadmap giữ liên kết tâm lý nhận lương trước Tết cùng Diễm.
-  8. 📝 **[Nhật ký nhanh 2 phút]:** Gõ `today` trong Terminal ghi nhận số giờ DaVinci và 1 dòng cảm xúc/tiếng Anh.
-  9. 🌙 **[Ngủ sớm hồi phục]:** Ngủ sớm trước 23:00 hồi phục cơ thể để ngày mai quay lại Mode 1 (Never Miss Twice).
+  4. 🧬 **[Dược lý sinh tồn 100%]:** Uống Telfor 120mg & MySpa sau ăn tối + Rửa mũi nước muối & 2 viên Magnesium Glycinate trước ngủ. Bảo vệ đường thở và giấc ngủ là số 1.
+  5. 🌙 **[Duo Sync & Gõ 'today' 2p + Ngủ sớm trước 23:00]:** Mở Elite Roadmap giữ liên kết tâm lý cùng Diễm + gõ `today` ghi nhận con số + ngủ sớm hồi phục (Never Miss Twice).
   👉 **Quy tắc: Never Miss Twice — Bật Mode 2 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1!**
 
 ---
