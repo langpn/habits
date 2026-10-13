@@ -804,6 +804,474 @@
       opacity: 1;
     }
 
+    /* ==================== VIEW TABS ==================== */
+    .view-tabs {
+      display: flex;
+      gap: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 6px;
+      border-radius: 14px;
+      backdrop-filter: blur(12px);
+    }
+    .view-tab-btn {
+      flex: 1;
+      padding: 10px 14px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .view-tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .view-tab-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 2px 10px rgba(56, 189, 248, 0.15);
+    }
+
+    /* ==================== DEADLINES RADAR ==================== */
+    .deadline-radar-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .radar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .radar-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .radar-icon {
+      font-size: 20px;
+    }
+    .radar-title-text {
+      font-size: 14.5px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .radar-subtitle {
+      font-size: 11.5px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .radar-add-btn {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .radar-add-btn:hover {
+      background: rgba(56, 189, 248, 0.22);
+      color: #7dd3fc;
+    }
+
+    /* Task Add Form */
+    .task-form-drawer {
+      display: none;
+      background: rgba(10, 13, 20, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeIn 0.2s ease;
+    }
+    .task-form-drawer.open {
+      display: flex;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    .radar-input, .radar-select {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: var(--text-main);
+      font-size: 13px;
+      outline: none;
+      font-family: inherit;
+    }
+    .radar-input:focus, .radar-select:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+    .radar-select option {
+      background: #0a0d14;
+      color: #fff;
+    }
+    .radar-submit-btn {
+      background: #10b981;
+      border: none;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .radar-submit-btn:hover {
+      background: #059669;
+    }
+
+    /* Deadline items */
+    .deadline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .deadline-item {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: all 0.2s ease;
+    }
+    .deadline-item:hover {
+      background: rgba(255, 255, 255, 0.045);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    .deadline-item.completed {
+      opacity: 0.55;
+      background: rgba(255, 255, 255, 0.01);
+    }
+    .deadline-item.completed .deadline-title {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    .deadline-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+    .deadline-checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      border: 1.5px solid var(--text-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .deadline-item.completed .deadline-checkbox {
+      background: #10b981;
+      border-color: #10b981;
+    }
+    .deadline-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+    .deadline-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-main);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .deadline-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      flex-wrap: wrap;
+    }
+    .cat-tag {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .cat-tag.school {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+    }
+    .cat-tag.studio {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+    }
+    .cat-tag.life {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+    }
+
+    .deadline-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .countdown-badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .countdown-badge.overdue {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      color: #f87171;
+      animation: pulse 1.5s infinite;
+    }
+    .countdown-badge.today {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+    .countdown-badge.upcoming {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+    }
+    .countdown-badge.done {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+    .btn-delete-task {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 6px;
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+    .btn-delete-task:hover {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.1);
+    }
+    .empty-deadlines {
+      text-align: center;
+      padding: 16px;
+      color: var(--text-dim);
+      font-size: 12.5px;
+      font-style: italic;
+    }
+
+    /* ==================== WEEKLY MATRIX ==================== */
+    .weekly-view-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .weekly-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .weekly-lead-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 768px) {
+      .weekly-lead-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+    .lead-metric-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .lead-metric-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lead-metric-val {
+      font-size: 22px;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+    }
+    .lead-metric-sub {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    /* 7-Day Grid */
+    .weekly-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 900px) {
+      .weekly-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .weekly-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .week-day-col {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .week-day-col:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .week-day-col.is-today {
+      border-color: rgba(56, 189, 248, 0.5);
+      background: rgba(56, 189, 248, 0.06);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+    }
+    .week-day-col.status-strict {
+      border-top: 3px solid #10b981;
+    }
+    .week-day-col.status-core {
+      border-top: 3px solid #f59e0b;
+    }
+    .week-day-col.status-miss {
+      border-top: 3px solid #ef4444;
+    }
+    .week-day-col.status-future {
+      border-top: 3px solid var(--text-dim);
+      opacity: 0.6;
+    }
+    .day-col-header {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 8px;
+    }
+    .day-col-name {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .day-col-date {
+      font-size: 13.5px;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+    }
+    .day-col-status-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 10.5px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .day-col-davinci {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-size: 10.5px;
+      padding: 4px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-dim);
+    }
+    .day-col-davinci.active {
+      color: #fb923c;
+      background: rgba(249, 115, 22, 0.15);
+      font-weight: 700;
+    }
+
     @media (max-width: 768px) {
       .mode-selector {
         grid-template-columns: 1fr;
@@ -851,75 +1319,184 @@
       </div>
     </header>
 
-    <!-- Date Navigation Bar -->
-    <div class="date-bar">
-      <div class="date-nav">
-        <button class="nav-btn" onclick="shiftDay(-1)" title="Xem ngày trước">◀ Ngày trước</button>
-        <span class="current-date-text" id="display-date-label">Hôm nay</span>
-        <button class="nav-btn" id="next-day-btn" onclick="shiftDay(1)" style="display:none;" title="Xem ngày sau">Ngày sau ▶</button>
-        <button class="nav-btn jump-today" id="jump-today-btn" onclick="jumpToToday()" style="display:none;" title="Quay về hôm nay">Về Hôm Nay</button>
-      </div>
-      <div class="date-status" id="date-status-badge">
-        <span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>
-      </div>
+    <!-- View Switch Tabs -->
+    <div class="view-tabs">
+      <button class="view-tab-btn active" id="tab-btn-daily" onclick="switchView('daily')">
+        📅 Hôm Nay (Daily Check)
+      </button>
+      <button class="view-tab-btn" id="tab-btn-weekly" onclick="switchView('weekly')">
+        📊 Ma Trận Tuần (Weekly Matrix)
+      </button>
     </div>
 
-    <!-- Mode Selector (Binary System: 2 Modes) -->
-    <div class="mode-selector">
-      <!-- Mode 1: Strict / Peak Attack -->
-      <div class="mode-btn strict active-strict" id="btn-strict" onclick="switchMode('strict')">
-        <span class="mode-tag">Level 1 • Rảnh & Khỏe</span>
-        <div class="mode-name">🟢 Tấn Công Toàn Lực (Peak Focus)</div>
-        <div class="mode-desc">Trạng thái tinh thần cao, toàn bộ thời gian ở nhà, bung tối đa hỏa lực 6 Khối Điểm Tựa.</div>
-      </div>
-
-      <!-- Mode 2: Core Survival Keystones -->
-      <div class="mode-btn core" id="btn-core" onclick="switchMode('core')">
-        <span class="mode-tag" style="color: var(--accent-priority);">Level 2 • Nén / Biến Cố / Never Zero</span>
-        <div class="mode-name">🟡 Điểm Tựa Sống Còn (Never Zero)</div>
-        <div class="mode-desc">Dậy muộn, bận việc trường, mệt mỏi. Cắt bỏ việc râu ria, bảo vệ 100% các Keystones quyết định cuộc đời.</div>
-      </div>
-    </div>
-
-    <!-- Progress Card -->
-    <div class="progress-bar-container">
-      <div class="progress-stats">
-        <span class="progress-label" id="progress-mode-label">
-          <span>Tiến độ:</span> 
-          <strong id="mode-display-name" style="color: var(--accent-strict)">Chế độ Nghiêm Ngặt</strong>
-        </span>
-        <span class="progress-percent" id="progress-percent-text">0 / 11 (0%)</span>
-      </div>
-      <div class="bar-track">
-        <div class="bar-fill" id="progress-fill"></div>
-      </div>
-    </div>
-
-    <!-- Task List Container -->
-    <div class="task-list-card">
-      <div class="list-header">
-        <div class="list-title" id="list-title">
-          <span>📋</span> Danh sách Thói quen
+    <!-- Deadlines Radar Card -->
+    <div class="deadline-radar-card" id="deadline-radar-card">
+      <div class="radar-header">
+        <div class="radar-title">
+          <span class="radar-icon">🎯</span>
+          <div>
+            <div class="radar-title-text">
+              DEADLINES RADAR • HẠN CHÓT QUYẾT ĐỊNH
+              <span id="radar-count-badge" style="font-size: 11px; font-weight: 700; background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 2px 8px; border-radius: 999px;">0 việc</span>
+            </div>
+            <div class="radar-subtitle">Nhiệm vụ tự do: Nghĩa vụ IUH • Sprints Sean Kang • Upwork / Hợp đồng</div>
+          </div>
         </div>
-        <div class="list-actions">
-          <button class="action-btn" onclick="copyObsidianMarkdown()" title="Copy Markdown vào Obsidian">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            Obsidian
+        <div class="radar-actions">
+          <button class="radar-add-btn" id="radar-toggle-form-btn" onclick="toggleTaskForm()">
+            + Thêm Deadline
           </button>
         </div>
       </div>
 
-      <div id="tasks-container">
-        <!-- Rendered by JavaScript -->
+      <!-- Task Add Form Drawer -->
+      <form class="task-form-drawer" id="task-form-drawer" onsubmit="handleCreateTask(event)">
+        <div class="form-row">
+          <input type="text" class="radar-input" id="task-input-title" placeholder="Tên việc cần làm (VD: Nộp đề cương IUH, Chốt nháp Reel 1)..." required>
+          <select class="radar-select" id="task-input-category">
+            <option value="school">🎓 Học IUH</option>
+            <option value="studio">🎬 DaVinci Edit</option>
+            <option value="life">⚡ Cá nhân / Upwork</option>
+          </select>
+          <input type="date" class="radar-input" id="task-input-date" required>
+          <input type="time" class="radar-input" id="task-input-time" value="23:59">
+          <button type="submit" class="radar-submit-btn">Lưu việc</button>
+        </div>
+      </form>
+
+      <!-- Deadlines List -->
+      <div class="deadline-list" id="deadline-list-container">
+        <!-- Rendered by JS -->
       </div>
     </div>
 
-    <!-- Mindset Warning -->
-    <div class="mindset-card">
-      <div class="mindset-icon">⚠️</div>
-      <div class="mindset-content">
-        <h4>Mindset & Warning</h4>
-        <p>"Do you want a brilliant future, or a life of poverty and humiliation? Đừng tìm sự hoàn hảo, hãy tìm sự bền bỉ. Một ngày tồi tệ nhất vẫn phải giữ lấy sợi dây neo!"</p>
+    <!-- Daily View Container -->
+    <div id="daily-view-container" style="display: flex; flex-direction: column; gap: 16px;">
+      <!-- Date Navigation Bar -->
+      <div class="date-bar">
+        <div class="date-nav">
+          <button class="nav-btn" onclick="shiftDay(-1)" title="Xem ngày trước">◀ Ngày trước</button>
+          <span class="current-date-text" id="display-date-label">Hôm nay</span>
+          <button class="nav-btn" id="next-day-btn" onclick="shiftDay(1)" style="display:none;" title="Xem ngày sau">Ngày sau ▶</button>
+          <button class="nav-btn jump-today" id="jump-today-btn" onclick="jumpToToday()" style="display:none;" title="Quay về hôm nay">Về Hôm Nay</button>
+        </div>
+        <div class="date-status" id="date-status-badge">
+          <span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>
+        </div>
+      </div>
+
+      <!-- Mode Selector (Binary System: 2 Modes) -->
+      <div class="mode-selector">
+        <!-- Mode 1: Strict / Peak Attack -->
+        <div class="mode-btn strict active-strict" id="btn-strict" onclick="switchMode('strict')">
+          <span class="mode-tag">Level 1 • Rảnh & Khỏe</span>
+          <div class="mode-name">🟢 Tấn Công Toàn Lực (Peak Focus)</div>
+          <div class="mode-desc">Trạng thái tinh thần cao, toàn bộ thời gian ở nhà, bung tối đa hỏa lực 6 Khối Điểm Tựa.</div>
+        </div>
+
+        <!-- Mode 2: Core Survival Keystones -->
+        <div class="mode-btn core" id="btn-core" onclick="switchMode('core')">
+          <span class="mode-tag" style="color: var(--accent-priority);">Level 2 • Nén / Biến Cố / Never Zero</span>
+          <div class="mode-name">🟡 Điểm Tựa Sống Còn (Never Zero)</div>
+          <div class="mode-desc">Dậy muộn, bận việc trường, mệt mỏi. Cắt bỏ việc râu ria, bảo vệ 100% các Keystones quyết định cuộc đời.</div>
+        </div>
+      </div>
+
+      <!-- Progress Card -->
+      <div class="progress-bar-container">
+        <div class="progress-stats">
+          <span class="progress-label" id="progress-mode-label">
+            <span>Tiến độ:</span> 
+            <strong id="mode-display-name" style="color: var(--accent-strict)">Chế độ Nghiêm Ngặt</strong>
+          </span>
+          <span class="progress-percent" id="progress-percent-text">0 / 11 (0%)</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Task List Container -->
+      <div class="task-list-card">
+        <div class="list-header">
+          <div class="list-title" id="list-title">
+            <span>📋</span> Danh sách Thói quen
+          </div>
+          <div class="list-actions">
+            <button class="action-btn" onclick="copyObsidianMarkdown()" title="Copy Markdown vào Obsidian">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Obsidian
+            </button>
+          </div>
+        </div>
+
+        <div id="tasks-container">
+          <!-- Rendered by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Mindset Warning -->
+      <div class="mindset-card">
+        <div class="mindset-icon">⚠️</div>
+        <div class="mindset-content">
+          <h4>Mindset & Warning</h4>
+          <p>"Do you want a brilliant future, or a life of poverty and humiliation? Đừng tìm sự hoàn hảo, hãy tìm sự bền bỉ. Một ngày tồi tệ nhất vẫn phải giữ lấy sợi dây neo!"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weekly View Container -->
+    <div id="weekly-view-container" style="display: none;">
+      <div class="weekly-view-card">
+        <!-- Week Navigation -->
+        <div class="weekly-nav-bar">
+          <div class="date-nav">
+            <button class="nav-btn" onclick="shiftWeek(-1)" title="Tuần trước">◀ Tuần trước</button>
+            <span class="current-date-text" id="weekly-label-text">Tuần này</span>
+            <button class="nav-btn" id="weekly-next-btn" onclick="shiftWeek(1)" title="Tuần sau">Tuần sau ▶</button>
+            <button class="nav-btn jump-today" id="weekly-current-btn" onclick="jumpToCurrentWeek()" style="display: none;" title="Về tuần hiện tại">Về Tuần Này</button>
+          </div>
+          <div class="date-status">
+            <span>🛡️ Chuẩn ISO 8601 (Thứ 2 ➔ Chủ Nhật)</span>
+          </div>
+        </div>
+
+        <!-- Weekly Lead Metrics Summary -->
+        <div class="weekly-lead-metrics">
+          <div class="lead-metric-card">
+            <div class="lead-metric-title">
+              <span>🎬 DaVinci Deep Work</span>
+            </div>
+            <div class="lead-metric-val" id="metric-davinci-hours" style="color: #fb923c;">0 giờ</div>
+            <div class="lead-metric-sub">Chỉ tiêu: &ge; 21h/tuần (Cày Sprint Sean Kang)</div>
+          </div>
+
+          <div class="lead-metric-card">
+            <div class="lead-metric-title">
+              <span>🔥 Nhịp Độ Bền Bỉ</span>
+            </div>
+            <div class="lead-metric-val" id="metric-consistency-score" style="color: #10b981;">0 / 7</div>
+            <div class="lead-metric-sub" id="metric-consistency-sub">0% số ngày đạt Mode 1 hoặc Mode 2</div>
+          </div>
+
+          <div class="lead-metric-card">
+            <div class="lead-metric-title">
+              <span>⚡ Never Miss Twice</span>
+            </div>
+            <div class="lead-metric-val" id="metric-shield-status" style="color: #38bdf8;">AN TOÀN</div>
+            <div class="lead-metric-sub" id="metric-shield-sub">Không bị đứt xích 2 ngày liên tiếp</div>
+          </div>
+        </div>
+
+        <!-- 7-Day Matrix Grid -->
+        <div class="weekly-grid" id="weekly-grid-container">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Explanatory note -->
+        <div style="font-size: 11.5px; color: var(--text-dim); text-align: center; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          💡 Bấm vào bất kỳ ngày nào trong ma trận để nhảy ngay sang xem chi tiết check-list ngày đó.
+        </div>
       </div>
     </div>
 
@@ -988,6 +1565,7 @@
     let auth = null;
     let db = null;
     let habitsRef = null;
+    let customTasksRef = null;
     let isFirebaseInit = false;
 
     try {
@@ -995,6 +1573,7 @@
       auth = firebase.auth();
       db = firebase.database();
       habitsRef = db.ref('habits_vault_history');
+      customTasksRef = db.ref('custom_tasks');
       isFirebaseInit = true;
 
       // Set permanent local persistence for login
@@ -1418,13 +1997,436 @@
       }
     }
 
+    // ==================== DEADLINES RADAR STATE & LOGIC ====================
+    function getStoredCustomTasks() {
+      try {
+        return JSON.parse(localStorage.getItem('habits_custom_tasks') || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveStoredCustomTasks(tasks) {
+      try {
+        localStorage.setItem('habits_custom_tasks', JSON.stringify(tasks));
+      } catch (e) {}
+    }
+
+    function syncCustomTasksToCloud(tasks) {
+      if (isFirebaseInit && auth && auth.currentUser && customTasksRef) {
+        customTasksRef.set(tasks).catch(err => console.error("Cloud push custom_tasks error:", err));
+      }
+    }
+
+    function toggleTaskForm() {
+      const drawer = document.getElementById('task-form-drawer');
+      const btn = document.getElementById('radar-toggle-form-btn');
+      if (!drawer) return;
+      const isOpen = drawer.classList.contains('open');
+      if (isOpen) {
+        drawer.classList.remove('open');
+        if (btn) btn.textContent = '+ Thêm Deadline';
+      } else {
+        drawer.classList.add('open');
+        if (btn) btn.textContent = '✕ Đóng form';
+        const dateInput = document.getElementById('task-input-date');
+        if (dateInput && !dateInput.value) {
+          dateInput.value = formatLocalDate(new Date());
+        }
+        const titleInput = document.getElementById('task-input-title');
+        if (titleInput) titleInput.focus();
+      }
+    }
+
+    function handleCreateTask(e) {
+      e.preventDefault();
+      const title = document.getElementById('task-input-title').value.trim();
+      const category = document.getElementById('task-input-category').value;
+      const dueDate = document.getElementById('task-input-date').value;
+      const dueTime = document.getElementById('task-input-time').value || '23:59';
+
+      if (!title || !dueDate) {
+        showToast("Vui lòng nhập tên công việc và ngày hết hạn!");
+        return;
+      }
+
+      const tasks = getStoredCustomTasks();
+      const newTask = {
+        id: 'task_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+        title,
+        category,
+        dueDate,
+        dueTime,
+        completed: false,
+        completedAt: null,
+        createdAt: Date.now()
+      };
+
+      tasks.unshift(newTask);
+      saveStoredCustomTasks(tasks);
+      syncCustomTasksToCloud(tasks);
+      renderCustomTasks();
+
+      document.getElementById('task-input-title').value = '';
+      toggleTaskForm();
+      showToast("Đã thêm deadline mới!");
+    }
+
+    function toggleCustomTaskCompleted(taskId) {
+      const tasks = getStoredCustomTasks();
+      const task = tasks.find(t => t.id === taskId);
+      if (!task) return;
+      task.completed = !task.completed;
+      task.completedAt = task.completed ? Date.now() : null;
+      saveStoredCustomTasks(tasks);
+      syncCustomTasksToCloud(tasks);
+      renderCustomTasks();
+      showToast(task.completed ? "✓ Đã hoàn thành deadline!" : "Đã mở lại deadline!");
+    }
+
+    function deleteCustomTask(taskId) {
+      if (!confirm("Bạn có chắc muốn xóa nhiệm vụ này?")) return;
+      let tasks = getStoredCustomTasks();
+      tasks = tasks.filter(t => t.id !== taskId);
+      saveStoredCustomTasks(tasks);
+      syncCustomTasksToCloud(tasks);
+      renderCustomTasks();
+      showToast("Đã xóa nhiệm vụ.");
+    }
+
+    function getDeadlineCountdown(dueDate, dueTime, completed) {
+      if (completed) {
+        return { status: 'done', text: '✓ Đã xong' };
+      }
+      const now = new Date();
+      const target = new Date(`${dueDate}T${dueTime || '23:59'}:00`);
+      const diffMs = target.getTime() - now.getTime();
+      const diffHours = Math.round(diffMs / (1000 * 60 * 60));
+      const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+      if (diffMs < 0) {
+        const overdueDays = Math.abs(Math.floor(diffMs / (1000 * 60 * 60 * 24)));
+        if (overdueDays === 0) {
+          return { status: 'overdue', text: `⚠️ QUÁ HẠN ${Math.abs(diffHours)} GIỜ` };
+        }
+        return { status: 'overdue', text: `⚠️ QUÁ HẠN ${overdueDays} NGÀY` };
+      }
+
+      const todayStr = formatLocalDate(now);
+      if (dueDate === todayStr) {
+        if (diffHours <= 1) {
+          const diffMins = Math.max(1, Math.round(diffMs / (1000 * 60)));
+          return { status: 'today', text: `⏰ HÔM NAY (còn ${diffMins}p)` };
+        }
+        return { status: 'today', text: `⏰ HÔM NAY (còn ${diffHours}h)` };
+      }
+
+      if (diffDays === 1) {
+        return { status: 'today', text: `⏰ NGÀY MAI` };
+      }
+
+      return { status: 'upcoming', text: `⏳ Còn ${diffDays} ngày` };
+    }
+
+    function renderCustomTasks() {
+      const container = document.getElementById('deadline-list-container');
+      const countBadge = document.getElementById('radar-count-badge');
+      if (!container) return;
+
+      const tasks = getStoredCustomTasks();
+      const uncompleted = tasks.filter(t => !t.completed);
+      if (countBadge) {
+        countBadge.textContent = `${uncompleted.length} việc đang chờ`;
+      }
+
+      if (tasks.length === 0) {
+        container.innerHTML = `<div class="empty-deadlines">Chưa có nhiệm vụ hạn chót nào. Bấm "+ Thêm Deadline" để lập mục tiêu!</div>`;
+        return;
+      }
+
+      const sorted = [...tasks].sort((a, b) => {
+        if (a.completed !== b.completed) return a.completed ? 1 : -1;
+        if (!a.completed) {
+          return (a.dueDate + a.dueTime).localeCompare(b.dueDate + b.dueTime);
+        }
+        return (b.completedAt || 0) - (a.completedAt || 0);
+      });
+
+      const categoryNames = {
+        school: '🎓 Học IUH',
+        studio: '🎬 DaVinci Edit',
+        life: '⚡ Upwork / Cá nhân'
+      };
+
+      container.innerHTML = sorted.map(t => {
+        const cd = getDeadlineCountdown(t.dueDate, t.dueTime, t.completed);
+        const catLabel = categoryNames[t.category] || t.category;
+        const dateParts = t.dueDate.split('-');
+        const dateFormatted = `${dateParts[2]}/${dateParts[1]}`;
+        return `
+          <div class="deadline-item ${t.completed ? 'completed' : ''}">
+            <div class="deadline-left">
+              <div class="deadline-checkbox" onclick="toggleCustomTaskCompleted('${t.id}')" title="${t.completed ? 'Mở lại' : 'Đánh dấu hoàn thành'}">
+                ${t.completed ? `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>` : ''}
+              </div>
+              <div class="deadline-content">
+                <div class="deadline-title" title="${t.title}">${t.title}</div>
+                <div class="deadline-meta">
+                  <span class="cat-tag ${t.category}">${catLabel}</span>
+                  <span>📅 Hạn: ${dateFormatted} lúc ${t.dueTime}</span>
+                </div>
+              </div>
+            </div>
+            <div class="deadline-right">
+              <span class="countdown-badge ${cd.status}">${cd.text}</span>
+              <button class="btn-delete-task" onclick="deleteCustomTask('${t.id}')" title="Xóa nhiệm vụ">✕</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ==================== VIEW SWITCHING ====================
+    let currentActiveView = 'daily';
+
+    function switchView(viewName) {
+      currentActiveView = viewName;
+      const dailyContainer = document.getElementById('daily-view-container');
+      const weeklyContainer = document.getElementById('weekly-view-container');
+      const dailyBtn = document.getElementById('tab-btn-daily');
+      const weeklyBtn = document.getElementById('tab-btn-weekly');
+
+      if (viewName === 'weekly') {
+        if (dailyContainer) dailyContainer.style.display = 'none';
+        if (weeklyContainer) weeklyContainer.style.display = 'block';
+        if (dailyBtn) dailyBtn.classList.remove('active');
+        if (weeklyBtn) weeklyBtn.classList.add('active');
+        renderWeeklyMatrix();
+      } else {
+        if (dailyContainer) dailyContainer.style.display = 'flex';
+        if (weeklyContainer) weeklyContainer.style.display = 'none';
+        if (dailyBtn) dailyBtn.classList.add('active');
+        if (weeklyBtn) weeklyBtn.classList.remove('active');
+        updateDateUI();
+        renderTasks();
+      }
+    }
+
+    // ==================== WEEKLY MATRIX LOGIC ====================
+    let currentWeekOffset = 0;
+
+    function getISOWeekDates(weekOffset = 0) {
+      const anchor = parseLocalDate(getBiologicalToday());
+      const day = anchor.getDay();
+      const diffToMonday = (day === 0 ? -6 : 1) - day;
+      anchor.setDate(anchor.getDate() + diffToMonday + (weekOffset * 7));
+
+      const weekDays = [];
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(anchor);
+        d.setDate(anchor.getDate() + i);
+        weekDays.push(formatLocalDate(d));
+      }
+      return weekDays;
+    }
+
+    function shiftWeek(direction) {
+      currentWeekOffset += direction;
+      renderWeeklyMatrix();
+    }
+
+    function jumpToCurrentWeek() {
+      currentWeekOffset = 0;
+      renderWeeklyMatrix();
+    }
+
+    function renderWeeklyMatrix() {
+      const grid = document.getElementById('weekly-grid-container');
+      const labelEl = document.getElementById('weekly-label-text');
+      const currentBtn = document.getElementById('weekly-current-btn');
+      if (!grid) return;
+
+      const weekDates = getISOWeekDates(currentWeekOffset);
+      const bioToday = getBiologicalToday();
+      const history = getStoredHistory();
+
+      const startDate = parseLocalDate(weekDates[0]);
+      const endDate = parseLocalDate(weekDates[6]);
+      const startFmt = `${String(startDate.getDate()).padStart(2, '0')}/${String(startDate.getMonth() + 1).padStart(2, '0')}`;
+      const endFmt = `${String(endDate.getDate()).padStart(2, '0')}/${String(endDate.getMonth() + 1).padStart(2, '0')}`;
+
+      if (currentWeekOffset === 0) {
+        if (labelEl) labelEl.textContent = `Tuần Này (${startFmt} - ${endFmt})`;
+        if (currentBtn) currentBtn.style.display = 'none';
+      } else {
+        if (labelEl) labelEl.textContent = `${currentWeekOffset < 0 ? Math.abs(currentWeekOffset) + ' tuần trước' : '+' + currentWeekOffset + ' tuần'} (${startFmt} - ${endFmt})`;
+        if (currentBtn) currentBtn.style.display = 'inline-block';
+      }
+
+      const dayNamesVN = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật'];
+      
+      let totalDaVinciHours = 0;
+      let consistencyDays = 0;
+      let consecutiveMisses = 0;
+      let hasTwoConsecutiveMisses = false;
+
+      const renderedCols = weekDates.map((dateKey, index) => {
+        const d = parseLocalDate(dateKey);
+        const dayName = dayNamesVN[index];
+        const isToday = (dateKey === bioToday);
+        const isFuture = (dateKey > bioToday);
+
+        const dayData = history[dateKey];
+        const mode = (dayData && dayData.mode) ? dayData.mode : 'strict';
+        const checked = (dayData && dayData.checked) ? dayData.checked : {};
+        const checkedCount = Object.values(checked).filter(Boolean).length;
+
+        const davinciDone = Boolean((mode === 'strict' && checked['strict_1']) || (mode === 'core' && checked['core_0']));
+
+        let colStatus = 'status-future';
+        let statusBadgeText = 'Chưa tới';
+        let statusBadgeBg = 'rgba(255, 255, 255, 0.05)';
+        let statusBadgeColor = 'var(--text-dim)';
+
+        if (!isFuture) {
+          if (davinciDone) {
+            totalDaVinciHours += (mode === 'strict' ? 3 : 1);
+          }
+
+          if (checkedCount >= 4 || (mode === 'core' && checkedCount >= 3)) {
+            consistencyDays++;
+            consecutiveMisses = 0;
+            if (mode === 'strict') {
+              colStatus = 'status-strict';
+              statusBadgeText = `🟢 Mode 1 (${checkedCount} việc)`;
+              statusBadgeBg = 'rgba(16, 185, 129, 0.15)';
+              statusBadgeColor = '#34d399';
+            } else {
+              colStatus = 'status-core';
+              statusBadgeText = `🟡 Mode 2 (${checkedCount} việc)`;
+              statusBadgeBg = 'rgba(245, 158, 11, 0.15)';
+              statusBadgeColor = '#fbbf24';
+            }
+          } else if (checkedCount > 0) {
+            consistencyDays++;
+            consecutiveMisses = 0;
+            colStatus = 'status-core';
+            statusBadgeText = `🟡 Dở dang (${checkedCount} việc)`;
+            statusBadgeBg = 'rgba(245, 158, 11, 0.12)';
+            statusBadgeColor = '#fbbf24';
+          } else {
+            if (!isToday) {
+              consecutiveMisses++;
+              if (consecutiveMisses >= 2) {
+                hasTwoConsecutiveMisses = true;
+              }
+              colStatus = 'status-miss';
+              statusBadgeText = '🔴 Bỏ lỡ (Miss)';
+              statusBadgeBg = 'rgba(239, 68, 68, 0.15)';
+              statusBadgeColor = '#f87171';
+            } else {
+              colStatus = 'status-core';
+              statusBadgeText = '⏳ Đang diễn ra';
+              statusBadgeBg = 'rgba(56, 189, 248, 0.15)';
+              statusBadgeColor = '#38bdf8';
+            }
+          }
+        }
+
+        return `
+          <div class="week-day-col ${colStatus} ${isToday ? 'is-today' : ''}" onclick="selectDayFromWeekly('${dateKey}')" title="Bấm để xem check-list ${dayName} (${dateKey})">
+            <div class="day-col-header">
+              <span class="day-col-name">${dayName}</span>
+              <span class="day-col-date">${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}</span>
+              ${isToday ? `<span style="font-size: 9.5px; font-weight: 800; color: #38bdf8; text-transform: uppercase;">● Hôm nay</span>` : ''}
+            </div>
+            <div class="day-col-status-badge" style="background: ${statusBadgeBg}; color: ${statusBadgeColor};">
+              ${statusBadgeText}
+            </div>
+            <div class="day-col-davinci ${davinciDone ? 'active' : ''}">
+              <span>🎬 DaVinci:</span>
+              <span>${davinciDone ? '✓ Đạt' : (isFuture ? '-' : 'Chưa')}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      grid.innerHTML = renderedCols;
+
+      const dvHoursEl = document.getElementById('metric-davinci-hours');
+      if (dvHoursEl) dvHoursEl.textContent = `${totalDaVinciHours} giờ`;
+
+      const consistencyEl = document.getElementById('metric-consistency-score');
+      const consistencySubEl = document.getElementById('metric-consistency-sub');
+      if (consistencyEl) consistencyEl.textContent = `${consistencyDays} / 7 ngày`;
+      if (consistencySubEl) {
+        const pct = Math.round((consistencyDays / 7) * 100);
+        consistencySubEl.textContent = `${pct}% số ngày giữ lửa kỷ luật`;
+      }
+
+      const shieldEl = document.getElementById('metric-shield-status');
+      const shieldSubEl = document.getElementById('metric-shield-sub');
+      if (shieldEl && shieldSubEl) {
+        if (hasTwoConsecutiveMisses) {
+          shieldEl.textContent = '⚠️ NGUY HIỂM';
+          shieldEl.style.color = '#ef4444';
+          shieldSubEl.textContent = 'Vi phạm Never Miss Twice! Bằng mọi giá gỡ lại hôm nay!';
+        } else {
+          shieldEl.textContent = 'AN TOÀN';
+          shieldEl.style.color = '#38bdf8';
+          shieldSubEl.textContent = 'Dây neo được bảo toàn vững chắc.';
+        }
+      }
+    }
+
+    function selectDayFromWeekly(dateKey) {
+      viewedDateKey = dateKey;
+      switchView('daily');
+    }
+
+    // ==================== HERMES AGENT & AUTOMATION EXPORT ====================
+    window.exportBotSummary = function() {
+      const bioToday = getBiologicalToday();
+      const history = getStoredHistory();
+      const todayRec = history[bioToday] || { mode: 'strict', checked: {} };
+      const customTasks = getStoredCustomTasks();
+
+      const checkedCount = Object.values(todayRec.checked || {}).filter(Boolean).length;
+      const isStrict = todayRec.mode === 'strict';
+      const davinciDone = Boolean((isStrict && todayRec.checked && todayRec.checked['strict_1']) || (!isStrict && todayRec.checked && todayRec.checked['core_0']));
+
+      const uncompletedTasks = customTasks.filter(t => !t.completed);
+      const now = new Date();
+      const next48h = new Date(now.getTime() + 48 * 60 * 60 * 1000);
+
+      const upcoming48h = uncompletedTasks.filter(t => {
+        const target = new Date(`${t.dueDate}T${t.dueTime || '23:59'}:00`);
+        return target >= now && target <= next48h;
+      });
+
+      const overdue = uncompletedTasks.filter(t => {
+        const target = new Date(`${t.dueDate}T${t.dueTime || '23:59'}:00`);
+        return target < now;
+      });
+
+      return {
+        today: bioToday,
+        mode: todayRec.mode || 'strict',
+        habitsCompletedToday: checkedCount,
+        davinciCompletedToday: davinciDone,
+        overdueDeadlines: overdue.map(t => ({ title: t.title, dueDate: t.dueDate, dueTime: t.dueTime, category: t.category })),
+        deadlinesWithin48Hours: upcoming48h.map(t => ({ title: t.title, dueDate: t.dueDate, dueTime: t.dueTime, category: t.category })),
+        totalPendingDeadlines: uncompletedTasks.length
+      };
+    };
+
     // ==================== AUTH STATE & REALTIME LISTENER ====================
     if (isFirebaseInit && auth) {
       auth.onAuthStateChanged((user) => {
         if (user) {
           setSyncBadge('synced');
 
-          // Realtime listener with deep merge (no data loss)
+          // Realtime listener for habit history
           habitsRef.on('value', (snapshot) => {
             const cloudHistory = snapshot.val() || {};
             const localHistory = getStoredHistory() || {};
@@ -1456,22 +2458,48 @@
 
             saveStoredHistory(merged);
 
-            // Upload any local-only dates to cloud
             if (Object.keys(localHistory).length > 0 && JSON.stringify(merged) !== JSON.stringify(cloudHistory)) {
               habitsRef.set(merged).catch(() => {});
             }
 
             updateDateUI();
             renderTasks();
+            if (currentActiveView === 'weekly') renderWeeklyMatrix();
             setSyncBadge('synced');
           }, (err) => {
             console.error("Firebase read error (check rules):", err);
             setSyncBadge('offline');
           });
 
+          // Realtime listener for custom tasks
+          if (customTasksRef) {
+            customTasksRef.on('value', (snapshot) => {
+              const cloudTasks = snapshot.val() || [];
+              const localTasks = getStoredCustomTasks() || [];
+              const rawCloud = Array.isArray(cloudTasks) ? cloudTasks : Object.values(cloudTasks);
+
+              const taskMap = new Map();
+              localTasks.forEach(t => { if (t && t.id) taskMap.set(t.id, t); });
+              rawCloud.forEach(t => {
+                if (t && t.id) {
+                  if (!taskMap.has(t.id) || (t.completedAt && !taskMap.get(t.id).completedAt)) {
+                    taskMap.set(t.id, t);
+                  }
+                }
+              });
+
+              const mergedTasks = Array.from(taskMap.values());
+              saveStoredCustomTasks(mergedTasks);
+              renderCustomTasks();
+            }, (err) => {
+              console.error("Firebase custom_tasks read error:", err);
+            });
+          }
+
         } else {
           setSyncBadge('unauthed');
           if (habitsRef) habitsRef.off();
+          if (customTasksRef) customTasksRef.off();
         }
       });
     }
@@ -1479,6 +2507,7 @@
     // ==================== INITIALIZE ====================
     updateDateUI();
     renderTasks();
+    renderCustomTasks();
   </script>
 </body>
 </html>
