@@ -15,11 +15,11 @@ Cuộc đời và công việc của bạn được vận hành trơn tru bởi 
         ┌───────────────────────┼───────────────────────┐
         ▼                       ▼                       ▼
   DOOM EMACS GTD        NEOVIM + OBSIDIAN       HABITS COMPANION
-(Execution Engine)      (Knowledge Engine)     (Bio & Habit Engine)
-• Bắt việc (C-c <tab>)  • 3-Tier Zettelkasten  • 3 Chế độ đàn hồi
-• Agenda 4 khối (C-c SPC) • La bàn định hướng  • Đồng bộ iPhone ⇄ Mac
-• Clock-in tính giờ (I) • Spaced Repetition 3p • Realtime Firebase
-• projects.org          • Weekly Panorama      • Cố định langpn.dev
+(Deep Work Engine)     (Ground Truth & PKM)    (Visual Compass PWA)
+• Bắt việc (C-c <tab>)  • journal/ (today/week) • Tấm bản đồ định vị
+• Agenda sạch (C-c SPC) • notes/ (150-250w)     • 2 Chế độ nhị phân
+• Clock-in DaVinci & IUH• Spaced Repetition 60s • Habit Stacking vật lý
+• projects.org          • La bàn cuộc đời       • Cố định langpn.dev
 ```
 
 ---
@@ -128,37 +128,35 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 ## 🧠 7. QUY TRÌNH ZETTELKASTEN (NEOVIM + OBSIDIAN + ICLOUD)
 
 1. **Đồng bộ tự động qua iCloud:**
-   * Thư mục `~/.org/braindump` là symlink trỏ thẳng vào iCloud Drive. Mọi ghi chú tự động xuất hiện trên **Obsidian iPhone**.
+   * Thư mục `~/workspace/org/braindump` là symlink trỏ thẳng vào iCloud Drive. Mọi ghi chú tự động xuất hiện trên **Obsidian iPhone**.
 2. **Thao tác 1 giây với Neovim trong Terminal:**
-   * Gõ **`today`** rồi Enter: Tự tạo và mở Daily Note hôm nay theo mẫu `daily-template.md`.
-   * Gõ **`week`** rồi Enter: Tự tạo và mở Weekly Review tuần này theo mẫu `weekly-template.md`.
-3. **Cấu trúc Song ngữ thông minh (Bilingual Smart Zettel):**
-   * Tầng 1: Tiếng Anh chuyên nghiệp (English-First) để tắm ngôn ngữ và làm việc với khách Upwork.
-   * Tầng 2: Bản dịch nhận thức tiếng Việt (Vietnamese Anchor) giải thích bản chất trong 3 dòng.
-   * Tầng 3: Bảng từ vựng ngành (Key Industry Vocabulary).
-   * Tầng 4: Móc câu ngữ cảnh `[[ ]]` gắn về `the-personal-compass-of-lang.md`.
-4. **Ôn tập 3 phút bằng Spaced Repetition:**
-   * Plugin đã cấu hình chỉ quét thẻ `#permanent` và giới hạn tối đa 3–5 note/ngày.
-   * Không có áp lực, mỗi ngày mở ra đọc thử thách 60 giây biến kiến thức thành phản xạ vô thức.
+   * Gõ **`today`** rồi Enter: Tự tạo và mở Daily Note hôm nay trong `journal/daily/` theo mẫu `daily-template.md`. Điền đúng 3 con số sự thật (giờ DaVinci, giờ IUH, Mode) và 2 câu tiếng Anh.
+   * Gõ **`week`** rồi Enter: Tự tạo và mở Weekly Review tuần này trong `journal/weekly/` theo mẫu `weekly-template.md`.
+3. **Thánh địa Tri thức (`notes/`):**
+   * Mỗi Zettel là 1 luận điểm nguyên tử duy nhất (150 – 250 từ, đọc trong 45 giây).
+   * Bắt buộc có mục `### 🎯 Human Anchor` do chính Lang tự tay đúc kết từ kinh nghiệm cơ bắp thực tế.
+   * Móc câu ngữ cảnh `[[ ]]` gắn về `the-personal-compass-of-lang.md`.
+4. **Ôn tập 2 phút bằng Spaced Repetition:**
+   * Plugin quét thẻ `#permanent` trong `notes/` với chu kỳ giãn cách tối đa 180 ngày.
+   * Mỗi ngày mở ra đọc lướt 2–3 note, bồi đắp kinh nghiệm nếu có, bấm `Good` để note dạt ra xa.
 
 ---
 
 ## 🔭 8. NGHI THỨC WEEKLY REVIEW CHIỀU CHỦ NHẬT (16:30 – 17:15)
 
 Dành 45 phút bước lên "tầng cao 10.000 feet" để nhìn lại toàn cảnh:
-1. **Làm sạch:** Dọn `inbox.org` (Emacs) và `00_inbox/` (Obsidian) về số 0.
-2. **Kiểm tra sự thật:** Mở Emacs xem `%CLOCKSUM` tuần qua đã cày được bao nhiêu tiếng DaVinci (chỉ tiêu: 15–20h/tuần).
-3. **Phản tư:** Gõ lệnh `week` trong Terminal, trả lời 4 câu hỏi: Top 3 chiến thắng, bài học đắt giá, cảm xúc năng lượng, và **Mũi tên sinh tử (The ONE Thing)** cho tuần tới.
+1. **Làm sạch:** Dọn `inbox.org` (Emacs) về số 0.
+2. **Kiểm tra sự thật:** Xem tổng số giờ đã cày trên timeline DaVinci tuần qua (chỉ tiêu: 15–20h/tuần).
+3. **Phản tư:** Gõ lệnh `week` trong Terminal, trả lời 3 câu hỏi: Top 3 chiến thắng, bài học đắt giá, và **Mũi tên sinh tử (The ONE Thing)** cho tuần tới.
 
 ---
 
 ## 📱 9. HƯỚNG DẪN WEB APP TRÊN IPHONE (`https://langpn.github.io/habits/`)
 
-* **Giao diện:** Đã thêm vào Màn hình chính (PWA Fullscreen).
-* **Đăng nhập cố định:** Tài khoản `langpn.dev@gmail.com` đã cố định, chỉ cần gõ Mật khẩu là kết nối Realtime Sync với Firebase Cloud.
-* **Thời gian chuyển ngày:** Tự động sang ngày mới lúc **04:00 AM**.
-* **Xem lại ngày cũ:** Dùng nút `◀ Ngày trước` và `Ngày sau ▶`.
-* **Chuỗi ngày (Streak):** Tính chuẩn xác theo múi giờ Việt Nam, bảo lưu chuỗi nếu hôm qua đã hoàn thành.
+* **Vai trò tối thượng:** **Tấm bản đồ định vị bỏ túi (Visual Compass)**. Mở lên để ngắm cấu trúc ngày, kiểm tra các khối hành động khi bị mất phương hướng.
+* **Không áp lực vi quản lý:** Không bắt buộc phải vào tick từng thói quen nhỏ để giữ streak giả tạo. Thói quen sinh học đã được cài đặt tự động vào môi trường vật lý (Habit Stacking).
+* **Đăng nhập cố định:** Tài khoản `langpn.dev@gmail.com` đã cố định, kết nối Realtime Sync với Firebase Cloud.
+* **Thời gian chuyển ngày:** Tự động sang ngày mới lúc **04:00 AM** (bảo vệ trọn vẹn phiên làm việc ban đêm).
 
 ---
 
