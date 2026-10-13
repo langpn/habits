@@ -804,205 +804,226 @@
       opacity: 1;
     }
 
-    /* ==================== VIEW TABS ==================== */
-    .view-tabs {
-      display: flex;
-      gap: 8px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 6px;
-      border-radius: 14px;
-      backdrop-filter: blur(12px);
-    }
-    .view-tab-btn {
-      flex: 1;
-      padding: 10px 14px;
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      font-size: 13px;
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-    .view-tab-btn:hover {
-      color: var(--text-main);
-      background: rgba(255, 255, 255, 0.04);
-    }
-    .view-tab-btn.active {
-      background: rgba(56, 189, 248, 0.15);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      box-shadow: 0 2px 10px rgba(56, 189, 248, 0.15);
-    }
-
-    /* ==================== WEEKLY MATRIX ==================== */
-    .weekly-view-card {
+    /* ==================== 7-DAY RHYTHM HORIZON ==================== */
+    .rhythm-card {
       background: var(--card-bg);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 14px 16px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
-    .weekly-nav-bar {
+
+    .rhythm-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
     }
-    .weekly-lead-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    @media (max-width: 768px) {
-      .weekly-lead-metrics {
-        grid-template-columns: 1fr;
-      }
-    }
-    .lead-metric-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 14px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .lead-metric-title {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+
+    .rhythm-nav {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .lead-metric-val {
-      font-size: 22px;
+
+    .rhythm-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 700;
+    }
+
+    .rhythm-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .rhythm-btn.today-btn {
+      width: auto;
+      padding: 0 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .rhythm-week-title {
+      font-size: 13px;
       font-weight: 800;
       font-family: 'JetBrains Mono', monospace;
       color: #fff;
-    }
-    .lead-metric-sub {
-      font-size: 11px;
-      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* 7-Day Grid */
-    .weekly-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 10px;
+    .rhythm-metrics {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
     }
-    @media (max-width: 900px) {
-      .weekly-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 500px) {
-      .weekly-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    .week-day-col {
-      background: rgba(255, 255, 255, 0.02);
+
+    .metric-pill {
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 14px 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      position: relative;
-    }
-    .week-day-col:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.05);
-    }
-    .week-day-col.is-today {
-      border-color: rgba(56, 189, 248, 0.5);
-      background: rgba(56, 189, 248, 0.06);
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
-    }
-    .week-day-col.status-strict {
-      border-top: 3px solid #10b981;
-    }
-    .week-day-col.status-core {
-      border-top: 3px solid #f59e0b;
-    }
-    .week-day-col.status-miss {
-      border-top: 3px solid #ef4444;
-    }
-    .week-day-col.status-future {
-      border-top: 3px solid var(--text-dim);
-      opacity: 0.6;
-    }
-    .day-col-header {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      padding-bottom: 8px;
-    }
-    .day-col-name {
-      font-size: 11.5px;
-      font-weight: 700;
+      align-items: center;
+      gap: 5px;
       color: var(--text-muted);
     }
-    .day-col-date {
+
+    .metric-pill strong {
+      color: #fff;
+    }
+
+    /* 7-Day Pill Strip */
+    .rhythm-strip {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .day-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 8px 4px 6px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      user-select: none;
+    }
+
+    .day-pill:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .day-pill.active {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: #38bdf8;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+    }
+
+    .day-pill.is-today-pill::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 6px #38bdf8;
+    }
+
+    .day-pill-name {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .day-pill.active .day-pill-name {
+      color: #7dd3fc;
+    }
+
+    .day-pill-num {
       font-size: 13.5px;
       font-weight: 800;
       font-family: 'JetBrains Mono', monospace;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .day-pill.active .day-pill-num {
       color: #fff;
     }
-    .day-col-status-badge {
+
+    .day-pill-indicators {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 4px 8px;
-      border-radius: 6px;
-      font-size: 10.5px;
-      font-weight: 700;
+      gap: 3px;
+      min-height: 14px;
+    }
+
+    .dot-status {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .dot-strict {
+      background: #10b981;
+      box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+    }
+
+    .dot-core {
+      background: #f59e0b;
+      box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+    }
+
+    .dot-miss {
+      background: #ef4444;
+      box-shadow: 0 0 6px rgba(239, 68, 68, 0.6);
+    }
+
+    .dot-future {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .dot-davinci {
+      font-size: 9px;
+      line-height: 1;
+    }
+
+    /* Selected day info banner */
+    .rhythm-active-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .rhythm-active-banner strong {
+      color: #fff;
       font-family: 'JetBrains Mono', monospace;
-    }
-    .day-col-davinci {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      font-size: 10.5px;
-      padding: 4px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-dim);
-    }
-    .day-col-davinci.active {
-      color: #fb923c;
-      background: rgba(249, 115, 22, 0.15);
-      font-weight: 700;
     }
 
     @media (max-width: 768px) {
-      .mode-selector {
-        grid-template-columns: 1fr;
-      }
       .header {
         flex-direction: column;
         align-items: flex-start;
@@ -1011,6 +1032,21 @@
       .header-badges {
         width: 100%;
         justify-content: space-between;
+      }
+      .rhythm-strip {
+        gap: 4px;
+      }
+      .day-pill {
+        padding: 6px 2px 4px 2px;
+      }
+      .day-pill-name {
+        font-size: 9px;
+      }
+      .day-pill-num {
+        font-size: 12px;
+      }
+      .mode-selector {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -1046,143 +1082,95 @@
       </div>
     </header>
 
-    <!-- View Switch Tabs -->
-    <div class="view-tabs">
-      <button class="view-tab-btn active" id="tab-btn-daily" onclick="switchView('daily')">
-        📅 Hôm Nay (Daily Check)
-      </button>
-      <button class="view-tab-btn" id="tab-btn-weekly" onclick="switchView('weekly')">
-        📊 Ma Trận Tuần (Weekly Matrix)
-      </button>
-    </div>
-
-    <!-- Daily View Container -->
-    <div id="daily-view-container" style="display: flex; flex-direction: column; gap: 16px;">
-      <!-- Date Navigation Bar -->
-      <div class="date-bar">
-        <div class="date-nav">
-          <button class="nav-btn" onclick="shiftDay(-1)" title="Xem ngày trước">◀ Ngày trước</button>
-          <span class="current-date-text" id="display-date-label">Hôm nay</span>
-          <button class="nav-btn" id="next-day-btn" onclick="shiftDay(1)" style="display:none;" title="Xem ngày sau">Ngày sau ▶</button>
-          <button class="nav-btn jump-today" id="jump-today-btn" onclick="jumpToToday()" style="display:none;" title="Quay về hôm nay">Về Hôm Nay</button>
+    <!-- 7-Day Rhythm Horizon (Integrated Weekly Strip) -->
+    <div class="rhythm-card" id="rhythm-card">
+      <div class="rhythm-header">
+        <div class="rhythm-nav">
+          <button class="rhythm-btn" onclick="shiftWeek(-1)" title="Tuần trước">◀</button>
+          <span class="rhythm-week-title" id="rhythm-week-label">Tuần Này</span>
+          <button class="rhythm-btn" onclick="shiftWeek(1)" title="Tuần sau">▶</button>
+          <button class="rhythm-btn today-btn" id="rhythm-today-btn" onclick="jumpToToday()" style="display: none;" title="Về hôm nay">Hôm nay</button>
         </div>
-        <div class="date-status" id="date-status-badge">
-          <span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>
-        </div>
-      </div>
-
-      <!-- Mode Selector (Binary System: 2 Modes) -->
-      <div class="mode-selector">
-        <!-- Mode 1: Strict / Peak Attack -->
-        <div class="mode-btn strict active-strict" id="btn-strict" onclick="switchMode('strict')">
-          <span class="mode-tag">Level 1 • Rảnh & Khỏe</span>
-          <div class="mode-name">🟢 Tấn Công Toàn Lực (Peak Focus)</div>
-          <div class="mode-desc">Trạng thái tinh thần cao, toàn bộ thời gian ở nhà, bung tối đa hỏa lực 6 Khối Điểm Tựa.</div>
-        </div>
-
-        <!-- Mode 2: Core Survival Keystones -->
-        <div class="mode-btn core" id="btn-core" onclick="switchMode('core')">
-          <span class="mode-tag" style="color: var(--accent-priority);">Level 2 • Nén / Biến Cố / Never Zero</span>
-          <div class="mode-name">🟡 Điểm Tựa Sống Còn (Never Zero)</div>
-          <div class="mode-desc">Dậy muộn, bận việc trường, mệt mỏi. Cắt bỏ việc râu ria, bảo vệ 100% các Keystones quyết định cuộc đời.</div>
-        </div>
-      </div>
-
-      <!-- Progress Card -->
-      <div class="progress-bar-container">
-        <div class="progress-stats">
-          <span class="progress-label" id="progress-mode-label">
-            <span>Tiến độ:</span> 
-            <strong id="mode-display-name" style="color: var(--accent-strict)">Chế độ Nghiêm Ngặt</strong>
-          </span>
-          <span class="progress-percent" id="progress-percent-text">0 / 11 (0%)</span>
-        </div>
-        <div class="bar-track">
-          <div class="bar-fill" id="progress-fill"></div>
-        </div>
-      </div>
-
-      <!-- Task List Container -->
-      <div class="task-list-card">
-        <div class="list-header">
-          <div class="list-title" id="list-title">
-            <span>📋</span> Danh sách Thói quen
+        <div class="rhythm-metrics">
+          <div class="metric-pill" title="Tổng giờ DaVinci Resolve tuần này">
+            <span>🎬</span>
+            <strong id="rhythm-davinci-val">0h</strong> / 21h
           </div>
-          <div class="list-actions">
-            <button class="action-btn" onclick="copyObsidianMarkdown()" title="Copy Markdown vào Obsidian">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              Obsidian
-            </button>
+          <div class="metric-pill" title="Trạng thái Never Miss Twice">
+            <span id="rhythm-shield-icon">🛡️</span>
+            <strong id="rhythm-shield-val" style="color: #38bdf8;">An toàn</strong>
           </div>
         </div>
-
-        <div id="tasks-container">
-          <!-- Rendered by JavaScript -->
-        </div>
       </div>
 
-      <!-- Mindset Warning -->
-      <div class="mindset-card">
-        <div class="mindset-icon">⚠️</div>
-        <div class="mindset-content">
-          <h4>Mindset & Warning</h4>
-          <p>"Do you want a brilliant future, or a life of poverty and humiliation? Đừng tìm sự hoàn hảo, hãy tìm sự bền bỉ. Một ngày tồi tệ nhất vẫn phải giữ lấy sợi dây neo!"</p>
-        </div>
+      <!-- 7-Day Pill Strip (T2 -> CN) -->
+      <div class="rhythm-strip" id="rhythm-strip-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Active Day Indicator Banner -->
+      <div class="rhythm-active-banner">
+        <span>Đang xem: <strong id="rhythm-active-day-name">Hôm nay</strong></span>
+        <span id="rhythm-active-day-status" style="font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--text-dim);">⏰ Sang ngày mới lúc 04:00 AM</span>
       </div>
     </div>
 
-    <!-- Weekly View Container -->
-    <div id="weekly-view-container" style="display: none;">
-      <div class="weekly-view-card">
-        <!-- Week Navigation -->
-        <div class="weekly-nav-bar">
-          <div class="date-nav">
-            <button class="nav-btn" onclick="shiftWeek(-1)" title="Tuần trước">◀ Tuần trước</button>
-            <span class="current-date-text" id="weekly-label-text">Tuần này</span>
-            <button class="nav-btn" id="weekly-next-btn" onclick="shiftWeek(1)" title="Tuần sau">Tuần sau ▶</button>
-            <button class="nav-btn jump-today" id="weekly-current-btn" onclick="jumpToCurrentWeek()" style="display: none;" title="Về tuần hiện tại">Về Tuần Này</button>
-          </div>
-          <div class="date-status">
-            <span>🛡️ Chuẩn ISO 8601 (Thứ 2 ➔ Chủ Nhật)</span>
-          </div>
+    <!-- Mode Selector (Binary System: 2 Modes) -->
+    <div class="mode-selector">
+      <!-- Mode 1: Strict / Peak Attack -->
+      <div class="mode-btn strict active-strict" id="btn-strict" onclick="switchMode('strict')">
+        <span class="mode-tag">Level 1 • Rảnh & Khỏe</span>
+        <div class="mode-name">🟢 Tấn Công (Peak Focus)</div>
+        <div class="mode-desc">Bung tối đa hỏa lực 6 Khối Điểm Tựa & DaVinci Sean Kang.</div>
+      </div>
+
+      <!-- Mode 2: Core Survival Keystones -->
+      <div class="mode-btn core" id="btn-core" onclick="switchMode('core')">
+        <span class="mode-tag" style="color: var(--accent-priority);">Level 2 • Nén / Never Zero</span>
+        <div class="mode-name">🟡 Điểm Tựa (Never Zero)</div>
+        <div class="mode-desc">Bận rộn, mệt mỏi. Cắt bỏ râu ria, bảo vệ 100% các Keystones sống còn.</div>
+      </div>
+    </div>
+
+    <!-- Progress Card -->
+    <div class="progress-bar-container">
+      <div class="progress-stats">
+        <span class="progress-label" id="progress-mode-label">
+          <span>Tiến độ:</span> 
+          <strong id="mode-display-name" style="color: var(--accent-strict)">Chế độ Nghiêm Ngặt</strong>
+        </span>
+        <span class="progress-percent" id="progress-percent-text">0 / 11 (0%)</span>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Task List Container -->
+    <div class="task-list-card">
+      <div class="list-header">
+        <div class="list-title" id="list-title">
+          <span>📋</span> Danh sách Thói quen
         </div>
-
-        <!-- Weekly Lead Metrics Summary -->
-        <div class="weekly-lead-metrics">
-          <div class="lead-metric-card">
-            <div class="lead-metric-title">
-              <span>🎬 DaVinci Deep Work</span>
-            </div>
-            <div class="lead-metric-val" id="metric-davinci-hours" style="color: #fb923c;">0 giờ</div>
-            <div class="lead-metric-sub">Chỉ tiêu: &ge; 21h/tuần (Cày Sprint Sean Kang)</div>
-          </div>
-
-          <div class="lead-metric-card">
-            <div class="lead-metric-title">
-              <span>🔥 Nhịp Độ Bền Bỉ</span>
-            </div>
-            <div class="lead-metric-val" id="metric-consistency-score" style="color: #10b981;">0 / 7</div>
-            <div class="lead-metric-sub" id="metric-consistency-sub">0% số ngày đạt Mode 1 hoặc Mode 2</div>
-          </div>
-
-          <div class="lead-metric-card">
-            <div class="lead-metric-title">
-              <span>⚡ Never Miss Twice</span>
-            </div>
-            <div class="lead-metric-val" id="metric-shield-status" style="color: #38bdf8;">AN TOÀN</div>
-            <div class="lead-metric-sub" id="metric-shield-sub">Không bị đứt xích 2 ngày liên tiếp</div>
-          </div>
+        <div class="list-actions">
+          <button class="action-btn" onclick="copyObsidianMarkdown()" title="Copy Markdown vào Obsidian">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Obsidian
+          </button>
         </div>
+      </div>
 
-        <!-- 7-Day Matrix Grid -->
-        <div class="weekly-grid" id="weekly-grid-container">
-          <!-- Rendered by JS -->
-        </div>
+      <div id="tasks-container">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
 
-        <!-- Explanatory note -->
-        <div style="font-size: 11.5px; color: var(--text-dim); text-align: center; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
-          💡 Bấm vào bất kỳ ngày nào trong ma trận để nhảy ngay sang xem chi tiết check-list ngày đó.
-        </div>
+    <!-- Mindset Warning -->
+    <div class="mindset-card">
+      <div class="mindset-icon">⚠️</div>
+      <div class="mindset-content">
+        <h4>Mindset & Warning</h4>
+        <p>"Do you want a brilliant future, or a life of poverty and humiliation? Đừng tìm sự hoàn hảo, hãy tìm sự bền bỉ. Một ngày tồi tệ nhất vẫn phải giữ lấy sợi dây neo!"</p>
       </div>
     </div>
 
@@ -1415,57 +1403,14 @@
 
     function updateDateUI() {
       todayDateKey = getBiologicalToday();
-      const isToday = (viewedDateKey === todayDateKey);
-      const displayLabel = document.getElementById('display-date-label');
-      const nextBtn = document.getElementById('next-day-btn');
-      const jumpBtn = document.getElementById('jump-today-btn');
-      const statusBadge = document.getElementById('date-status-badge');
-
-      const d = parseLocalDate(viewedDateKey);
-      const dayNames = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
-      const dayName = dayNames[d.getDay()];
-      const formattedVN = `${dayName}, ${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
-
-      if (isToday) {
-        displayLabel.textContent = `Hôm nay (${formattedVN})`;
-        if (nextBtn) nextBtn.style.display = 'none';
-        if (jumpBtn) jumpBtn.style.display = 'none';
-        if (statusBadge) statusBadge.innerHTML = '<span>⏰ Tự động sang ngày mới lúc 04:00 AM</span>';
-      } else {
-        displayLabel.textContent = formattedVN;
-        if (nextBtn) nextBtn.style.display = 'inline-block';
-        if (jumpBtn) jumpBtn.style.display = 'inline-block';
-        if (statusBadge) statusBadge.innerHTML = '<span style="color: #f59e0b">👀 Đang xem lại ngày cũ</span>';
-      }
-
+      renderRhythmStrip();
       updateStreak();
-    }
-
-    function shiftDay(direction) {
-      todayDateKey = getBiologicalToday();
-      const curr = parseLocalDate(viewedDateKey);
-      curr.setDate(curr.getDate() + direction);
-      const newKey = formatLocalDate(curr);
-
-      if (newKey > todayDateKey) {
-        viewedDateKey = todayDateKey;
-      } else {
-        viewedDateKey = newKey;
-      }
-      updateDateUI();
-      renderTasks();
-    }
-
-    function jumpToToday() {
-      todayDateKey = getBiologicalToday();
-      viewedDateKey = todayDateKey;
-      updateDateUI();
-      renderTasks();
     }
 
     function switchMode(mode) {
       updateDayData(viewedDateKey, { mode: mode });
       renderTasks();
+      renderRhythmStrip();
     }
 
     function toggleTask(mode, index) {
@@ -1477,6 +1422,7 @@
       dayData.checked[key] = !dayData.checked[key];
       updateDayData(viewedDateKey, { checked: dayData.checked });
       renderTasks();
+      renderRhythmStrip();
       updateStreak();
     }
 
@@ -1681,33 +1627,7 @@
       }
     }
 
-    // ==================== VIEW SWITCHING ====================
-    let currentActiveView = 'daily';
-
-    function switchView(viewName) {
-      currentActiveView = viewName;
-      const dailyContainer = document.getElementById('daily-view-container');
-      const weeklyContainer = document.getElementById('weekly-view-container');
-      const dailyBtn = document.getElementById('tab-btn-daily');
-      const weeklyBtn = document.getElementById('tab-btn-weekly');
-
-      if (viewName === 'weekly') {
-        if (dailyContainer) dailyContainer.style.display = 'none';
-        if (weeklyContainer) weeklyContainer.style.display = 'block';
-        if (dailyBtn) dailyBtn.classList.remove('active');
-        if (weeklyBtn) weeklyBtn.classList.add('active');
-        renderWeeklyMatrix();
-      } else {
-        if (dailyContainer) dailyContainer.style.display = 'flex';
-        if (weeklyContainer) weeklyContainer.style.display = 'none';
-        if (dailyBtn) dailyBtn.classList.add('active');
-        if (weeklyBtn) weeklyBtn.classList.remove('active');
-        updateDateUI();
-        renderTasks();
-      }
-    }
-
-    // ==================== WEEKLY MATRIX LOGIC ====================
+    // ==================== 7-DAY RHYTHM HORIZON LOGIC ====================
     let currentWeekOffset = 0;
 
     function getISOWeekDates(weekOffset = 0) {
@@ -1727,156 +1647,165 @@
 
     function shiftWeek(direction) {
       currentWeekOffset += direction;
-      renderWeeklyMatrix();
+      const newWeekDates = getISOWeekDates(currentWeekOffset);
+      if (!newWeekDates.includes(viewedDateKey)) {
+        viewedDateKey = newWeekDates[0];
+      }
+      renderRhythmStrip();
+      renderTasks();
     }
 
-    function jumpToCurrentWeek() {
+    function jumpToToday() {
       currentWeekOffset = 0;
-      renderWeeklyMatrix();
+      todayDateKey = getBiologicalToday();
+      viewedDateKey = todayDateKey;
+      renderRhythmStrip();
+      renderTasks();
+      showToast("Đã quay về Hôm nay!");
     }
 
-    function renderWeeklyMatrix() {
-      const grid = document.getElementById('weekly-grid-container');
-      const labelEl = document.getElementById('weekly-label-text');
-      const currentBtn = document.getElementById('weekly-current-btn');
-      if (!grid) return;
+    function selectRhythmDay(dateKey) {
+      viewedDateKey = dateKey;
+      renderRhythmStrip();
+      renderTasks();
+    }
 
+    function renderRhythmStrip() {
+      const stripContainer = document.getElementById('rhythm-strip-container');
+      const weekLabel = document.getElementById('rhythm-week-label');
+      const todayBtn = document.getElementById('rhythm-today-btn');
+      const dvValEl = document.getElementById('rhythm-davinci-val');
+      const shieldValEl = document.getElementById('rhythm-shield-val');
+      const shieldIconEl = document.getElementById('rhythm-shield-icon');
+      const activeDayName = document.getElementById('rhythm-active-day-name');
+      const activeDayStatus = document.getElementById('rhythm-active-day-status');
+
+      if (!stripContainer) return;
+
+      todayDateKey = getBiologicalToday();
       const weekDates = getISOWeekDates(currentWeekOffset);
-      const bioToday = getBiologicalToday();
       const history = getStoredHistory();
 
+      // Week title
       const startDate = parseLocalDate(weekDates[0]);
       const endDate = parseLocalDate(weekDates[6]);
       const startFmt = `${String(startDate.getDate()).padStart(2, '0')}/${String(startDate.getMonth() + 1).padStart(2, '0')}`;
       const endFmt = `${String(endDate.getDate()).padStart(2, '0')}/${String(endDate.getMonth() + 1).padStart(2, '0')}`;
 
-      if (currentWeekOffset === 0) {
-        if (labelEl) labelEl.textContent = `Tuần Này (${startFmt} - ${endFmt})`;
-        if (currentBtn) currentBtn.style.display = 'none';
-      } else {
-        if (labelEl) labelEl.textContent = `${currentWeekOffset < 0 ? Math.abs(currentWeekOffset) + ' tuần trước' : '+' + currentWeekOffset + ' tuần'} (${startFmt} - ${endFmt})`;
-        if (currentBtn) currentBtn.style.display = 'inline-block';
+      if (weekLabel) {
+        if (currentWeekOffset === 0) {
+          weekLabel.textContent = `Tuần Này (${startFmt} - ${endFmt})`;
+        } else if (currentWeekOffset === -1) {
+          weekLabel.textContent = `Tuần Trước (${startFmt} - ${endFmt})`;
+        } else {
+          weekLabel.textContent = `${currentWeekOffset > 0 ? '+' : ''}${currentWeekOffset} Tuần (${startFmt} - ${endFmt})`;
+        }
       }
 
-      const dayNamesVN = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật'];
-      
-      let totalDaVinciHours = 0;
-      let consistencyDays = 0;
+      // Show 'Hôm nay' button if not viewing today or not on current week
+      if (todayBtn) {
+        const isViewingToday = (viewedDateKey === todayDateKey && currentWeekOffset === 0);
+        todayBtn.style.display = isViewingToday ? 'none' : 'inline-flex';
+      }
+
+      // Active day banner
+      const viewedD = parseLocalDate(viewedDateKey);
+      const dayNamesLong = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+      const viewedDayName = dayNamesLong[viewedD.getDay()];
+      const viewedFormattedVN = `${viewedDayName}, ${String(viewedD.getDate()).padStart(2, '0')}/${String(viewedD.getMonth() + 1).padStart(2, '0')}/${viewedD.getFullYear()}`;
+
+      if (activeDayName) {
+        if (viewedDateKey === todayDateKey) {
+          activeDayName.textContent = `Hôm nay (${viewedFormattedVN})`;
+        } else {
+          activeDayName.textContent = viewedFormattedVN;
+        }
+      }
+
+      if (activeDayStatus) {
+        if (viewedDateKey === todayDateKey) {
+          activeDayStatus.innerHTML = '<span style="color:#38bdf8;">⏰ Tự động sang ngày mới lúc 04:00 AM</span>';
+        } else if (viewedDateKey < todayDateKey) {
+          activeDayStatus.innerHTML = '<span style="color:#f59e0b;">👀 Đang xem lại ngày cũ</span>';
+        } else {
+          activeDayStatus.innerHTML = '<span style="color:#94a3b8;">🔮 Kế hoạch ngày tương lai</span>';
+        }
+      }
+
+      // Calculate Lead Metrics across current week
+      const dayShortNames = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+      let weeklyDaVinciHours = 0;
       let consecutiveMisses = 0;
       let hasTwoConsecutiveMisses = false;
 
-      const renderedCols = weekDates.map((dateKey, index) => {
+      const pillsHtml = weekDates.map((dateKey, idx) => {
         const d = parseLocalDate(dateKey);
-        const dayName = dayNamesVN[index];
-        const isToday = (dateKey === bioToday);
-        const isFuture = (dateKey > bioToday);
+        const dayShort = dayShortNames[idx];
+        const dayNum = String(d.getDate()).padStart(2, '0');
+        const isToday = (dateKey === todayDateKey);
+        const isActive = (dateKey === viewedDateKey);
+        const isFuture = (dateKey > todayDateKey);
 
         const dayData = history[dateKey];
         const mode = (dayData && dayData.mode) ? dayData.mode : 'strict';
         const checked = (dayData && dayData.checked) ? dayData.checked : {};
         const checkedCount = Object.values(checked).filter(Boolean).length;
 
+        // DaVinci check: strict_1 or core_0
         const davinciDone = Boolean((mode === 'strict' && checked['strict_1']) || (mode === 'core' && checked['core_0']));
 
-        let colStatus = 'status-future';
-        let statusBadgeText = 'Chưa tới';
-        let statusBadgeBg = 'rgba(255, 255, 255, 0.05)';
-        let statusBadgeColor = 'var(--text-dim)';
-
+        let dotClass = 'dot-future';
         if (!isFuture) {
           if (davinciDone) {
-            totalDaVinciHours += (mode === 'strict' ? 3 : 1);
+            weeklyDaVinciHours += (mode === 'strict' ? 3 : 1);
           }
 
           if (checkedCount >= 4 || (mode === 'core' && checkedCount >= 3)) {
-            consistencyDays++;
+            dotClass = mode === 'strict' ? 'dot-strict' : 'dot-core';
             consecutiveMisses = 0;
-            if (mode === 'strict') {
-              colStatus = 'status-strict';
-              statusBadgeText = `🟢 Mode 1 (${checkedCount} việc)`;
-              statusBadgeBg = 'rgba(16, 185, 129, 0.15)';
-              statusBadgeColor = '#34d399';
-            } else {
-              colStatus = 'status-core';
-              statusBadgeText = `🟡 Mode 2 (${checkedCount} việc)`;
-              statusBadgeBg = 'rgba(245, 158, 11, 0.15)';
-              statusBadgeColor = '#fbbf24';
-            }
           } else if (checkedCount > 0) {
-            consistencyDays++;
+            dotClass = 'dot-core';
             consecutiveMisses = 0;
-            colStatus = 'status-core';
-            statusBadgeText = `🟡 Dở dang (${checkedCount} việc)`;
-            statusBadgeBg = 'rgba(245, 158, 11, 0.12)';
-            statusBadgeColor = '#fbbf24';
           } else {
             if (!isToday) {
+              dotClass = 'dot-miss';
               consecutiveMisses++;
-              if (consecutiveMisses >= 2) {
-                hasTwoConsecutiveMisses = true;
-              }
-              colStatus = 'status-miss';
-              statusBadgeText = '🔴 Bỏ lỡ (Miss)';
-              statusBadgeBg = 'rgba(239, 68, 68, 0.15)';
-              statusBadgeColor = '#f87171';
+              if (consecutiveMisses >= 2) hasTwoConsecutiveMisses = true;
             } else {
-              colStatus = 'status-core';
-              statusBadgeText = '⏳ Đang diễn ra';
-              statusBadgeBg = 'rgba(56, 189, 248, 0.15)';
-              statusBadgeColor = '#38bdf8';
+              dotClass = 'dot-future';
             }
           }
         }
 
         return `
-          <div class="week-day-col ${colStatus} ${isToday ? 'is-today' : ''}" onclick="selectDayFromWeekly('${dateKey}')" title="Bấm để xem check-list ${dayName} (${dateKey})">
-            <div class="day-col-header">
-              <span class="day-col-name">${dayName}</span>
-              <span class="day-col-date">${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}</span>
-              ${isToday ? `<span style="font-size: 9.5px; font-weight: 800; color: #38bdf8; text-transform: uppercase;">● Hôm nay</span>` : ''}
-            </div>
-            <div class="day-col-status-badge" style="background: ${statusBadgeBg}; color: ${statusBadgeColor};">
-              ${statusBadgeText}
-            </div>
-            <div class="day-col-davinci ${davinciDone ? 'active' : ''}">
-              <span>🎬 DaVinci:</span>
-              <span>${davinciDone ? '✓ Đạt' : (isFuture ? '-' : 'Chưa')}</span>
+          <div class="day-pill ${isActive ? 'active' : ''} ${isToday ? 'is-today-pill' : ''}" 
+               onclick="selectRhythmDay('${dateKey}')" 
+               title="${dayShort}, ${dateKey} ${isToday ? '(Hôm nay)' : ''}">
+            <span class="day-pill-name">${dayShort}</span>
+            <span class="day-pill-num">${dayNum}</span>
+            <div class="day-pill-indicators">
+              <span class="dot-status ${dotClass}"></span>
+              ${davinciDone ? '<span class="dot-davinci" title="Đã dựng DaVinci">🔥</span>' : ''}
             </div>
           </div>
         `;
       }).join('');
 
-      grid.innerHTML = renderedCols;
+      stripContainer.innerHTML = pillsHtml;
 
-      const dvHoursEl = document.getElementById('metric-davinci-hours');
-      if (dvHoursEl) dvHoursEl.textContent = `${totalDaVinciHours} giờ`;
-
-      const consistencyEl = document.getElementById('metric-consistency-score');
-      const consistencySubEl = document.getElementById('metric-consistency-sub');
-      if (consistencyEl) consistencyEl.textContent = `${consistencyDays} / 7 ngày`;
-      if (consistencySubEl) {
-        const pct = Math.round((consistencyDays / 7) * 100);
-        consistencySubEl.textContent = `${pct}% số ngày giữ lửa kỷ luật`;
-      }
-
-      const shieldEl = document.getElementById('metric-shield-status');
-      const shieldSubEl = document.getElementById('metric-shield-sub');
-      if (shieldEl && shieldSubEl) {
+      // Update lead metrics UI
+      if (dvValEl) dvValEl.textContent = `${weeklyDaVinciHours}h`;
+      if (shieldValEl && shieldIconEl) {
         if (hasTwoConsecutiveMisses) {
-          shieldEl.textContent = '⚠️ NGUY HIỂM';
-          shieldEl.style.color = '#ef4444';
-          shieldSubEl.textContent = 'Vi phạm Never Miss Twice! Bằng mọi giá gỡ lại hôm nay!';
+          shieldIconEl.textContent = '⚠️';
+          shieldValEl.textContent = 'Nguy hiểm';
+          shieldValEl.style.color = '#ef4444';
         } else {
-          shieldEl.textContent = 'AN TOÀN';
-          shieldEl.style.color = '#38bdf8';
-          shieldSubEl.textContent = 'Dây neo được bảo toàn vững chắc.';
+          shieldIconEl.textContent = '🛡️';
+          shieldValEl.textContent = 'An toàn';
+          shieldValEl.style.color = '#38bdf8';
         }
       }
-    }
-
-    function selectDayFromWeekly(dateKey) {
-      viewedDateKey = dateKey;
-      switchView('daily');
     }
 
     // ==================== HERMES AGENT & AUTOMATION EXPORT ====================
@@ -1941,7 +1870,6 @@
 
             updateDateUI();
             renderTasks();
-            if (currentActiveView === 'weekly') renderWeeklyMatrix();
             setSyncBadge('synced');
           }, (err) => {
             console.error("Firebase read error (check rules):", err);
