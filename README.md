@@ -48,12 +48,12 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 | Khung Giờ | Khối Tác Chiến Điểm Tựa | Chi Tiết Thực Thi & Tinh Thần |
 | :--- | :--- | :--- |
 | **08:15** | 🌅 **1. Khởi động tâm trí** | Thiền định 15 phút (Reset Dopamine) + Mở Doom Emacs (`C-c SPC`) khóa Top 3 việc `NEXT`. |
-| **08:45 – 12:00** | ⚡ **2. Ca sáng: DaVinci Resolve (Cốt lõi)** | **Mũi nhọn ra tiền:** Kiểm tra **Elite Roadmap** trước khi làm ➔ Bật Flow Pomodoro (50/10), luyện cụm phím `Q - W - E - S - D` cày Sprint Sean Kang xuất xưởng REEL. |
+| **08:45 – 12:00** | ⚡ **2. Ca sáng: DaVinci Resolve (Cốt lõi)** | **Mũi nhọn ra tiền:** Kim chỉ nam **`repos/elite-roadmap`** (Sprint 1 xuất xưởng 4 REELs). Ứng dụng AI tiền kỳ bóc tách B-roll/sub ➔ Bật Flow Pomodoro (50/10), luyện cụm phím `Q - W - E - S - D` cày Sprint! |
 | **12:00** | 🥗 **3. Nạp vi chất trưa & Power Nap** | Uống **Omega-3 & Vitamin D3/K2** ngay sau bữa ăn trưa để chất béo hòa tan hấp thu 100%. Giảm tinh bột nhanh chống buồn ngủ + Chợp mắt 20p. |
-| **13:30 – 15:30** | 🎓 **4. Ca chiều: Nghĩa Vụ Danh Dự (Ôn thi IUH)** | **Trách nhiệm gia đình:** Xử lý dứt điểm bài lab, bài tập lớn và đề cương ôn thi giữa kỳ cùng AI. Học dứt khoát 90–120 phút, bảo đảm an toàn qua môn! |
+| **13:30 – 15:30** | 🎓 **4. Ca chiều: Nghĩa Vụ Danh Dự (Java & Spring)** | **Trách nhiệm gia đình:** Dành trọn 90–120 phút ôn thi vấn đáp Java (25/10) và code đồ án Web Spring Boot (Showcase #3). Học dứt khoát, an toàn qua môn! |
 | **17:45 – 19:15** | 🏋️ **5. Thân thể chiến binh** | Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Rest day Boxing xả stress. |
 | **19:30** | 💊 **6. Phòng ngự Dược lý tối** | Ăn tối + Uống **Telfor 120mg & MySpa (Isotretinoin)**. Dồn toàn bộ tác dụng phụ mệt mỏi/an dịu vào ban đêm để hỗ trợ ngủ sâu, triệt tiêu cơn buồn ngủ ban ngày! |
-| **20:15** | 📡 **7. Vũ khí tương lai & Tiếng Anh** | **Nạp sóng mới (15–20p):** 10p lướt tin tức AI Agent + 10p đàm đạo tiếng Anh phản xạ cùng `/teach` (chuẩn bị meeting Upwork). |
+| **20:00 – 20:45** | 🚀 **7. Nạp vi chất AI Engineer (Chiến dịch MWG)** | **Micro-Dose 45p (`DAILY_KNOWLEDGE_PIPELINE.md`):** 15' Sơ đồ Freeform iPad + 15' Luyện nói STAR + 15' Đúc kết Atomic Zettel (Chuẩn bị phỏng vấn MWG 08/11). |
 | **21:15** | 🧠 **8. Tái hiện tri thức (Note Review)** | **Nhiệm vụ cốt lõi:** Mở Obsidian bấm **`Option + R`** đọc lướt 2–3 Zettel trong `notes/` (60s/note). Bồi đắp Human Anchor thực tế nếu có, bấm Good để note dạt ra xa! |
 | **21:30** | 📝 **9. Đóng cửa ngày & Nhật ký** | **Chốt lại ngày:** Gõ **`today`** trong Terminal: Ghi lại 3 con số (giờ DaVinci, Mode, Zettel), Top 3 chiến thắng và viết 2–3 câu tiếng Anh phản tư. |
 | **22:00** | 🌙 **10. Phòng ngự đêm & Giấc ngủ sâu** | Rửa mũi nước muối sinh lý + Xịt mũi + 2 viên **Magnesium Glycinate** + Giới nghiêm và ngủ trước 00:00 (thở mũi 100%). |
@@ -66,22 +66,25 @@ Nguyên nhân trước đây bạn bị buồn ngủ điên cuồng lúc cuối 
 
 * 🟢 **MODE 1: TẤN CÔNG TOÀN LỰC (Peak Focus - Các Khối Điểm Tựa)** — Áp dụng cho mọi ngày bình thường, ở nhà toàn thời gian, năng lượng dồi dào:
   1. **[08:15] Khởi động tâm trí:** Thiền 15p + Doom Emacs khóa Top 3 `NEXT`.
-  2. **[08:45 – 12:00] Deep Work Ca Sáng:** Kiểm tra Elite Roadmap ➔ DaVinci Resolve cày Sprint Sean Kang (phím tắt `Q - W - E - S - D`).
+  2. **[08:45 – 12:00] Deep Work Ca Sáng:** Kim chỉ nam Elite Roadmap ➔ DaVinci Resolve cày Sprint Sean Kang (phím tắt `Q - W - E - S - D`).
   3. **[12:00] Nạp vi chất:** Ăn trưa kiểm soát tinh bột + Uống Omega-3 & Vitamin D3/K2 + Chợp mắt 20p.
-  4. **[13:30 – 15:30] Ca Chiều Nghĩa Vụ Danh Dự:** Ôn thi giữa kỳ, giải quyết bài lab & đồ án IUH cùng AI để bảo vệ lòng tin gia đình và không rớt môn.
+  4. **[13:30 – 15:30] Ca Chiều Nghĩa Vụ Danh Dự:** Ôn thi vấn đáp Java & code Spring Boot JPA cùng AI để vừa ẵm điểm A vừa làm đẹp CV MWG.
   5. **[17:45 – 19:15] Thân thể chiến binh:** Calisthenics Hypertrophy (Kéo xà, Chống đẩy, Squat) / Boxing.
   6. **[19:30] Phòng ngự Dược lý tối:** Ăn tối + Uống Telfor 120mg & MySpa (dồn an dịu vào đêm).
-  7. **[20:15] Vũ khí tương lai & Tiếng Anh:** 10p lướt tin tức AI Agent + 10p đàm đạo tiếng Anh phản xạ cùng `/teach`.
+  7. **[20:00 – 20:45] Nạp vi chất AI Engineer:** 45 phút theo sát `DAILY_KNOWLEDGE_PIPELINE.md` (Freeform + STAR + Zettel).
   8. **[21:15] Tái hiện tri thức (Note Review):** Bấm `Option + R` đọc lướt 2–3 Zettel trong `notes/` nạp tiềm thức.
   9. **[21:30] Đóng cửa ngày:** Gõ `today` ghi nhận 3 con số và 2 câu tiếng Anh phản tư.
   10. **[22:00] Phòng ngự đêm & Giấc ngủ sâu:** Rửa mũi & 2 viên Magnesium, ngủ trước 00:00 (thở mũi 100%).
 
 * 🟡 **MODE 2: ĐIỂM TỰA SỐNG CÒN (Survival Keystones - Never Zero)** — Áp dụng khi dậy muộn, bận thi cử trường đột xuất, ốm mệt hoặc biến cố trong ngày. Cắt bỏ mọi việc râu ria, **BẢO VỆ 100% CÁC KEYSTONES QUYẾT ĐỊNH CUỘC ĐỜI & XU THẾ TƯƠNG LAI**:
-  1. ⚡ **[DaVinci Nén - 45 đến 60 phút]:** Kiểm tra Elite Roadmap ➔ Cắt tối thiểu 1 phân cảnh / 1 bài bằng phím `Q-W-E`. Không bao giờ để nguội tay nghề!
-  2. 🎓 **[IUH Chống Rớt Môn - 45 phút]:** Dành trọn 45 phút dứt điểm 1 phần bài tập hoặc 1 chương đề cương ôn thi cùng AI. Bảo đảm không rớt môn!
+  1. ⚡ **[DaVinci Nén - 45 đến 60 phút]:** Kim chỉ nam Elite Roadmap ➔ Cắt tối thiểu 1 phân cảnh / 1 bài bằng phím `Q-W-E`. Không bao giờ để nguội tay nghề!
+  2. 🎓 **[IUH Chống Rớt Môn - 45 phút]:** Dành trọn 45 phút dứt điểm 1 phần bài tập hoặc đề cương ôn thi vấn đáp Java cùng AI. Bảo đảm không rớt môn!
   3. 🏋️ **[Thể chất giữ lửa - 15 đến 20 phút]:** 3 set chống đẩy + xà + squat tại phòng để duy trì cơ bắp và lưu thông máu.
   4. 🥗 **[Nạp vi chất & Dược lý sinh tồn 100%]:** Uống Omega-3 & D3/K2 sau ăn trưa/tối + Uống Telfor 120mg & MySpa sau ăn tối + Rửa mũi nước muối & 2 viên Magnesium Glycinate trước ngủ. Bảo vệ giấc ngủ là số 1.
-  5. 📡 **[Radar AI & Tiếng Anh nhanh - 10 phút]:** Lướt nhanh 1 tin tức/video ngắn về AI Agent hoặc luyện 2 câu tiếng Anh giao tiếp.
+  5. 📡 **[Micro-Dose AI Engineer - 15 đến 20 phút]:** Đọc 1 chủ đề trong `DAILY_KNOWLEDGE_PIPELINE.md` hoặc luyện 1 câu phỏng vấn STAR để giữ nhịp độ phát triển.
+  6. 🧠 **[Neo tri thức 60 giây]:** Bấm `Option + R` đọc lướt 1–2 Zettel trong `notes/` nạp tiềm thức, bảo tồn tri thức và phản xạ thực chiến.
+  7. 📝 **[Nhật ký nhanh & Hồi phục]:** Gõ `today` trong Terminal ghi nhận số giờ DaVinci và cảm xúc + Ngủ sớm trước 23:00 hồi phục cơ thể (Never Miss Twice).
+  👉 **Quy tắc: Never Miss Twice — Bật Mode 2 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1!**
   6. 🧠 **[Neo tri thức 60 giây]:** Bấm `Option + R` đọc lướt 1–2 Zettel trong `notes/` nạp tiềm thức, bảo tồn tri thức và phản xạ thực chiến.
   7. 📝 **[Nhật ký nhanh & Hồi phục]:** Gõ `today` trong Terminal ghi nhận số giờ DaVinci và cảm xúc + Ngủ sớm trước 23:00 hồi phục cơ thể (Never Miss Twice).
   👉 **Quy tắc: Never Miss Twice — Bật Mode 2 một ngày, ngày mai bằng mọi giá phải quay lại Mode 1!**
