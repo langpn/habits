@@ -1092,9 +1092,9 @@
           <button class="rhythm-btn today-btn" id="rhythm-today-btn" onclick="jumpToToday()" style="display: none;" title="Về hôm nay">Hôm nay</button>
         </div>
         <div class="rhythm-metrics">
-          <div class="metric-pill" title="Tổng giờ DaVinci Resolve tuần này">
+          <div class="metric-pill" title="Số ngày đã chạm DaVinci theo checklist; không phải giờ clock">
             <span>🎬</span>
-            <strong id="rhythm-davinci-val">0h</strong> / 21h
+            <strong id="rhythm-davinci-val">0d</strong> đã chạm
           </div>
           <div class="metric-pill" title="Trạng thái Never Miss Twice">
             <span id="rhythm-shield-icon">🛡️</span>
@@ -1726,7 +1726,7 @@
 
       // Calculate Lead Metrics across current week
       const dayShortNames = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
-      let weeklyDaVinciHours = 0;
+      let weeklyDaVinciTouchDays = 0;
       let consecutiveMisses = 0;
       let hasTwoConsecutiveMisses = false;
 
@@ -1743,13 +1743,13 @@
         const checked = (dayData && dayData.checked) ? dayData.checked : {};
         const checkedCount = Object.values(checked).filter(Boolean).length;
 
-        // DaVinci check: strict_1 or core_0
-        const davinciDone = Boolean((mode === 'strict' && checked['strict_1']) || (mode === 'core' && checked['core_0']));
+        // DaVinci touch state only; this checklist is not a clock source.
+        const davinciDone = Boolean((mode === 'strict' && checked['strict_0']) || (mode === 'core' && checked['core_0']));
 
         let dotClass = 'dot-future';
         if (!isFuture) {
           if (davinciDone) {
-            weeklyDaVinciHours += (mode === 'strict' ? 3 : 1);
+            weeklyDaVinciTouchDays++;
           }
 
           if (checkedCount >= 4 || (mode === 'core' && checkedCount >= 3)) {
@@ -1786,7 +1786,7 @@
       stripContainer.innerHTML = pillsHtml;
 
       // Update lead metrics UI
-      if (dvValEl) dvValEl.textContent = `${weeklyDaVinciHours}h`;
+      if (dvValEl) dvValEl.textContent = `${weeklyDaVinciTouchDays}d`;
       if (shieldValEl && shieldIconEl) {
         if (hasTwoConsecutiveMisses) {
           shieldIconEl.textContent = '⚠️';
@@ -1808,7 +1808,7 @@
 
       const checkedCount = Object.values(todayRec.checked || {}).filter(Boolean).length;
       const isStrict = todayRec.mode === 'strict';
-      const davinciDone = Boolean((isStrict && todayRec.checked && todayRec.checked['strict_1']) || (!isStrict && todayRec.checked && todayRec.checked['core_0']));
+      const davinciDone = Boolean((isStrict && todayRec.checked && todayRec.checked['strict_0']) || (!isStrict && todayRec.checked && todayRec.checked['core_0']));
 
       return {
         today: bioToday,
